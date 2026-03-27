@@ -1,0 +1,178 @@
+@layer components {
+  .oc-rating {
+    display: inline-flex;
+    gap: var(--oc-spacing-1);
+    align-items: center;
+    
+    &[data-size="sm"] {
+      gap: var(--oc-spacing-0_5);
+    }
+    
+    &[data-size="lg"] {
+      gap: var(--oc-spacing-2);
+    }
+  }
+  
+  .oc-rating-star {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform var(--oc-transition-base);
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    &[data-readonly="true"] {
+      cursor: default;
+      
+      &:hover {
+        transform: none;
+      }
+    }
+    
+    /* Default size */
+    width: 1.25rem;
+    height: 1.25rem;
+    
+    &[data-size="sm"] {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    &[data-size="lg"] {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  
+  .oc-rating-star svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--oc-color-slate-300);
+    transition: fill var(--oc-transition-base);
+  }
+  
+  /* Filled states */
+  .oc-rating-star[data-filled="true"] svg {
+    fill: var(--oc-color-yellow-400);
+  }
+  
+  .oc-rating-star[data-filled="half"] svg {
+    fill: url(#half-fill);
+  }
+  
+  /* Color variants */
+  .oc-rating[data-color="primary"] .oc-rating-star[data-filled="true"] svg {
+    fill: var(--oc-color-blue-500);
+  }
+  
+  .oc-rating[data-color="success"] .oc-rating-star[data-filled="true"] svg {
+    fill: #16a34a;
+  }
+  
+  .oc-rating[data-color="danger"] .oc-rating-star[data-filled="true"] svg {
+    fill: var(--oc-color-red-500);
+  }
+  
+  .oc-rating[data-color="purple"] .oc-rating-star[data-filled="true"] svg {
+    fill: #a855f7;
+  }
+  
+  /* Heart shape */
+  .oc-rating[data-shape="heart"] .oc-rating-star svg {
+    fill: var(--oc-color-slate-300);
+  }
+  
+  .oc-rating[data-shape="heart"] .oc-rating-star[data-filled="true"] svg {
+    fill: #ef4444;
+  }
+  
+  .oc-rating[data-shape="heart"] .oc-rating-star[data-filled="half"] svg {
+    fill: url(#half-fill-heart);
+  }
+  
+  /* Diamond shape */
+  .oc-rating[data-shape="diamond"] .oc-rating-star svg {
+    fill: var(--oc-color-slate-300);
+  }
+  
+  .oc-rating[data-shape="diamond"] .oc-rating-star[data-filled="true"] svg {
+    fill: #06b6d4;
+  }
+  
+  .oc-rating[data-shape="diamond"] .oc-rating-star[data-filled="half"] svg {
+    fill: url(#half-fill-diamond);
+  }
+  
+  /* Circle shape */
+  .oc-rating[data-shape="circle"] .oc-rating-star svg {
+    fill: var(--oc-color-slate-300);
+  }
+  
+  .oc-rating[data-shape="circle"] .oc-rating-star[data-filled="true"] svg {
+    fill: #8b5cf6;
+  }
+  
+  .oc-rating[data-shape="circle"] .oc-rating-star[data-filled="half"] svg {
+    fill: url(#half-fill-circle);
+  }
+  
+  /* Rating value display */
+  .oc-rating-value {
+    margin-left: var(--oc-spacing-2);
+    font-weight: 500;
+    color: var(--oc-text-base);
+    
+    &[data-size="sm"] {
+      font-size: var(--oc-font-size-sm);
+      margin-left: var(--oc-spacing-1);
+    }
+    
+    &[data-size="lg"] {
+      font-size: var(--oc-font-size-lg);
+      margin-left: var(--oc-spacing-3);
+    }
+  }
+  
+  /* Interactive hover effects */
+  .oc-rating[data-interactive="true"] .oc-rating-star:hover svg {
+    fill: var(--oc-color-yellow-400);
+  }
+  
+  .oc-rating[data-interactive="true"][data-color="primary"] .oc-rating-star:hover svg {
+    fill: var(--oc-color-blue-500);
+  }
+  
+  .oc-rating[data-interactive="true"][data-color="success"] .oc-rating-star:hover svg {
+    fill: #16a34a;
+  }
+  
+  .oc-rating[data-interactive="true"][data-color="danger"] .oc-rating-star:hover svg {
+    fill: var(--oc-color-red-500);
+  }
+  
+  .oc-rating[data-interactive="true"][data-color="purple"] .oc-rating-star:hover svg {
+    fill: #a855f7;
+  }
+  
+  .oc-rating[data-interactive="true"][data-shape="heart"] .oc-rating-star:hover svg {
+    fill: #ef4444;
+  }
+  
+  .oc-rating[data-interactive="true"][data-shape="diamond"] .oc-rating-star:hover svg {
+    fill: #06b6d4;
+  }
+  
+  .oc-rating[data-interactive="true"][data-shape="circle"] .oc-rating-star:hover svg {
+    fill: #8b5cf6;
+  }
+}
+
+/* SVG definitions for half fills (should be included once in the page) */
+.oc-rating-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,194 @@
+@layer components {
+  /* Toast Notifications */
+  .oc-toast {
+    position: fixed;
+    bottom: var(--oc-spacing-6);
+    right: var(--oc-spacing-6);
+    background: var(--background);
+    border: 1px solid var(--oc-border-base);
+    border-radius: var(--oc-radius-lg);
+    box-shadow: var(--oc-shadow-large);
+    padding: var(--oc-spacing-4);
+    min-width: 300px;
+    max-width: 500px;
+    z-index: var(--oc-z-toast);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all var(--oc-transition-base) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Show toast */
+    &:target,
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    /* Auto-hide after delay */
+    &:target {
+      animation: oc-toast-slide-in 0.3s ease-out, oc-toast-fade-out 0.3s ease-out 2.7s forwards;
+    }
+    
+    &.show {
+      animation: oc-toast-slide-in 0.3s ease-out;
+    }
+    
+    /* Variants */
+    &.success {
+      border-left: 4px solid #22c55e;
+      
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: var(--oc-spacing-4);
+        top: var(--oc-spacing-4);
+        background: #22c55e;
+        color: white;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
+    
+    &.error {
+      border-left: 4px solid var(--oc-surface-danger);
+      
+      &::before {
+        content: '✕';
+        position: absolute;
+        left: var(--oc-spacing-4);
+        top: var(--oc-spacing-4);
+        background: var(--oc-surface-danger);
+        color: white;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
+    
+    &.warning {
+      border-left: 4px solid #f59e0b;
+      
+      &::before {
+        content: '⚠';
+        position: absolute;
+        left: var(--oc-spacing-4);
+        top: var(--oc-spacing-4);
+        background: #f59e0b;
+        color: white;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
+    
+    &.info {
+      border-left: 4px solid var(--oc-surface-primary);
+      
+      &::before {
+        content: 'ℹ';
+        position: absolute;
+        left: var(--oc-spacing-4);
+        top: var(--oc-spacing-4);
+        background: var(--oc-surface-primary);
+        color: white;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
+    
+    /* Toast content */
+    .oc-toast-title {
+      font-weight: 600;
+      margin-bottom: var(--oc-spacing-2);
+      margin-left: 2.5rem;
+      color: var(--oc-text-base);
+    }
+    
+    .oc-toast-message {
+      color: var(--oc-text-muted);
+      line-height: 1.5;
+    }
+    
+    /* Close button */
+    .oc-toast-close {
+      position: absolute;
+      top: var(--oc-spacing-2);
+      right: var(--oc-spacing-2);
+      background: transparent;
+      border: none;
+      color: var(--oc-text-muted);
+      font-size: 1.25rem;
+      cursor: pointer;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--oc-radius-md);
+      transition: all var(--oc-transition-base);
+      
+      &:hover {
+        background: var(--oc-color-slate-100);
+        color: var(--oc-text-base);
+      }
+    }
+    
+    /* Toast container for multiple toasts */
+    .oc-toast-container {
+      position: fixed;
+      bottom: var(--oc-spacing-6);
+      right: var(--oc-spacing-6);
+      z-index: var(--oc-z-toast);
+      display: flex;
+      flex-direction: column;
+      gap: var(--oc-spacing-3);
+    }
+    
+    .oc-toast-container .oc-toast {
+      position: relative;
+      transform: none;
+      opacity: 1;
+      margin-bottom: var(--oc-spacing-3);
+    }
+  }
+  
+  /* Keyframes for toast animations */
+  @keyframes oc-toast-slide-in {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes oc-toast-fade-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+  }
+}

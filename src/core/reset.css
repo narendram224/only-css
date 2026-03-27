@@ -1,0 +1,41 @@
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  * { margin: 0; }
+  html { tab-size: 4; }
+  body, dialog, [popover] {
+    font-family: var(--oc-font-sans);
+    font-size: var(--oc-font-size-base);
+    line-height: var(--oc-leading-normal);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  a {
+    color: var(--oc-surface-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  :disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  [hidden] { display: none; }
+}

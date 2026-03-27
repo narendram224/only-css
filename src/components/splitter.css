@@ -1,0 +1,251 @@
+@layer components {
+  .oc-splitter {
+    /* Added fallback colors so it works independently */
+    --border: var(--oc-border-base, #e5e7eb);
+    --bg: var(--background, #ffffff);
+    --text: var(--oc-text-muted, #6b7280);
+
+    border: 0;
+    margin: 2rem 0;
+    position: relative;
+    background-color: var(--border);
+    height: 1px; /* Base height required for standard splitters */
+    width: 100%;
+  }
+
+  /* Default line splitter */
+  .oc-splitter[data-type="line"] {
+    background-color: var(--border);
+    height: 1px;
+  }
+
+  /* Dashed line splitter */
+  .oc-splitter[data-type="dashed"] {
+    background: none;
+    border-top: 1px dashed var(--border);
+    height: 0;
+  }
+
+  /* Dotted line splitter */
+  .oc-splitter[data-type="dotted"] {
+    background: none;
+    border-top: 1px dotted var(--border);
+    height: 0;
+  }
+
+  /* Thick line splitter */
+  .oc-splitter[data-type="thick"] {
+    background-color: var(--border);
+    height: 2px;
+  }
+
+  /* Gradient splitter */
+  .oc-splitter[data-type="gradient"] {
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--border),
+      transparent
+    );
+    height: 1px;
+    border: none;
+  }
+
+  /* Double line splitter */
+  .oc-splitter[data-type="double"] {
+    background: none;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    height: 3px;
+  }
+
+  /* Splitter with text - Default (Center) */
+  .oc-splitter[data-text]:not([data-position])::after,
+  .oc-splitter[data-text][data-position="center"]::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    color: var(--text);
+    padding: 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  /* Left aligned text */
+  .oc-splitter[data-text][data-position="left"]::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: var(--bg);
+    color: var(--text);
+    padding: 0 0.75rem 0 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  /* Right aligned text */
+  .oc-splitter[data-text][data-position="right"]::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: var(--bg);
+    color: var(--text);
+    padding: 0 0 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  /* Splitter with icon */
+  .oc-splitter[data-icon]::after {
+    content: attr(data-icon);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg);
+    color: var(--text);
+    padding: 0.25rem;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Splitter with icon and text */
+  .oc-splitter[data-icon][data-text]::after {
+    content: attr(data-icon) " " attr(data-text);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+  }
+
+  /* Color variants */
+  .oc-splitter[data-color="primary"] {
+    --border: var(--oc-color-blue-500, #3b82f6);
+    background-color: var(--border);
+  }
+  .oc-splitter[data-color="success"] {
+    --border: #16a34a;
+    background-color: var(--border);
+  }
+  .oc-splitter[data-color="danger"] {
+    --border: var(--oc-color-red-500, #ef4444);
+    background-color: var(--border);
+  }
+  .oc-splitter[data-color="warning"] {
+    --border: #f59e0b;
+    background-color: var(--border);
+  }
+  .oc-splitter[data-color="purple"] {
+    --border: #a855f7;
+    background-color: var(--border);
+  }
+
+  .oc-splitter[data-type="gradient"][data-color] {
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--border),
+      transparent
+    );
+  }
+
+  /* Size variants */
+  .oc-splitter[data-size="sm"] {
+    margin: 1rem 0;
+  }
+  .oc-splitter[data-size="lg"] {
+    margin: 3rem 0;
+  }
+  .oc-splitter[data-size="lg"]:not([data-type="dashed"]):not(
+      [data-type="dotted"]
+    ) {
+    height: 2px;
+  }
+
+  /* Vertical splitter */
+  .oc-splitter[data-orientation="vertical"] {
+    width: 1px;
+    height: 100px;
+    margin: 0 2rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .oc-splitter[data-orientation="vertical"][data-type="dashed"] {
+    border-left: 1px dashed var(--border);
+    border-top: none;
+    background: none;
+    width: 0;
+  }
+
+  .oc-splitter[data-orientation="vertical"][data-type="dotted"] {
+    border-left: 1px dotted var(--border);
+    border-top: none;
+    background: none;
+    width: 0;
+  }
+
+  .oc-splitter[data-orientation="vertical"][data-type="gradient"] {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--border),
+      transparent
+    );
+  }
+
+  /* Vertical text positioning */
+  .oc-splitter[data-orientation="vertical"][data-text]::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  /* Animated splitter */
+  .oc-splitter[data-animated="true"] {
+    overflow: hidden;
+  }
+
+  .oc-splitter[data-animated="true"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+    animation: splitter-shine 2s infinite;
+    z-index: 1;
+  }
+
+  @keyframes splitter-shine {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}

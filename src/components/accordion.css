@@ -1,0 +1,53 @@
+@layer components {
+  .oc-accordion {
+    width: 100%;
+    border-radius: var(--oc-radius-md);
+    border: 1px solid var(--oc-border-base);
+    overflow: hidden;
+    background: var(--background);
+  }
+
+  .oc-accordion details {
+    border-bottom: 1px solid var(--oc-border-base);
+  }
+
+  .oc-accordion details:last-child {
+    border-bottom: none;
+  }
+
+  .oc-accordion summary {
+    padding: var(--oc-spacing-3) var(--oc-spacing-4);
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background var(--oc-transition-base);
+  }
+
+  .oc-accordion summary:hover {
+    background: var(--oc-color-slate-50);
+  }
+
+  .oc-accordion summary::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform var(--oc-transition-base);
+    margin-right: 0.25rem;
+  }
+
+  .oc-accordion details[open] summary::after {
+    transform: rotate(-135deg);
+  }
+
+  .oc-accordion .content {
+    padding: var(--oc-spacing-4);
+    border-top: 1px solid var(--oc-border-base);
+    animation: oc-fade-in var(--oc-transition-base) ease-out;
+  }
+}

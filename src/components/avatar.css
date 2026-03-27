@@ -1,0 +1,221 @@
+@layer components {
+  /* Avatar Component */
+  .oc-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--oc-font-size-base);
+    color: var(--oc-text-on-secondary);
+    background: var(--oc-surface-secondary);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    
+    /* Size variants */
+    &.xsmall {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0.625rem;
+    }
+    
+    &.small {
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.75rem;
+    }
+    
+    &.medium {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 0.875rem;
+    }
+    
+    &.large {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1rem;
+    }
+    
+    &.xlarge {
+      width: 4rem;
+      height: 4rem;
+      font-size: 1.25rem;
+    }
+    
+    &.xxlarge {
+      width: 5rem;
+      height: 5rem;
+      font-size: 1.5rem;
+    }
+    
+    /* Image avatar */
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    /* Status indicators */
+    &.online::after {
+      content: '';
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 15%;
+      height: 15%;
+      background: #22c55e;
+      border: 2px solid white;
+      border-radius: 50%;
+    }
+    
+    &.offline::after {
+      content: '';
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 15%;
+      height: 15%;
+      background: #94a3b8;
+      border: 2px solid white;
+      border-radius: 50%;
+    }
+    
+    &.busy::after {
+      content: '';
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      width: 15%;
+      height: 15%;
+      background: #f59e0b;
+      border: 2px solid white;
+      border-radius: 50%;
+      animation: oc-avatar-pulse 2s infinite;
+    }
+    
+    /* Border variants */
+    &.bordered {
+      border: 2px solid var(--oc-border-base);
+    }
+    
+    &.border-primary {
+      border: 2px solid var(--oc-surface-primary);
+    }
+    
+    &.border-success {
+      border: 2px solid #22c55e;
+    }
+    
+    &.border-danger {
+      border: 2px solid var(--oc-surface-danger);
+    }
+    
+    /* Square variant */
+    &.square {
+      border-radius: var(--oc-radius-md);
+    }
+    
+    /* Rounded variant */
+    &.rounded {
+      border-radius: var(--oc-radius-lg);
+    }
+  }
+  
+  /* Avatar Group */
+  .oc-avatar-group {
+    display: inline-flex;
+    align-items: center;
+    
+    /* Stack layout */
+    &.stack {
+      flex-direction: column;
+      gap: calc(var(--oc-spacing-1) * -1);
+      
+      .oc-avatar {
+        margin-bottom: calc(var(--oc-spacing-1) * -1);
+      }
+    }
+    
+    /* Horizontal layout */
+    &.horizontal {
+      gap: calc(var(--oc-spacing-2) * -1);
+      
+      .oc-avatar {
+        margin-right: calc(var(--oc-spacing-2) * -1);
+        
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    
+    /* With labels */
+    &.with-labels {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--oc-spacing-2);
+      
+      .oc-avatar-label {
+        font-size: var(--oc-font-size-sm);
+        color: var(--oc-text-muted);
+        text-align: center;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  
+  /* Avatar with presence indicator */
+  .oc-avatar-with-status {
+    position: relative;
+    display: inline-block;
+    
+    .oc-avatar {
+      margin-bottom: var(--oc-spacing-2);
+    }
+    
+    .oc-avatar-status {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      border: 2px solid white;
+      
+      &.online {
+        background: #22c55e;
+      }
+      
+      &.offline {
+        background: #94a3b8;
+      }
+      
+      &.busy {
+        background: #f59e0b;
+        animation: oc-avatar-pulse 2s infinite;
+      }
+      
+      &.away {
+        background: #f59e0b;
+      }
+    }
+  }
+  
+  /* Keyframes for avatar animations */
+  @keyframes oc-avatar-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
+}

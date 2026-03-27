@@ -1,0 +1,153 @@
+@layer components {
+  /* Dropdown - CSS-only using :focus-within */
+  .oc-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .oc-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--oc-spacing-2);
+    padding: var(--oc-spacing-2) var(--oc-spacing-4);
+    background: var(--background);
+    border: 1px solid var(--oc-border-base);
+    border-radius: var(--oc-radius-md);
+    font-size: var(--oc-font-size-base);
+    color: var(--oc-text-base);
+    cursor: pointer;
+    transition: all var(--oc-transition-base);
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .oc-dropdown-trigger:hover {
+    background: var(--oc-color-slate-50);
+    border-color: var(--oc-color-slate-300);
+  }
+
+  .oc-dropdown-trigger:focus {
+    outline: 2px solid var(--oc-ring);
+    outline-offset: 2px;
+  }
+
+  .oc-dropdown-trigger::after {
+    content: "▼";
+    font-size: 0.7em;
+    transition: transform var(--oc-transition-base);
+  }
+
+  .oc-dropdown-menu {
+    position: absolute;
+    top: calc(100% + var(--oc-spacing-2));
+    left: 0;
+    z-index: var(--oc-z-dropdown);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    min-width: 160px;
+    padding: var(--oc-spacing-2) 0;
+    background: var(--background);
+    border: 1px solid var(--oc-border-base);
+    border-radius: var(--oc-radius-md);
+    box-shadow: var(--oc-shadow-medium);
+    list-style: none;
+    transition: all var(--oc-transition-base);
+  }
+
+  .oc-dropdown:focus-within .oc-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .oc-dropdown:focus-within .oc-dropdown-trigger::after {
+    transform: rotate(180deg);
+  }
+
+  .oc-dropdown-item {
+    display: block;
+    padding: var(--oc-spacing-2) var(--oc-spacing-4);
+    color: var(--oc-text-base);
+    text-decoration: none;
+    transition: background var(--oc-transition-base);
+    cursor: pointer;
+    font-size: var(--oc-font-size-base);
+    white-space: nowrap;
+  }
+
+  .oc-dropdown-item:hover {
+    background: var(--oc-color-slate-50);
+  }
+
+  .oc-dropdown-item:focus {
+    outline: none;
+    background: var(--oc-color-slate-100);
+  }
+
+  .oc-dropdown-divider {
+    height: 1px;
+    background: var(--oc-border-base);
+    margin: var(--oc-spacing-1) 0;
+  }
+
+  /* Alternative dropdown using details/summary */
+  .oc-dropdown-details {
+    position: relative;
+  }
+
+  .oc-dropdown-details summary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--oc-spacing-2);
+    padding: var(--oc-spacing-2) var(--oc-spacing-4);
+    background: var(--background);
+    border: 1px solid var(--oc-border-base);
+    border-radius: var(--oc-radius-md);
+    font-size: var(--oc-font-size-base);
+    color: var(--oc-text-base);
+    cursor: pointer;
+    list-style: none;
+    transition: all var(--oc-transition-base);
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .oc-dropdown-details summary:hover {
+    background: var(--oc-color-slate-50);
+    border-color: var(--oc-color-slate-300);
+  }
+
+  .oc-dropdown-details summary::after {
+    content: "▼";
+    font-size: 0.7em;
+    transition: transform var(--oc-transition-base);
+  }
+
+  .oc-dropdown-details[open] > summary::after {
+    transform: rotate(180deg);
+  }
+
+  .oc-dropdown-details .oc-dropdown-menu {
+    position: absolute;
+    top: calc(100% + var(--oc-spacing-2));
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    min-width: 160px;
+    padding: var(--oc-spacing-2) 0;
+    background: var(--background);
+    border: 1px solid var(--oc-border-base);
+    border-radius: var(--oc-radius-md);
+    box-shadow: var(--oc-shadow-medium);
+    list-style: none;
+    transition: all var(--oc-transition-base);
+  }
+
+  .oc-dropdown-details[open] .oc-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

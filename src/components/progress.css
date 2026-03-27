@@ -1,0 +1,24 @@
+@layer components {
+  /* Progress Bar */
+  .oc-progress {
+    width: 100%;
+    height: var(--oc-spacing-2);
+    background: var(--oc-surface-secondary);
+    border-radius: var(--oc-radius-full);
+    overflow: hidden;
+    position: relative;
+
+    .oc-progress-bar {
+      height: 100%;
+      background: var(--oc-surface-primary);
+      width: var(--progress, 0%);
+      transition: width var(--oc-transition-base);
+
+      &.danger { background: var(--oc-surface-danger); }
+      &.success { background: #22c55e; }
+    }
+
+    &.large { height: var(--oc-spacing-4); }
+    &.small { height: var(--oc-spacing-1); }
+  }
+}

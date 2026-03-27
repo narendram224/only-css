@@ -1,0 +1,70 @@
+@layer components {
+  /* Dialog / Modal - CSS-only using :target */
+  .oc-dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--oc-z-modal);
+    backdrop-filter: blur(4px);
+    animation: oc-fade-in var(--oc-transition-base) ease-out;
+  }
+
+  .oc-dialog-backdrop:target {
+    display: flex;
+  }
+
+  .oc-dialog {
+    background: var(--background);
+    border-radius: var(--oc-radius-lg);
+    box-shadow: var(--oc-shadow-large);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    padding: var(--oc-spacing-6);
+    animation: oc-scale-in var(--oc-transition-base) cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .oc-dialog-close {
+    position: absolute;
+    top: var(--oc-spacing-4);
+    right: var(--oc-spacing-4);
+    text-decoration: none;
+    color: var(--oc-text-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--oc-radius-full);
+    transition: all var(--oc-transition-base);
+  }
+
+  .oc-dialog-close:hover {
+    background: var(--oc-color-slate-100);
+    color: var(--oc-text-base);
+  }
+
+  .oc-dialog-title {
+    margin: 0 0 var(--oc-spacing-4) 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--oc-text-base);
+  }
+
+  .oc-dialog-content {
+    margin-bottom: var(--oc-spacing-6);
+    color: var(--oc-text-muted);
+    line-height: 1.5;
+  }
+
+  .oc-dialog-actions {
+    display: flex;
+    gap: var(--oc-spacing-3);
+    justify-content: flex-end;
+  }
+}

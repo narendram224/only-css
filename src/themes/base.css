@@ -1,0 +1,53 @@
+@layer theme {
+  :root {
+    /* Spacing Scale */
+    --oc-spacing-1: 0.25rem;
+    --oc-spacing-2: 0.5rem;
+    --oc-spacing-3: 0.75rem;
+    --oc-spacing-4: 1rem;
+    --oc-spacing-5: 1.25rem;
+    --oc-spacing-6: 1.5rem;
+    --oc-spacing-8: 2rem;
+    --oc-spacing-10: 2.5rem;
+    --oc-spacing-12: 3rem;
+
+    /* Radius */
+    --oc-radius-sm: 0.125rem;
+    --oc-radius-md: 0.375rem;
+    --oc-radius-lg: 0.5rem;
+    --oc-radius-xl: 0.75rem;
+    --oc-radius-full: 9999px;
+
+    /* Typography */
+    --oc-font-sans: ui-sans-serif, system-ui, sans-serif;
+    --oc-font-size-sm: 0.875rem;
+    --oc-font-size-base: 1rem;
+    --oc-font-size-lg: 1.125rem;
+    --oc-font-size-xl: 1.25rem;
+
+    /* Transition */
+    --oc-transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Primitive Colors (Slate Palette) */
+    --oc-color-slate-50: #f8fafc;
+    --oc-color-slate-100: #f1f5f9;
+    --oc-color-slate-200: #e2e8f0;
+    --oc-color-slate-300: #cbd5e1;
+    --oc-color-slate-400: #94a3b8;
+    --oc-color-slate-500: #64748b;
+    --oc-color-slate-600: #475569;
+    --oc-color-slate-700: #334155;
+    --oc-color-slate-800: #1e293b;
+    --oc-color-slate-900: #0f172a;
+
+    /* Primary (Blue) */
+    --oc-color-blue-500: #3b82f6;
+    --oc-color-blue-600: #2563eb;
+    --oc-color-blue-700: #1d4ed8;
+
+    /* Danger (Red) */
+    --oc-color-red-500: #ef4444;
+    --oc-color-red-600: #dc2626;
+    --oc-color-red-700: #b91c1c;
+  }
+}

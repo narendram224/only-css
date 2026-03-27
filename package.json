@@ -1,0 +1,17 @@
+{
+  "name": "only-css",
+  "module": "index.ts",
+  "type": "module",
+  "keywords": ["ui", "components", "component-library"],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "start": "bun run index.ts",
+    "build": "bun build index.ts --outdir ./dist --minify"
+
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

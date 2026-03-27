@@ -1,0 +1,35 @@
+@layer components {
+  .oc-card {
+    background: var(--background);
+    border: 1px solid var(--oc-border-base);
+    border-radius: var(--oc-radius-lg);
+    overflow: hidden;
+    transition: var(--oc-transition-base);
+    display: flex;
+    flex-direction: column;
+
+    &.hover:hover {
+      box-shadow: var(--oc-shadow-medium);
+      transform: translateY(-2px);
+    }
+
+    .oc-card-header {
+      padding: var(--oc-spacing-4);
+      border-bottom: 1px solid var(--oc-border-base);
+      
+      h3 { margin: 0; font-size: 1.25rem; }
+      p { margin: 0.25rem 0 0; color: var(--oc-text-muted); font-size: 0.875rem; }
+    }
+
+    .oc-card-content {
+      padding: var(--oc-spacing-4);
+      flex: 1;
+    }
+
+    .oc-card-footer {
+      padding: var(--oc-spacing-4);
+      border-top: 1px solid var(--oc-border-base);
+      background: var(--oc-color-slate-50);
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@layer components {
+  /* Base Button Style */
+  button,
+  .oc-btn {
+    --btn-bg: var(--oc-surface-primary);
+    --btn-text: var(--oc-text-on-primary);
+    --btn-border: transparent;
+    --btn-radius: var(--oc-radius-md);
+    --btn-padding-y: var(--oc-spacing-2);
+    --btn-padding-x: var(--oc-spacing-4);
+    --btn-font-size: var(--oc-font-size-base);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--oc-spacing-2);
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    font-size: var(--btn-font-size);
+    font-weight: 500;
+    font-family: var(--oc-font-sans);
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--btn-border);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    cursor: pointer;
+    transition: var(--oc-transition-base);
+    text-decoration: none;
+    line-height: 1;
+    user-select: none;
+
+    &:hover:not(:disabled) {
+      filter: brightness(0.9);
+    }
+
+    &:active:not(:disabled) {
+      filter: brightness(0.8);
+      transform: translateY(1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--oc-surface-primary);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      filter: grayscale(1);
+    }
+
+    /* Variants */
+    &[data-variant="secondary"] {
+      --btn-bg: var(--oc-surface-secondary);
+      --btn-text: var(--oc-text-on-secondary);
+      &:focus-visible { outline-color: var(--oc-color-slate-400); }
+    }
+
+    &[data-variant="danger"] {
+      --btn-bg: var(--oc-surface-danger);
+      --btn-text: var(--oc-text-on-danger);
+      &:focus-visible { outline-color: var(--oc-surface-danger); }
+    }
+
+    &[data-variant="link"] {
+      --btn-bg: transparent;
+      --btn-text: var(--oc-surface-primary);
+      padding-left: 0;
+      padding-right: 0;
+      &:hover:not(:disabled) { text-decoration: underline; background: transparent; filter: none; }
+    }
+
+    /* Outline Style */
+    &.outline {
+      --btn-bg: transparent;
+      --btn-border: currentColor;
+      --btn-text: var(--oc-surface-primary);
+
+      &[data-variant="secondary"] { --btn-text: var(--oc-text-on-secondary); }
+      &[data-variant="danger"] { --btn-text: var(--oc-surface-danger); }
+
+      &:hover:not(:disabled) {
+        --btn-bg: var(--oc-surface-primary);
+        --btn-text: var(--oc-text-on-primary);
+
+        &[data-variant="secondary"] {
+          --btn-bg: var(--oc-surface-secondary);
+          --btn-text: var(--oc-text-on-secondary);
+        }
+        &[data-variant="danger"] {
+          --btn-bg: var(--oc-surface-danger);
+          --btn-text: var(--oc-text-on-danger);
+        }
+      }
+    }
+
+    /* Ghost Style */
+    &.ghost {
+      --btn-bg: transparent;
+      --btn-text: var(--oc-surface-primary);
+
+      &[data-variant="secondary"] { --btn-text: var(--oc-text-on-secondary); }
+      &[data-variant="danger"] { --btn-text: var(--oc-surface-danger); }
+
+      &:hover:not(:disabled) {
+        --btn-bg: rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    /* Rounded & Pill Styles */
+    &.rounded { --btn-radius: var(--oc-radius-lg); }
+    &.pill { --btn-radius: var(--oc-radius-full); }
+
+    /* Sizes */
+    &.small {
+      --btn-padding-y: var(--oc-spacing-1);
+      --btn-padding-x: var(--oc-spacing-3);
+      --btn-font-size: var(--oc-font-size-sm);
+    }
+
+    &.large {
+      --btn-padding-y: var(--oc-spacing-3);
+      --btn-padding-x: var(--oc-spacing-6);
+      --btn-font-size: var(--oc-font-size-lg);
+    }
+
+    &.xlarge {
+      --btn-padding-y: var(--oc-spacing-4);
+      --btn-padding-x: var(--oc-spacing-8);
+      --btn-font-size: var(--oc-font-size-xl);
+    }
+  }
+}

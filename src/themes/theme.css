@@ -1,0 +1,53 @@
+@layer theme {
+  :root {
+    --oc-surface-primary: var(--oc-color-blue-600);
+    --oc-surface-primary-hover: var(--oc-color-blue-700);
+    --oc-text-on-primary: white;
+
+    --oc-surface-secondary: var(--oc-color-slate-100);
+    --oc-surface-secondary-hover: var(--oc-color-slate-200);
+    --oc-text-on-secondary: var(--oc-color-slate-900);
+
+    --oc-surface-danger: var(--oc-color-red-600);
+    --oc-surface-danger-hover: var(--oc-color-red-700);
+    --oc-text-on-danger: white;
+
+    --oc-border-base: var(--oc-color-slate-200);
+    --oc-text-muted: var(--oc-color-slate-500);
+    --oc-text-base: var(--oc-color-slate-900);
+
+    /* Additional colors for demo */
+    --oc-color-green-100: #dcfce7;
+    --oc-color-green-300: #86efac;
+    --oc-color-purple-100: #f3e8ff;
+    --oc-color-purple-300: #d8b4fe;
+    --oc-color-orange-100: #fed7aa;
+    --oc-color-orange-300: #fb923c;
+    --oc-color-yellow-100: #fef3c7;
+    --oc-color-yellow-300: #fbbf24;
+
+    /* Reset aliases */
+    --background: white;
+    --foreground: var(--oc-color-slate-900);
+    --oc-text-primary: var(--oc-color-slate-900);
+    --oc-leading-normal: 1.5;
+    --ring: var(--oc-color-blue-600);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --oc-surface-secondary: var(--oc-color-slate-800);
+      --oc-surface-secondary-hover: var(--oc-color-slate-700);
+      --oc-text-on-secondary: var(--oc-color-slate-100);
+
+      --oc-border-base: var(--oc-color-slate-700);
+      --oc-text-muted: var(--oc-color-slate-400);
+      --oc-text-base: var(--oc-color-slate-50);
+
+      --background: var(--oc-color-slate-900);
+      --foreground: var(--oc-color-slate-50);
+      --oc-text-primary: var(--oc-color-slate-50);
+      --ring: var(--oc-color-blue-500);
+    }
+  }
+}

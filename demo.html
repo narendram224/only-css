@@ -1,0 +1,2778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only-CSS Component Library</title>
+    <link rel="stylesheet" href="src/index.css">
+    <style>
+        body {
+            padding: 2rem;
+            font-family: var(--oc-font-sans);
+            color: var(--oc-text-base);
+            background-color: var(--oc-color-slate-50);
+        }
+        .demo-section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--oc-radius-lg);
+            border: 1px solid var(--oc-border-base);
+        }
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--oc-text-base);
+        }
+        h3 {
+            margin-bottom: 1rem;
+            font-weight: 500;
+            color: var(--oc-text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .demo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .code-example {
+            background: var(--oc-color-slate-900);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--oc-radius-md);
+            margin-top: 1rem;
+            font-family: var(--oc-font-mono);
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+        .dark-mode {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 2rem;
+            border-radius: var(--oc-radius-lg);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>    <div class="oc-container">
+        <h1 style="margin-bottom: 0.5rem;">Only-CSS Component Library</h1>
+        <p style="margin-bottom: 3rem; color: var(--oc-text-muted);">A pure CSS component library with zero JavaScript and minimal footprint.</p>
+
+        <!-- Buttons -->
+        <div class="demo-section">
+            <h2>Buttons</h2>
+            
+            <h3>Variants</h3>
+            <div class="demo-grid">
+                <button>Default Primary</button>
+                <button data-variant="secondary">Secondary</button>
+                <button data-variant="danger">Danger</button>
+                <button data-variant="link">Link Button</button>
+            </div>
+
+            <h3>Styles</h3>
+            <div class="demo-grid">
+                <button class="outline">Outline Primary</button>
+                <button data-variant="danger" class="outline">Outline Danger</button>
+                <button class="ghost">Ghost Primary</button>
+                <button data-variant="secondary" class="ghost">Ghost Secondary</button>
+            </div>
+
+            <h3>Shapes</h3>
+            <div class="demo-grid">
+                <button class="rounded">Rounded Corners</button>
+                <button class="pill">Pill Shape</button>
+                <button data-variant="danger" class="pill">Danger Pill</button>
+                <button class="outline pill">Outline Pill</button>
+            </div>
+
+            <h3>Sizes</h3>
+            <div class="demo-grid">
+                <button class="small">Small</button>
+                <button>Default</button>
+                <button class="large">Large</button>
+                <button class="xlarge">Extra Large</button>
+            </div>
+
+            <h3>States</h3>
+            <div class="demo-grid">
+                <button disabled>Disabled</button>
+                <button data-variant="danger" disabled>Disabled Danger</button>
+                <button class="outline" disabled>Disabled Outline</button>
+            </div>
+        </div>
+
+        <!-- Grid System -->
+        <div class="demo-section">
+            <h2>Grid System</h2>
+            
+            <h3>Basic Grid (3 columns of 4)</h3>
+            <div class="oc-row" style="margin-bottom: 2rem;">
+                <div class="oc-col-4" style="background: var(--oc-color-slate-100); border: 2px solid var(--oc-color-slate-300); padding: 1rem; text-align: center; font-weight: 600;">Col 4</div>
+                <div class="oc-col-4" style="background: var(--oc-color-slate-200); border: 2px solid var(--oc-color-slate-400); padding: 1rem; text-align: center; font-weight: 600;">Col 4</div>
+                <div class="oc-col-4" style="background: var(--oc-color-slate-100); border: 2px solid var(--oc-color-slate-300); padding: 1rem; text-align: center; font-weight: 600;">Col 4</div>
+            </div>
+
+            <h3>With Offsets (Col 4 + Col 4 Offset 4)</h3>
+            <div class="oc-row" style="margin-bottom: 2rem; border: 1px dashed var(--oc-color-slate-400); padding: 0.5rem;">
+                <div class="oc-col-4" style="background: var(--oc-color-blue-100); border: 2px solid var(--oc-color-blue-300); padding: 1rem; text-align: center; font-weight: 600;">Col 4</div>
+                <div class="oc-col-4 oc-offset-4" style="background: var(--oc-color-red-100); border: 2px solid var(--oc-color-red-300); padding: 1rem; text-align: center; font-weight: 600;">Col 4<br><small>Offset 4</small></div>
+            </div>
+
+            <h3>Different Column Sizes</h3>
+            <div class="oc-row" style="margin-bottom: 2rem; border: 1px dashed var(--oc-color-slate-400); padding: 0.5rem;">
+                <div class="oc-col-2" style="background: var(--oc-color-green-100); border: 2px solid var(--oc-color-green-300); padding: 1rem; text-align: center; font-weight: 600; font-size: 0.875rem;">Col 2</div>
+                <div class="oc-col-8" style="background: var(--oc-color-blue-100); border: 2px solid var(--oc-color-blue-300); padding: 1rem; text-align: center; font-weight: 600;">Col 8</div>
+                <div class="oc-col-2" style="background: var(--oc-color-green-100); border: 2px solid var(--oc-color-green-300); padding: 1rem; text-align: center; font-weight: 600; font-size: 0.875rem;">Col 2</div>
+            </div>
+
+            <h3>Responsive (6 on desktop, 12 on mobile)</h3>
+            <div class="oc-row" style="margin-bottom: 2rem; border: 1px dashed var(--oc-color-slate-400); padding: 0.5rem;">
+                <div class="oc-col-6 oc-col-sm-12" style="background: var(--oc-color-purple-100); border: 2px solid var(--oc-color-purple-300); padding: 1rem; text-align: center; font-weight: 600;">6 on desktop<br>12 on mobile</div>
+                <div class="oc-col-6 oc-col-sm-12" style="background: var(--oc-color-purple-100); border: 2px solid var(--oc-color-purple-300); padding: 1rem; text-align: center; font-weight: 600;">6 on desktop<br>12 on mobile</div>
+            </div>
+
+            <h3>Nested Grid</h3>
+            <div class="oc-row" style="margin-bottom: 2rem; border: 1px dashed var(--oc-color-slate-400); padding: 0.5rem;">
+                <div class="oc-col-8" style="background: var(--oc-color-orange-100); border: 2px solid var(--oc-color-orange-300); padding: 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">Col 8 with nested grid:</div>
+                    <div class="oc-row">
+                        <div class="oc-col-6" style="background: var(--oc-color-yellow-100); border: 1px solid var(--oc-color-yellow-300); padding: 0.5rem; text-align: center; font-size: 0.75rem;">Nested 6</div>
+                        <div class="oc-col-6" style="background: var(--oc-color-yellow-100); border: 1px solid var(--oc-color-yellow-300); padding: 0.5rem; text-align: center; font-size: 0.75rem;">Nested 6</div>
+                    </div>
+                </div>
+                <div class="oc-col-4" style="background: var(--oc-color-orange-100); border: 2px solid var(--oc-color-orange-300); padding: 1rem; text-align: center; font-weight: 600;">Col 4</div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="demo-section">
+            <h2>Progress Bar</h2>
+            
+            <h3>Basic Progress</h3>
+            <div class="oc-progress" style="--progress: 75%">
+                <div class="oc-progress-bar"></div>
+            </div>
+
+            <h3>Variants</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="oc-progress" style="--progress: 60%">
+                    <div class="oc-progress-bar danger"></div>
+                </div>
+                <div class="oc-progress" style="--progress: 85%">
+                    <div class="oc-progress-bar success"></div>
+                </div>
+            </div>
+
+            <h3>Sizes</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="oc-progress small" style="--progress: 50%">
+                    <div class="oc-progress-bar"></div>
+                </div>
+                <div class="oc-progress" style="--progress: 50%">
+                    <div class="oc-progress-bar"></div>
+                </div>
+                <div class="oc-progress large" style="--progress: 50%">
+                    <div class="oc-progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert -->
+        <div class="demo-section">
+            <h2>Alert</h2>
+            
+            <div class="oc-alert">
+                <div>
+                    <div class="oc-alert-title">Default Alert</div>
+                    <div class="oc-alert-description">This is a default alert message.</div>
+                </div>
+            </div>
+
+            <div class="oc-alert" data-variant="danger" style="margin-top: 1rem;">
+                <div>
+                    <div class="oc-alert-title">Danger Alert</div>
+                    <div class="oc-alert-description">This is a danger alert message.</div>
+                </div>
+            </div>
+
+            <div class="oc-alert" data-variant="success" style="margin-top: 1rem;">
+                <div>
+                    <div class="oc-alert-title">Success Alert</div>
+                    <div class="oc-alert-description">This is a success alert message.</div>
+                </div>
+            </div>
+
+            <div class="oc-alert" data-variant="warning" style="margin-top: 1rem;">
+                <div>
+                    <div class="oc-alert-title">Warning Alert</div>
+                    <div class="oc-alert-description">This is a warning alert message.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avatar & Badge -->
+        <div class="demo-section">
+            <h2>Avatar & Badge</h2>
+            
+            <h3>Avatar Sizes & Shapes</h3>
+            <div class="demo-grid">
+                <div class="oc-avatar xsmall">XS</div>
+                <div class="oc-avatar small">S</div>
+                <div class="oc-avatar medium">M</div>
+                <div class="oc-avatar large">L</div>
+                <div class="oc-avatar xlarge">XL</div>
+                <div class="oc-avatar xxlarge">XXL</div>
+                <div class="oc-avatar square">Square</div>
+                <div class="oc-avatar rounded">Rounded</div>
+                <div class="oc-avatar bordered">Bordered</div>
+            </div>
+
+            <h3>Avatar with Images & Status</h3>
+            <div class="demo-grid">
+                <div class="oc-avatar">
+                    <img src="https://picsum.photos/100/100" alt="User">
+                </div>
+                <div class="oc-avatar online">
+                    JD
+                </div>
+                <div class="oc-avatar offline">
+                    AB
+                </div>
+                <div class="oc-avatar busy">
+                    CD
+                </div>
+            </div>
+
+            <h3>Avatar Groups</h3>
+            <div style="display: flex; gap: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Stack Layout</h4>
+                    <div class="oc-avatar-group stack">
+                        <div class="oc-avatar small">JD</div>
+                        <div class="oc-avatar small">AB</div>
+                        <div class="oc-avatar small">CD</div>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Horizontal Layout</h4>
+                    <div class="oc-avatar-group horizontal">
+                        <div class="oc-avatar small">JD</div>
+                        <div class="oc-avatar small">AB</div>
+                        <div class="oc-avatar small">CD</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Badge Variants</h3>
+            <div class="demo-grid">
+                <span class="oc-badge">Default</span>
+                <span class="oc-badge primary">Primary</span>
+                <span class="oc-badge secondary">Secondary</span>
+                <span class="oc-badge success">Success</span>
+                <span class="oc-badge danger">Danger</span>
+                <span class="oc-badge warning">Warning</span>
+            </div>
+
+            <h3>Badge Styles</h3>
+            <div class="demo-grid">
+                <span class="oc-badge outline primary">Outline</span>
+                <span class="oc-badge ghost danger">Ghost</span>
+                <span class="oc-badge pill success">Pill</span>
+                <span class="oc-badge square info">Square</span>
+                <span class="oc-badge dot">Dot</span>
+                <span class="oc-badge dot large">Large Dot</span>
+            </div>
+
+            <h3>Badge Sizes</h3>
+            <div class="demo-grid">
+                <span class="oc-badge xsmall">XS</span>
+                <span class="oc-badge small">Small</span>
+                <span class="oc-badge medium">Medium</span>
+                <span class="oc-badge large">Large</span>
+                <span class="oc-badge xlarge">XL</span>
+            </div>
+
+            <h3>Badge with Icons & Counter</h3>
+            <div class="demo-grid">
+                <div class="oc-badge-icon">
+                    <div class="oc-badge-icon">📧</div>
+                    <span class="oc-badge">Email</span>
+                </div>
+                <div class="oc-notification-badge">
+                    <button class="oc-btn">Messages</button>
+                    <span class="oc-badge counter">5</span>
+                </div>
+                <div class="oc-notification-badge">
+                    <button class="oc-btn">Notifications</button>
+                    <span class="oc-badge danger counter">12</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div class="demo-section">
+            <h2>Toast Notifications</h2>
+            
+            <h3>Toast Variants</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Success Toast</h4>
+                    <a href="#toast-success" class="oc-btn">Show Success</a>
+                    <div id="toast-success" class="oc-toast success">
+                        <div class="oc-toast-title">Success!</div>
+                        <div class="oc-toast-message">Your changes have been saved successfully.</div>
+                        <a href="#" class="oc-toast-close">&times;</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Error Toast</h4>
+                    <a href="#toast-error" class="oc-btn">Show Error</a>
+                    <div id="toast-error" class="oc-toast error">
+                        <div class="oc-toast-title">Error!</div>
+                        <div class="oc-toast-message">Failed to save your changes. Please try again.</div>
+                        <a href="#" class="oc-toast-close">&times;</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Warning Toast</h4>
+                    <a href="#toast-warning" class="oc-btn">Show Warning</a>
+                    <div id="toast-warning" class="oc-toast warning">
+                        <div class="oc-toast-title">Warning!</div>
+                        <div class="oc-toast-message">This action cannot be undone. Please proceed with caution.</div>
+                        <a href="#" class="oc-toast-close">&times;</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Info Toast</h4>
+                    <a href="#toast-info" class="oc-btn">Show Info</a>
+                    <div id="toast-info" class="oc-toast info">
+                        <div class="oc-toast-title">Information</div>
+                        <div class="oc-toast-message">A new update is available for download.</div>
+                        <a href="#" class="oc-toast-close">&times;</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Toast with Auto-Hide</h3>
+            <div>
+                <a href="#toast-auto" class="oc-btn">Show Auto-Hide Toast</a>
+                <div id="toast-auto" class="oc-toast">
+                    <div class="oc-toast-title">Auto-Hide</div>
+                    <div class="oc-toast-message">This toast will automatically hide after 3 seconds.</div>
+                    <a href="#" class="oc-toast-close">&times;</a>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; color: var(--oc-text-muted); font-size: 0.875rem;">
+                Toast notifications use CSS :target selector. Click the button to show, click backdrop or close button to hide.
+                Auto-hide toasts use CSS animations to disappear after a delay.
+            </p>
+        </div>
+
+        <!-- Card -->
+        <div class="demo-section">
+            <h2>Card</h2>
+            
+            <div class="oc-card" style="max-width: 300px;">
+                <div class="oc-card-header">
+                    <h3>Card Title</h3>
+                    <p>Card subtitle</p>
+                </div>
+                <div class="oc-card-content">
+                    <p>This is the card content area. You can put any content here.</p>
+                </div>
+                <div class="oc-card-footer">
+                    <button class="small">Action</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="demo-section">
+            <h2>Accordion</h2>
+            
+            <div class="oc-accordion">
+                <details>
+                    <summary>Section 1</summary>
+                    <div class="content">
+                        <p>This is the content for section 1. It appears when you click the header.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Section 2</summary>
+                    <div class="content">
+                        <p>This is the content for section 2. Accordion uses native HTML details/summary elements.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Section 3</summary>
+                    <div class="content">
+                        <p>This is the content for section 3. No JavaScript required!</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Dialog/Modal -->
+        <div class="demo-section">
+            <h2>Dialog/Modal</h2>
+            
+            <a href="#dialog-demo" class="oc-btn">Open Dialog</a>
+            
+            <div id="dialog-demo" class="oc-dialog-backdrop">
+                <div class="oc-dialog">
+                    <h3 class="oc-dialog-title">Dialog Title</h3>
+                    <div class="oc-dialog-content">
+                        <p>This is a dialog that opens using the :target CSS selector. No JavaScript needed!</p>
+                        <p>Click the backdrop or the close button to close it.</p>
+                    </div>
+                    <div class="oc-dialog-actions">
+                        <button>Save</button>
+                        <a href="#" class="oc-btn outline">Cancel</a>
+                    </div>
+                    <a href="#" class="oc-dialog-close">&times;</a>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem; color: var(--oc-text-muted); font-size: 0.875rem;">
+                Dialog uses CSS :target selector. Click "Open Dialog" to activate it.
+            </p>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="demo-section">
+            <h2>Dropdown</h2>
+            
+            <h3>Focus-within Dropdown</h3>
+            <div class="oc-dropdown" tabindex="0">
+                <div class="oc-dropdown-trigger">Dropdown Menu</div>
+                <div class="oc-dropdown-menu">
+                    <a href="#" class="oc-dropdown-item">Item 1</a>
+                    <a href="#" class="oc-dropdown-item">Item 2</a>
+                    <a href="#" class="oc-dropdown-item">Item 3</a>
+                    <div class="oc-dropdown-divider"></div>
+                    <a href="#" class="oc-dropdown-item">Separated Item</a>
+                </div>
+            </div>
+
+            <h3>Details/Summary Dropdown</h3>
+            <div class="oc-dropdown-details">
+                <summary>Alternative Dropdown</summary>
+                <div class="oc-dropdown-menu">
+                    <a href="#" class="oc-dropdown-item">Option A</a>
+                    <a href="#" class="oc-dropdown-item">Option B</a>
+                    <a href="#" class="oc-dropdown-item">Option C</a>
+                </div>
+            </div>
+            
+            <p style="margin-top: 1rem; color: var(--oc-text-muted); font-size: 0.875rem;">
+                Two CSS-only dropdown methods: :focus-within (click/focus to open) and details/summary (click to open).
+            </p>
+        </div>
+
+        <!-- Skeleton & Spinner -->
+        <div class="demo-section">
+            <h2>Skeleton & Spinner</h2>
+            
+            <h3>Skeleton Loading States</h3>
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <!-- Basic Skeleton -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Basic Skeleton</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div class="oc-skeleton title"></div>
+                        <div class="oc-skeleton"></div>
+                        <div class="oc-skeleton text-short"></div>
+                        <div class="oc-skeleton circle"></div>
+                    </div>
+                </div>
+
+                <!-- Skeleton Variants -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Skeleton Variants</h4>
+                    <div class="demo-grid">
+                        <div class="oc-skeleton avatar"></div>
+                        <div class="oc-skeleton button"></div>
+                        <div class="oc-skeleton card" style="width: 200px;"></div>
+                    </div>
+                </div>
+
+                <!-- Skeleton Group -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Skeleton Group (Text Lines)</h4>
+                    <div class="oc-skeleton-group">
+                        <div class="oc-skeleton-line"></div>
+                        <div class="oc-skeleton-line"></div>
+                        <div class="oc-skeleton-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Spinner Loading States</h3>
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <!-- Basic Spinner -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Basic Spinner</h4>
+                    <div class="demo-grid">
+                        <div class="oc-spinner small"></div>
+                        <div class="oc-spinner"></div>
+                        <div class="oc-spinner large"></div>
+                        <div class="oc-spinner xlarge"></div>
+                    </div>
+                </div>
+
+                <!-- Spinner Colors -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Color Variants</h4>
+                    <div class="demo-grid">
+                        <div class="oc-spinner primary"></div>
+                        <div class="oc-spinner danger"></div>
+                        <div class="oc-spinner success"></div>
+                        <div class="oc-spinner muted"></div>
+                    </div>
+                </div>
+
+                <!-- Spinner Styles -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Style Variants</h4>
+                    <div class="demo-grid">
+                        <div class="oc-spinner dots">
+                            <div class="oc-spinner-dot"></div>
+                        </div>
+                        <div class="oc-spinner pulse"></div>
+                        <div class="oc-spinner bars">
+                            <div class="oc-spinner-bar"></div>
+                        </div>
+                        <div class="oc-spinner dots primary">
+                            <div class="oc-spinner-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spinner with Text -->
+                <div>
+                    <h4 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--oc-text-muted);">Spinner with Text</h4>
+                    <div class="demo-grid">
+                        <div class="oc-spinner-container">
+                            <div class="oc-spinner"></div>
+                            <span class="oc-spinner-text">Loading...</span>
+                        </div>
+                        <div class="oc-spinner-container">
+                            <div class="oc-spinner primary"></div>
+                            <span class="oc-spinner-text">Processing...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="demo-section">
+            <h2>Tabs</h2>
+            
+<div class="tab-container" data-variant="pills" data-orientation="horizontal" data-size="md" style="--tab-count: 3">
+  
+  <details class="item" name="my-tabs" open style="--n: 1">
+    <summary class="subitem">
+      <span class="icon">🏠</span>
+      <span class="label">Dashboard</span>
+      <span class="badge">3</span>
+    </summary>
+    <div class="content-wrapper">
+      <h3>Dashboard Content</h3>
+      <p>This layout is strictly using CSS subgrid.</p>
+    </div>
+  </details>
+
+  <details class="item" name="my-tabs" style="--n: 2">
+    <summary class="subitem">
+      <span class="icon">⚙️</span>
+      <span class="label">Settings</span>
+    </summary>
+    <div class="content-wrapper">
+      <h3>Settings Content</h3>
+      <p>Works perfectly across different orientations.</p>
+    </div>
+  </details>
+
+  <details class="item" name="my-tabs" style="--n: 3">
+    <summary class="subitem">
+      <span class="icon">👤</span>
+      <span class="label">Profile</span>
+      <span class="badge">New</span>
+    </summary>
+    <div class="content-wrapper">
+      <h3>Profile Content</h3>
+      <p>Icons and badges align effortlessly.</p>
+    </div>
+  </details>
+
+</div>
+        </div>
+
+        <!-- Tabs Variations -->
+        <div class="demo-section">
+            <h2>Tabs Variations</h2>
+            
+            <h3>Underline Variant</h3>
+            <div class="tab-container" data-variant="underline" data-orientation="horizontal" data-size="md" style="--tab-count: 3">
+                <details class="item" name="underline-tabs" open style="--n: 1">
+                    <summary class="subitem">
+                        <span class="icon">📊</span>
+                        <span class="label">Analytics</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Underline style with clean minimal design.</p>
+                    </div>
+                </details>
+                <details class="item" name="underline-tabs" style="--n: 2">
+                    <summary class="subitem">
+                        <span class="icon">📈</span>
+                        <span class="label">Reports</span>
+                        <span class="badge">5</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Reports Section</h3>
+                        <p>Detailed reports and insights.</p>
+                    </div>
+                </details>
+                <details class="item" name="underline-tabs" style="--n: 3">
+                    <summary class="subitem">
+                        <span class="icon">🎯</span>
+                        <span class="label">Goals</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Goals Tracking</h3>
+                        <p>Track your progress and achievements.</p>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Card Variant</h3>
+            <div class="tab-container" data-variant="card" data-orientation="horizontal" data-size="md" style="--tab-count: 3">
+                <details class="item" name="card-tabs" style="--n: 1">
+                    <summary class="subitem">
+                        <span class="icon">💳</span>
+                        <span class="label">Payment</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Payment Methods</h3>
+                        <p>Card-style tabs with elevated design.</p>
+                    </div>
+                </details>
+                <details class="item" name="card-tabs" open style="--n: 2">
+                    <summary class="subitem">
+                        <span class="icon">🛡️</span>
+                        <span class="label">Security</span>
+                        <span class="badge">New</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Security Settings</h3>
+                        <p>Manage your security preferences.</p>
+                    </div>
+                </details>
+                <details class="item" name="card-tabs" style="--n: 3">
+                    <summary class="subitem">
+                        <span class="icon">🔔</span>
+                        <span class="label">Notifications</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Notification Preferences</h3>
+                        <p>Configure your notification settings.</p>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Vertical Orientation</h3>
+            <div class="tab-container" data-variant="pills" data-orientation="vertical" data-size="md" style="--tab-count: 3">
+                <details class="item" name="vertical-tabs" open style="--n: 1">
+                    <summary class="subitem">
+                        <span class="icon">📝</span>
+                        <span class="label">Documents</span>
+                        <span class="badge">12</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Document Management</h3>
+                        <p>Vertical layout with sidebar navigation.</p>
+                    </div>
+                </details>
+                <details class="item" name="vertical-tabs" style="--n: 2">
+                    <summary class="subitem">
+                        <span class="icon">👥</span>
+                        <span class="label">Team</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Team Collaboration</h3>
+                        <p>Work together with your team members.</p>
+                    </div>
+                </details>
+                <details class="item" name="vertical-tabs" style="--n: 3">
+                    <summary class="subitem">
+                        <span class="icon">📅</span>
+                        <span class="label">Calendar</span>
+                        <span class="badge">3</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Calendar Events</h3>
+                        <p>Manage your schedule and events.</p>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Animated Variant</h3>
+            <div class="tab-container" data-variant="animated" data-orientation="horizontal" data-size="md" style="--tab-count: 3">
+                <details class="item" name="animated-tabs" style="--n: 1">
+                    <summary class="subitem">
+                        <span class="icon">✨</span>
+                        <span class="label">Effects</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Visual Effects</h3>
+                        <p>Animated tabs with smooth transitions.</p>
+                    </div>
+                </details>
+                <details class="item" name="animated-tabs" open style="--n: 2">
+                    <summary class="subitem">
+                        <span class="icon">🎨</span>
+                        <span class="label">Design</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Design System</h3>
+                        <p>Beautiful animations and micro-interactions.</p>
+                    </div>
+                </details>
+                <details class="item" name="animated-tabs" style="--n: 3">
+                    <summary class="subitem">
+                        <span class="icon">🚀</span>
+                        <span class="label">Performance</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Performance Metrics</h3>
+                        <p>Optimized for speed and efficiency.</p>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Color Themes</h3>
+            <div style="display: grid; gap: 2rem;">
+                <div>
+                    <h4>Green Theme</h4>
+                    <div class="tab-container" data-variant="pills" data-orientation="horizontal" data-size="sm" data-theme="green" style="--tab-count: 3">
+                        <details class="item" name="green-tabs" open style="--n: 1">
+                            <summary class="subitem">
+                                <span class="icon">🌿</span>
+                                <span class="label">Nature</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Natural Theme</h3>
+                                <p>Fresh green color scheme.</p>
+                            </div>
+                        </details>
+                        <details class="item" name="green-tabs" style="--n: 2">
+                            <summary class="subitem">
+                                <span class="icon">🌱</span>
+                                <span class="label">Growth</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Growth Metrics</h3>
+                                <p>Track your progress over time.</p>
+                            </div>
+                        </details>
+                        <details class="item" name="green-tabs" style="--n: 3">
+                            <summary class="subitem">
+                                <span class="icon">🍃</span>
+                                <span class="label">Eco</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Eco Friendly</h3>
+                                <p>Sustainable and green solutions.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Purple Theme</h4>
+                    <div class="tab-container" data-variant="pills" data-orientation="horizontal" data-size="lg" data-theme="purple" style="--tab-count: 3">
+                        <details class="item" name="purple-tabs" style="--n: 1">
+                            <summary class="subitem">
+                                <span class="icon">💜</span>
+                                <span class="label">Creative</span>
+                                <span class="badge">Pro</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Creative Tools</h3>
+                                <p>Purple theme for creative work.</p>
+                            </div>
+                        </details>
+                        <details class="item" name="purple-tabs" open style="--n: 2">
+                            <summary class="subitem">
+                                <span class="icon">🎭</span>
+                                <span class="label">Artistic</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Artistic Expression</h3>
+                                <p>Express your creativity freely.</p>
+                            </div>
+                        </details>
+                        <details class="item" name="purple-tabs" style="--n: 3">
+                            <summary class="subitem">
+                                <span class="icon">✨</span>
+                                <span class="label">Magic</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Magic Features</h3>
+                                <p>Discover amazing capabilities.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Red Theme</h4>
+                    <div class="tab-container" data-variant="underline" data-orientation="horizontal" data-size="md" data-theme="red" style="--tab-count: 3">
+                        <details class="item" name="red-tabs" style="--n: 1">
+                            <summary class="subitem">
+                                <span class="icon">🔥</span>
+                                <span class="label">Urgent</span>
+                                <span class="badge">!</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Urgent Tasks</h3>
+                                <p>High priority items needing attention.</p>
+                            </div>
+                        </details>
+                        <details class="item" name="red-tabs" open style="--n: 2">
+                            <summary class="subitem">
+                                <span class="icon">⚠️</span>
+                                <span class="label">Alerts</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>System Alerts</h3>
+                                <p>Important notifications and warnings.</p>
+                            </div>
+                        </details>
+                        <details class="item" name="red-tabs" style="--n: 3">
+                            <summary class="subitem">
+                                <span class="icon">🛑</span>
+                                <span class="label">Blocked</span>
+                            </summary>
+                            <div class="content-wrapper">
+                                <h3>Blocked Items</h3>
+                                <p>Items that need resolution.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Scrollable Variant</h3>
+            <div class="tab-container" data-variant="scrollable" data-orientation="horizontal" data-size="md" style="--tab-count: 6">
+                <div class="tabs-header">
+                    <details class="item" name="scrollable-tabs" open style="--n: 1">
+                        <summary class="subitem">
+                            <span class="icon">🏠</span>
+                            <span class="label">Home</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Home Content</h3>
+                            <p>Scrollable tabs with horizontal scrolling when content overflows.</p>
+                        </div>
+                    </details>
+                    <details class="item" name="scrollable-tabs" style="--n: 2">
+                        <summary class="subitem">
+                            <span class="icon">📊</span>
+                            <span class="label">Analytics Dashboard</span>
+                            <span class="badge">5</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Analytics Dashboard</h3>
+                            <p>View your analytics data and insights.</p>
+                        </div>
+                    </details>
+                    <details class="item" name="scrollable-tabs" style="--n: 3">
+                        <summary class="subitem">
+                            <span class="icon">⚙️</span>
+                            <span class="label">Settings & Configuration</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Settings</h3>
+                            <p>Configure your preferences and settings.</p>
+                        </div>
+                    </details>
+                    <details class="item" name="scrollable-tabs" style="--n: 4">
+                        <summary class="subitem">
+                            <span class="icon">👤</span>
+                            <span class="label">Profile Management</span>
+                            <span class="badge">New</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Profile Information</h3>
+                            <p>Manage your profile details and preferences.</p>
+                        </div>
+                    </details>
+                    <details class="item" name="scrollable-tabs" style="--n: 5">
+                        <summary class="subitem">
+                            <span class="icon">🔔</span>
+                            <span class="label">Notifications</span>
+                            <span class="badge">12</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Notification Settings</h3>
+                            <p>Configure your notification preferences.</p>
+                        </div>
+                    </details>
+                    <details class="item" name="scrollable-tabs" style="--n: 6">
+                        <summary class="subitem">
+                            <span class="icon">📈</span>
+                            <span class="label">Reports & Analytics</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Reports Section</h3>
+                            <p>View detailed reports and analytics.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h3>Fixed Vertical Tabs</h3>
+            <div class="tab-container" data-variant="pills" data-orientation="vertical" data-size="md" style="--tab-count: 3">
+                <div class="tabs-sidebar">
+                    <details class="item" name="vertical-fixed-tabs" open style="--n: 1">
+                        <summary class="subitem">
+                            <span class="icon">📝</span>
+                            <span class="label">Documents</span>
+                            <span class="badge">12</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Document Management</h3>
+                            <p>Fixed vertical layout with sidebar navigation. Tabs are properly aligned vertically.</p>
+                        </div>
+                    </details>
+                    <details class="item" name="vertical-fixed-tabs" style="--n: 2">
+                        <summary class="subitem">
+                            <span class="icon">👥</span>
+                            <span class="label">Team Collaboration</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Team Collaboration</h3>
+                            <p>Work together with your team members efficiently.</p>
+                        </div>
+                    </details>
+                    <details class="item" name="vertical-fixed-tabs" style="--n: 3">
+                        <summary class="subitem">
+                            <span class="icon">📅</span>
+                            <span class="label">Calendar Events</span>
+                            <span class="badge">3</span>
+                        </summary>
+                        <div class="content-wrapper">
+                            <h3>Calendar Events</h3>
+                            <p>Manage your schedule and upcoming events.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h3>Shrink Variant (Minimum Width)</h3>
+            <div class="tab-container" data-variant="shrink" data-orientation="horizontal" data-size="md" style="--tab-count: 4">
+                <details class="item" name="shrink-tabs" open style="--n: 1">
+                    <summary class="subitem">
+                        <span class="icon">🏠</span>
+                        <span class="label">Home</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Home Content</h3>
+                        <p>Tabs shrink to minimum width needed.</p>
+                    </div>
+                </details>
+                <details class="item" name="shrink-tabs" style="--n: 2">
+                    <summary class="subitem">
+                        <span class="icon">📊</span>
+                        <span class="label">Analytics</span>
+                        <span class="badge">5</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Analytics Dashboard</h3>
+                        <p>View your analytics data.</p>
+                    </div>
+                </details>
+                <details class="item" name="shrink-tabs" style="--n: 3">
+                    <summary class="subitem">
+                        <span class="icon">⚙️</span>
+                        <span class="label">Settings</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Settings</h3>
+                        <p>Configure your preferences.</p>
+                    </div>
+                </details>
+                <details class="item" name="shrink-tabs" style="--n: 4">
+                    <summary class="subitem">
+                        <span class="icon">👤</span>
+                        <span class="label">Profile</span>
+                        <span class="badge">New</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Profile Information</h3>
+                        <p>Manage your profile details.</p>
+                    </div>
+                </details>
+            </div>
+
+            <h3>Minimal Variant</h3>
+            <div class="tab-container" data-variant="minimal" data-orientation="horizontal" data-size="md" style="--tab-count: 4">
+                <details class="item" name="minimal-tabs" open style="--n: 1">
+                    <summary class="subitem">
+                        <span class="label">Home</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Minimal Home</h3>
+                        <p>Clean and simple design.</p>
+                    </div>
+                </details>
+                <details class="item" name="minimal-tabs" style="--n: 2">
+                    <summary class="subitem">
+                        <span class="label">About</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>About Section</h3>
+                        <p>Learn more about us.</p>
+                    </div>
+                </details>
+                <details class="item" name="minimal-tabs" style="--n: 3">
+                    <summary class="subitem">
+                        <span class="label">Services</span>
+                        <span class="badge">3</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Our Services</h3>
+                        <p>What we offer to clients.</p>
+                    </div>
+                </details>
+                <details class="item" name="minimal-tabs" style="--n: 4">
+                    <summary class="subitem">
+                        <span class="label">Contact</span>
+                    </summary>
+                    <div class="content-wrapper">
+                        <h3>Contact Info</h3>
+                        <p>Get in touch with us.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Tooltips -->
+        <div class="demo-section">
+            <h2>Tooltips</h2>
+            
+            <div class="demo-grid">
+                <button data-tooltip="This is a tooltip">Hover me</button>
+                <button data-tooltip="Another tooltip here" class="outline">Hover me too</button>
+                <a href="#" data-tooltip="Link tooltip">Link with tooltip</a>
+            </div>
+        </div>
+
+        <!-- Utilities -->
+        <div class="demo-section">
+            <h2>Utilities</h2>
+            
+            <h3>Layout</h3>
+            <div class="hstack">
+                <button class="small">Button 1</button>
+                <button class="small">Button 2</button>
+                <button class="small">Button 3</button>
+            </div>
+
+            <div class="vstack" style="margin-top: 1rem;">
+                <button class="small w-100">Full Width Button 1</button>
+                <button class="small w-100">Full Width Button 2</button>
+            </div>
+
+            <h3>Text Alignment</h3>
+            <div style="background: var(--oc-color-slate-100); padding: 1rem; margin-top: 1rem;">
+                <p class="align-left">Left aligned text</p>
+                <p class="align-center">Center aligned text</p>
+                <p class="align-right">Right aligned text</p>
+            </div>
+        </div>
+    </div>
+
+    <div>Carousel
+
+
+        <div class="oc-carousel">
+  <div class="oc-carousel-item"><h3>Card 1</h3></div>
+  <div class="oc-carousel-item"><h3>Card 2</h3></div>
+  <div class="oc-carousel-item"><h3>Card 3</h3></div>
+  <div class="oc-carousel-item"><h3>Card 4</h3></div>
+  <div class="oc-carousel-item"><h3>Card 5</h3></div>
+  <div class="oc-carousel-item"><h3>Card 6</h3></div>
+  <div class="oc-carousel-item"><h3>Card 7</h3></div>
+  <div class="oc-carousel-item"><h3>Card 8</h3></div>
+  <div class="oc-carousel-item"><h3>Card 9</h3></div>
+  <div class="oc-carousel-item"><h3>Card 10</h3></div>
+  <div class="oc-carousel-item"><h3>Card 11</h3></div>
+  <div class="oc-carousel-item"><h3>Card 12</h3></div>
+</div>
+    </div>
+
+    <!-- Slider start -->
+
+    <div class="css-slider" style="--per-page:3;--gap:10px;margin-block:5rem;">
+		<img class="css-slider__item" src="https://picsum.photos/seed/5/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/6/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/7/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/8/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/9/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/10/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/11/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/12/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/13/426/240" alt="">
+		<img class="css-slider__item" src="https://picsum.photos/seed/14/426/240" alt="">
+	</div>
+
+
+	<h2>Examples</h2>
+	<div class="examples">
+		<div class="example">
+			<p>Image slider showing one image at a time with no gap.</p>
+			<div class="css-slider">
+				<img class="css-slider__item" src="https://picsum.photos/seed/1/720/405" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/2/720/405" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/3/720/405" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/4/720/405" alt="">
+			</div>
+		</div>
+
+		<div class="example">
+			<p>Image slider showing four images at a time with gaps between them.</p>
+			<div class="css-slider" style="--per-page:4;--gap:1rem;">
+				<img class="css-slider__item" src="https://picsum.photos/seed/5/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/6/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/7/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/8/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/9/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/10/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/11/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/12/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/13/256/144" alt="">
+				<img class="css-slider__item" src="https://picsum.photos/seed/14/256/144" alt="">
+			</div>
+
+			<p>Slider with five non-image elements, showing two at a time with a larger gap.</p>
+			<div class="css-slider" style="--per-page:2;--gap:2rem;">
+				<div class="css-slider__item v2">
+					<h4>#1: One</h4>
+					<small>Lorem ipsum dolor sit amet</small>
+				</div>
+				<div class="css-slider__item v2">
+					<h4>#2: Two</h4>
+					<small>Lorem ipsum dolor sit amet</small>
+				</div>
+				<div class="css-slider__item v2">
+					<h4>#3: Three</h4>
+					<small>Lorem ipsum dolor sit amet</small>
+				</div>
+				<div class="css-slider__item v2">
+					<h4>#4: Four</h4>
+					<small>Lorem ipsum dolor sit amet</small>
+				</div>
+				<div class="css-slider__item v2">
+					<h4>#5: Five</h4>
+					<small>Lorem ipsum dolor sit amet</small>
+				</div>
+			</div>
+
+			<p>Slider with five elements showing three at a time with no gap.</p>
+			<div class="css-slider" style="--per-page:3;">
+				<img class="css-slider__item" src="https://picsum.photos/seed/15/256/144" alt="">
+				<div class="css-slider__item v3">
+					<h4>Some Title</h4>
+					<small>Description about the image before</small>
+				</div>
+				<img class="css-slider__item" src="https://picsum.photos/seed/16/256/144" alt="">
+				<div class="css-slider__item v3">
+					<h4>Image Info</h4>
+					<small>Information about the second image</small>
+				</div>
+				<img class="css-slider__item" src="https://picsum.photos/seed/17/256/144" alt="">
+			</div>
+		</div>
+	</div>
+
+    <!-- Switch Component -->
+    <div class="demo-section">
+        <h2>Switch Component</h2>
+        
+        <h3>Basic Switches</h3>
+        <div class="demo-grid">
+            <label class="oc-switch">
+                <input type="checkbox">
+                <div class="oc-switch-track">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label">Default Switch</span>
+            </label>
+
+            <label class="oc-switch">
+                <input type="checkbox" checked>
+                <div class="oc-switch-track">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label">Checked Switch</span>
+            </label>
+
+            <label class="oc-switch">
+                <input type="checkbox" disabled>
+                <div class="oc-switch-track">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label">Disabled Switch</span>
+            </label>
+        </div>
+
+        <h3>Color Variants</h3>
+        <div class="demo-grid">
+            <label class="oc-switch">
+                <input type="checkbox" checked>
+                <div class="oc-switch-track" data-variant="success">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label">Success (Green)</span>
+            </label>
+
+            <label class="oc-switch">
+                <input type="checkbox" checked>
+                <div class="oc-switch-track" data-variant="danger">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label">Danger (Red)</span>
+            </label>
+
+            <label class="oc-switch">
+                <input type="checkbox" checked>
+                <div class="oc-switch-track" data-variant="warning">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label">Warning (Yellow)</span>
+            </label>
+        </div>
+
+        <h3>Size Variants</h3>
+        <div class="demo-grid" style="align-items: flex-start;">
+            <div>
+                <label class="oc-switch">
+                    <input type="checkbox" checked>
+                    <div class="oc-switch-track" data-size="sm">
+                        <div class="oc-switch-thumb"></div>
+                    </div>
+                    <span class="oc-switch-label" data-size="sm">Small Size</span>
+                </label>
+            </div>
+
+            <div>
+                <label class="oc-switch">
+                    <input type="checkbox" checked>
+                    <div class="oc-switch-track">
+                        <div class="oc-switch-thumb"></div>
+                    </div>
+                    <span class="oc-switch-label">Default Size</span>
+                </label>
+            </div>
+
+            <div>
+                <label class="oc-switch">
+                    <input type="checkbox" checked>
+                    <div class="oc-switch-track" data-size="lg">
+                        <div class="oc-switch-thumb"></div>
+                    </div>
+                    <span class="oc-switch-label" data-size="lg">Large Size</span>
+                </label>
+            </div>
+        </div>
+
+        <h3>Combined Examples</h3>
+        <div class="demo-grid" style="align-items: flex-start;">
+            <label class="oc-switch">
+                <input type="checkbox">
+                <div class="oc-switch-track" data-size="sm" data-variant="success">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label" data-size="sm">Small Success</span>
+            </label>
+
+            <label class="oc-switch">
+                <input type="checkbox" checked>
+                <div class="oc-switch-track" data-variant="danger">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label">Default Danger</span>
+            </label>
+
+            <label class="oc-switch">
+                <input type="checkbox">
+                <div class="oc-switch-track" data-size="lg" data-variant="warning">
+                    <div class="oc-switch-thumb"></div>
+                </div>
+                <span class="oc-switch-label" data-size="lg">Large Warning</span>
+            </label>
+        </div>
+
+    <!-- Rating Component -->
+    <div class="demo-section">
+        <h2>Rating Component</h2>
+        
+        <!-- SVG definitions for half fills -->
+        <svg class="oc-rating-defs">
+            <defs>
+                <linearGradient id="half-fill" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#cbd5e1;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="half-fill-heart" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="50%" style="stop-color:#ef4444;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#cbd5e1;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="half-fill-diamond" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#cbd5e1;stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="half-fill-circle" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#cbd5e1;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+        
+        <h3>Basic Star Ratings</h3>
+        <div class="demo-grid">
+            <div>
+                <div class="oc-rating">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">4.0</span>
+            </div>
+
+            <div>
+                <div class="oc-rating">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">3.5</span>
+            </div>
+
+            <div>
+                <div class="oc-rating">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">2.0</span>
+            </div>
+        </div>
+
+        <h3>Color Variants</h3>
+        <div class="demo-grid">
+            <div>
+                <div class="oc-rating" data-color="primary">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">3.5</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-color="success">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">4.0</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-color="danger">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">2.5</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-color="purple">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">5.0</span>
+            </div>
+        </div>
+
+        <h3>Different Shapes</h3>
+        <div class="demo-grid">
+            <div>
+                <div class="oc-rating" data-shape="heart">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">3.5</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-shape="diamond">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">4.0</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-shape="circle">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">2.5</span>
+            </div>
+        </div>
+
+        <h3>Size Variants</h3>
+        <div class="demo-grid" style="align-items: flex-start;">
+            <div>
+                <div class="oc-rating" data-size="sm">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value" data-size="sm">3.5</span>
+            </div>
+
+            <div>
+                <div class="oc-rating">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">3.5</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-size="lg">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value" data-size="lg">3.5</span>
+            </div>
+        </div>
+
+        <h3>Interactive Examples</h3>
+        <div class="demo-grid">
+            <div>
+                <div class="oc-rating" data-interactive="true">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">3.0</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-interactive="true" data-color="success">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="half">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">2.5</span>
+            </div>
+
+            <div>
+                <div class="oc-rating" data-interactive="true" data-shape="heart">
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star" data-filled="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="oc-rating-star">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                </div>
+                <span class="oc-rating-value">4.0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Splitter Component -->
+<div class="demo-section">
+    <h2>Splitter Component</h2>
+    
+    <h3>Basic Splitter Types</h3>
+    <div>
+        <p>Text before standard line.</p>
+        <div class="oc-splitter" data-type="line" role="separator"></div>
+        <p>Text after standard line.</p>
+
+        <div class="oc-splitter" data-type="dashed" role="separator"></div>
+        <p>Text after dashed line.</p>
+
+        <div class="oc-splitter" data-type="dotted" role="separator"></div>
+        <p>Text after dotted line.</p>
+
+        <div class="oc-splitter" data-type="thick" role="separator"></div>
+        <p>Text after thick line.</p>
+
+        <div class="oc-splitter" data-type="gradient" role="separator"></div>
+        <p>Text after gradient line.</p>
+
+        <div class="oc-splitter" data-type="double" role="separator"></div>
+        <p>Text after double line.</p>
+    </div>
+
+    <h3>Text Position Variants</h3>
+    <div>
+        <p>Text positioning examples.</p>
+        <div class="oc-splitter" data-text="Paragraph" data-position="left" role="separator"></div>
+        <p>Left text.</p>
+
+        <div class="oc-splitter" data-text="Section" data-position="center" role="separator"></div>
+        <p>Center text.</p>
+
+        <div class="oc-splitter" data-text="Chapter" data-position="right" role="separator"></div>
+    </div>
+
+    <h3>Color Variants</h3>
+    <div>
+        <p>Color examples.</p>
+        <div class="oc-splitter" data-text="Primary" data-color="primary" role="separator"></div>
+        <p>Primary color.</p>
+
+        <div class="oc-splitter" data-text="Success" data-color="success" role="separator"></div>
+        <p>Success color.</p>
+
+        <div class="oc-splitter" data-text="Danger" data-color="danger" role="separator"></div>
+        <p>Danger color.</p>
+
+        <div class="oc-splitter" data-text="Warning" data-color="warning" role="separator"></div>
+        <p>Warning color.</p>
+
+        <div class="oc-splitter" data-text="Purple" data-color="purple" role="separator"></div>
+    </div>
+
+    <h3>Size Variants</h3>
+    <div>
+        <div class="oc-splitter" data-text="Small" data-size="sm" role="separator"></div>
+        <div class="oc-splitter" data-text="Default" role="separator"></div>
+        <div class="oc-splitter" data-text="Large" data-size="lg" role="separator"></div>
+    </div>
+
+    <h3>Icon and Icon + Text Splitter</h3>
+    <div>
+        <div class="oc-splitter" data-icon="✨" role="separator"></div>
+        <div class="oc-splitter" data-icon="🎯" data-text="Target" role="separator"></div>
+        <div class="oc-splitter" data-icon="🚀" data-text="Launch" role="separator"></div>
+    </div>
+
+    <h3>Animated Splitter</h3>
+    <div>
+        <div class="oc-splitter" data-text="Animated" data-animated="true" data-type="thick" role="separator"></div>
+        <br>
+        <div class="oc-splitter" data-text="Loading" data-animated="true" data-color="primary" data-type="thick" role="separator"></div>
+    </div>
+
+    <h3>Vertical Splitter</h3>
+    <div style="display: flex; align-items: center; gap: 2rem; justify-content: center; height: 150px;">
+        <p style="margin: 0;">Left content</p>
+        
+        <div class="oc-splitter" data-orientation="vertical" data-type="line" role="separator"></div>
+        
+        <p style="margin: 0;">Middle content</p>
+        
+        <div class="oc-splitter" data-orientation="vertical" data-type="dashed" data-text="OR" role="separator"></div>
+        
+        <p style="margin: 0;">Right content</p>
+    </div>
+
+    <!-- Additional Vertical Splitter Examples -->
+    <div style="margin-top: 3rem;">
+        <h4>Vertical Splitter Variations</h4>
+        
+        <!-- Basic vertical splitters -->
+        <div style="display: flex; align-items: center; gap: 2rem; justify-content: center; height: 120px; margin: 2rem 0;">
+            <div style="text-align: center;">
+                <strong>Line</strong>
+                <p style="margin: 0.5rem 0;">Standard vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="line" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>Dashed</strong>
+                <p style="margin: 0.5rem 0;">Dashed vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="dashed" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>Dotted</strong>
+                <p style="margin: 0.5rem 0;">Dotted vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="dotted" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>Gradient</strong>
+                <p style="margin: 0.5rem 0;">Gradient vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="gradient" role="separator"></div>
+        </div>
+
+        <!-- Vertical splitters with text -->
+        <div style="display: flex; align-items: center; gap: 2rem; justify-content: center; height: 120px; margin: 2rem 0;">
+            <div style="text-align: center;">
+                <strong>AND</strong>
+                <p style="margin: 0.5rem 0;">With text label</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="dashed" data-text="AND" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>VS</strong>
+                <p style="margin: 0.5rem 0;">Competition style</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="line" data-text="VS" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>PLUS</strong>
+                <p style="margin: 0.5rem 0;">Addition style</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="dotted" data-text="PLUS" role="separator"></div>
+        </div>
+
+        <!-- Colored vertical splitters -->
+        <div style="display: flex; align-items: center; gap: 2rem; justify-content: center; height: 120px; margin: 2rem 0;">
+            <div style="text-align: center;">
+                <strong>Primary</strong>
+                <p style="margin: 0.5rem 0;">Blue vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="line" data-color="primary" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>Success</strong>
+                <p style="margin: 0.5rem 0;">Green vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="line" data-color="success" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>Danger</strong>
+                <p style="margin: 0.5rem 0;">Red vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="line" data-color="danger" role="separator"></div>
+            <div style="text-align: center;">
+                <strong>Warning</strong>
+                <p style="margin: 0.5rem 0;">Yellow vertical line</p>
+            </div>
+            <div class="oc-splitter" data-orientation="vertical" data-type="line" data-color="warning" role="separator"></div>
+        </div>
+
+        <!-- Vertical splitters in different contexts -->
+        <div style="margin: 2rem 0;">
+            <h4>Real-world Examples</h4>
+            
+            <!-- Price comparison -->
+            <div style="display: flex; align-items: center; gap: 3rem; justify-content: center; height: 100px; margin: 2rem 0; padding: 1rem; background: var(--oc-color-slate-50); border-radius: var(--oc-radius-md);">
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--oc-color-blue-600);">$9.99</div>
+                    <div style="font-size: 0.875rem; color: var(--oc-text-muted);">Basic Plan</div>
+                </div>
+                <div class="oc-splitter" data-orientation="vertical" data-type="gradient" data-color="primary" role="separator"></div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--oc-color-green-600);">$19.99</div>
+                    <div style="font-size: 0.875rem; color: var(--oc-text-muted);">Pro Plan</div>
+                </div>
+                <div class="oc-splitter" data-orientation="vertical" data-type="dashed" data-text="VS" data-color="purple" role="separator"></div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--oc-color-purple-600);">$29.99</div>
+                    <div style="font-size: 0.875rem; color: var(--oc-text-muted);">Enterprise</div>
+                </div>
+            </div>
+
+            <!-- Feature comparison -->
+            <div style="display: flex; align-items: stretch; gap: 2rem; margin: 2rem 0;">
+                <div style="flex: 1; padding: 1rem; border: 1px solid var(--oc-border-base); border-radius: var(--oc-radius-md);">
+                    <h5 style="margin: 0 0 0.5rem 0;">Feature A</h5>
+                    <p style="margin: 0; font-size: 0.875rem; color: var(--oc-text-muted);">Description of feature A with all the benefits</p>
+                </div>
+                <div class="oc-splitter" data-orientation="vertical" data-type="line" data-color="success" role="separator" style="align-self: stretch; height: auto;"></div>
+                <div style="flex: 1; padding: 1rem; border: 1px solid var(--oc-border-base); border-radius: var(--oc-radius-md);">
+                    <h5 style="margin: 0 0 0.5rem 0;">Feature B</h5>
+                    <p style="margin: 0; font-size: 0.875rem; color: var(--oc-text-muted);">Description of feature B with different advantages</p>
+                </div>
+                <div class="oc-splitter" data-orientation="vertical" data-type="dotted" data-text="PLUS" role="separator" style="align-self: stretch; height: auto;"></div>
+                <div style="flex: 1; padding: 1rem; border: 1px solid var(--oc-border-base); border-radius: var(--oc-radius-md);">
+                    <h5 style="margin: 0 0 0.5rem 0;">Feature C</h5>
+                    <p style="margin: 0; font-size: 0.875rem; color: var(--oc-text-muted);">Description of feature C with unique capabilities</p>
+                </div>
+            </div>
+
+            <!-- Navigation example -->
+            <div style="display: flex; align-items: center; gap: 1rem; justify-content: center; margin: 2rem 0;">
+                <button style="padding: 0.5rem 1rem; border: 1px solid var(--oc-border-base); background: white; border-radius: var(--oc-radius-md); cursor: pointer;">Home</button>
+                <div class="oc-splitter" data-orientation="vertical" data-type="line" role="separator"></div>
+                <button style="padding: 0.5rem 1rem; border: 1px solid var(--oc-border-base); background: white; border-radius: var(--oc-radius-md); cursor: pointer;">About</button>
+                <div class="oc-splitter" data-orientation="vertical" data-type="dashed" role="separator"></div>
+                <button style="padding: 0.5rem 1rem; border: 1px solid var(--oc-border-base); background: white; border-radius: var(--oc-radius-md); cursor: pointer;">Services</button>
+                <div class="oc-splitter" data-orientation="vertical" data-type="dotted" role="separator"></div>
+                <button style="padding: 0.5rem 1rem; border: 1px solid var(--oc-border-base); background: white; border-radius: var(--oc-radius-md); cursor: pointer;">Contact</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Popover Component -->
+    <div class="demo-section">
+        <h2>Popover Component</h2>
+        
+        <h3>Basic Popovers</h3>
+        <div class="demo-grid">
+            <div class="oc-popover" data-position="top">
+                <button class="oc-popover-trigger">Hover Top</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        This popover appears on top when you hover over the trigger.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="bottom">
+                <button class="oc-popover-trigger">Hover Bottom</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        This popover appears below the trigger element.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="left">
+                <button class="oc-popover-trigger">Hover Left</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        This popover appears to the left of the trigger.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="right">
+                <button class="oc-popover-trigger">Hover Right</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        This popover appears to the right of the trigger.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Color Variants</h3>
+        <div class="demo-grid">
+            <div class="oc-popover" data-position="top" data-color="primary">
+                <button class="oc-popover-trigger">Primary</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Primary Popover</div>
+                    <div class="oc-popover-body">
+                        This popover has a primary color theme with blue border and shadow.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="top" data-color="success">
+                <button class="oc-popover-trigger">Success</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Success Message</div>
+                    <div class="oc-popover-body">
+                        This popover uses success colors with green border and shadow.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="top" data-color="danger">
+                <button class="oc-popover-trigger">Danger</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Warning</div>
+                    <div class="oc-popover-body">
+                        This popover uses danger colors with red border and shadow.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="top" data-color="warning">
+                <button class="oc-popover-trigger">Warning</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Caution</div>
+                    <div class="oc-popover-body">
+                        This popover uses warning colors with yellow border and shadow.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Size Variants</h3>
+        <div class="demo-grid">
+            <div class="oc-popover" data-position="top" data-size="sm">
+                <button class="oc-popover-trigger">Small</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        This is a small popover with compact sizing and reduced padding.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="top">
+                <button class="oc-popover-trigger">Default</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        This is the default popover size with standard dimensions and padding.
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="top" data-size="lg">
+                <button class="oc-popover-trigger">Large</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Large Popover</div>
+                    <div class="oc-popover-body">
+                        This is a large popover with more space for content. It can accommodate longer text and more complex layouts.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Click to Open</h3>
+        <div class="demo-grid">
+            <div class="oc-popover" data-position="top" data-trigger="click">
+                <button class="oc-popover-trigger" tabindex="0">Click Me</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Click Popover</div>
+                    <div class="oc-popover-body">
+                        This popover opens when you click the trigger button. Click again to close.
+                    </div>
+                    <div class="oc-popover-footer">
+                        <button style="padding: 0.25rem 0.5rem; border: 1px solid var(--oc-border-base); background: white; border-radius: var(--oc-radius-sm); cursor: pointer;">Cancel</button>
+                        <button style="padding: 0.25rem 0.5rem; background: var(--oc-color-blue-500); color: white; border: none; border-radius: var(--oc-radius-sm); cursor: pointer;">Confirm</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="bottom" data-trigger="click">
+                <button class="oc-popover-trigger" tabindex="0">Menu</button>
+                <div class="oc-popover-content">
+                    <ul class="oc-popover-list">
+                        <li>Profile Settings</li>
+                        <li>Account Preferences</li>
+                        <li>Privacy Options</li>
+                        <li>Help & Support</li>
+                        <li>Sign Out</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h3>Rich Content Examples</h3>
+        <div class="demo-grid">
+            <div class="oc-popover" data-position="right" data-size="lg">
+                <button class="oc-popover-trigger">User Info</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">John Doe</div>
+                    <div class="oc-popover-body">
+                        <div style="display: flex; align-items: center; gap: var(--oc-spacing-3); margin-bottom: var(--oc-spacing-3);">
+                            <div style="width: 40px; height: 40px; background: var(--oc-color-blue-500); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">JD</div>
+                            <div>
+                                <div style="font-weight: 600;">John Doe</div>
+                                <div style="font-size: var(--oc-font-size-sm); color: var(--oc-text-muted);">john.doe@example.com</div>
+                            </div>
+                        </div>
+                        <div style="font-size: var(--oc-font-size-sm);">
+                            <div style="margin-bottom: var(--oc-spacing-1);"><strong>Role:</strong> Product Designer</div>
+                            <div style="margin-bottom: var(--oc-spacing-1);"><strong>Department:</strong> Design Team</div>
+                            <div><strong>Location:</strong> San Francisco, CA</div>
+                        </div>
+                    </div>
+                    <div class="oc-popover-footer">
+                        <button style="padding: 0.25rem 0.5rem; background: var(--oc-color-blue-500); color: white; border: none; border-radius: var(--oc-radius-sm); cursor: pointer; font-size: var(--oc-font-size-sm);">View Profile</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="left" data-color="primary">
+                <button class="oc-popover-trigger">📊 Stats</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Performance Metrics</div>
+                    <div class="oc-popover-body">
+                        <div style="margin-bottom: var(--oc-spacing-3);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--oc-spacing-1);">
+                                <span>Revenue</span>
+                                <strong>$45,231</strong>
+                            </div>
+                            <div style="height: 4px; background: var(--oc-color-slate-200); border-radius: 2px; overflow: hidden;">
+                                <div style="width: 75%; height: 100%; background: var(--oc-color-green-500);"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: var(--oc-spacing-3);">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--oc-spacing-1);">
+                                <span>Users</span>
+                                <strong>1,234</strong>
+                            </div>
+                            <div style="height: 4px; background: var(--oc-color-slate-200); border-radius: 2px; overflow: hidden;">
+                                <div style="width: 60%; height: 100%; background: var(--oc-color-blue-500);"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: var(--oc-spacing-1);">
+                                <span>Conversion</span>
+                                <strong>3.2%</strong>
+                            </div>
+                            <div style="height: 4px; background: var(--oc-color-slate-200); border-radius: 2px; overflow: hidden;">
+                                <div style="width: 32%; height: 100%; background: var(--oc-color-purple-500);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Interactive Examples</h3>
+        <div class="demo-grid">
+            <div class="oc-popover" data-position="top" data-color="success">
+                <button class="oc-popover-trigger">✅ Success Action</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        <div style="display: flex; align-items: center; gap: var(--oc-spacing-2);">
+                            <span style="font-size: 1.5rem;">✅</span>
+                            <div>
+                                <div style="font-weight: 600;">Action Completed!</div>
+                                <div style="font-size: var(--oc-font-size-sm); color: var(--oc-text-muted);">Your changes have been saved successfully.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="bottom" data-color="warning">
+                <button class="oc-popover-trigger">⚠️ Warning</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-body">
+                        <div style="display: flex; align-items: center; gap: var(--oc-spacing-2);">
+                            <span style="font-size: 1.5rem;">⚠️</span>
+                            <div>
+                                <div style="font-weight: 600;">Please Review</div>
+                                <div style="font-size: var(--oc-font-size-sm); color: var(--oc-text-muted);">Some fields need your attention before proceeding.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oc-popover" data-position="right" data-color="danger">
+                <button class="oc-popover-trigger">🗑️ Delete</button>
+                <div class="oc-popover-content">
+                    <div class="oc-popover-header">Confirm Delete</div>
+                    <div class="oc-popover-body">
+                        Are you sure you want to delete this item? This action cannot be undone.
+                    </div>
+                    <div class="oc-popover-footer">
+                        <button style="padding: 0.25rem 0.5rem; border: 1px solid var(--oc-border-base); background: white; border-radius: var(--oc-radius-sm); cursor: pointer;">Cancel</button>
+                        <button style="padding: 0.25rem 0.5rem; background: var(--oc-color-red-500); color: white; border: none; border-radius: var(--oc-radius-sm); cursor: pointer;">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Grid Component -->
+    <div class="demo-section">
+        <h2>Grid Component</h2>
+        
+        <h3>Basic Grid Layout</h3>
+        <div class="oc-container">
+            <div class="oc-row">
+                <div class="oc-col-4" style="background: var(--oc-color-blue-100); padding: var(--oc-spacing-3); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>Column 4</strong>
+                    <p>This column spans 4 out of 12 grid units.</p>
+                </div>
+                <div class="oc-col-4" style="background: var(--oc-color-green-100); padding: var(--oc-spacing-3); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>Column 4</strong>
+                    <p>This column spans 4 out of 12 grid units.</p>
+                </div>
+                <div class="oc-col-4" style="background: var(--oc-color-purple-100); padding: var(--oc-spacing-3); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>Column 4</strong>
+                    <p>This column spans 4 out of 12 grid units.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Equal Columns</h3>
+        <div class="oc-container">
+            <div class="oc-row">
+                <div class="oc-col-3" style="background: var(--oc-color-slate-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>1/4</strong>
+                </div>
+                <div class="oc-col-3" style="background: var(--oc-color-slate-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>1/4</strong>
+                </div>
+                <div class="oc-col-3" style="background: var(--oc-color-slate-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>1/4</strong>
+                </div>
+                <div class="oc-col-3" style="background: var(--oc-color-slate-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>1/4</strong>
+                </div>
+            </div>
+            
+            <div class="oc-row" style="margin-top: var(--oc-spacing-4);">
+                <div class="oc-col-6" style="background: var(--oc-color-slate-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>1/2</strong>
+                </div>
+                <div class="oc-col-6" style="background: var(--oc-color-slate-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>1/2</strong>
+                </div>
+            </div>
+            
+            <div class="oc-row" style="margin-top: var(--oc-spacing-4);">
+                <div class="oc-col-12" style="background: var(--oc-color-slate-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>Full Width (12/12)</strong>
+                </div>
+            </div>
+        </div>
+
+        <h3>Column Variations</h3>
+        <div class="oc-container">
+            <div class="oc-row">
+                <div class="oc-col-2" style="background: var(--oc-color-red-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>2</strong>
+                </div>
+                <div class="oc-col-8" style="background: var(--oc-color-yellow-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>8 (Main Content)</strong>
+                </div>
+                <div class="oc-col-2" style="background: var(--oc-color-red-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>2</strong>
+                </div>
+            </div>
+            
+            <div class="oc-row" style="margin-top: var(--oc-spacing-4);">
+                <div class="oc-col-3" style="background: var(--oc-color-blue-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>Sidebar</strong>
+                </div>
+                <div class="oc-col-9" style="background: var(--oc-color-indigo-100); padding: var(--oc-spacing-2); border-radius: var(--oc-radius-md); text-align: center;">
+                    <strong>Main Content Area</strong>
+                </div>
+            </div>
+        </div>
+
+        <h3>Grid Offsets</h3>
+     <div class="oc-container">
+    
+    <h2>1. Basic Equal Columns (All screen sizes)</h2>
+    <div class="oc-row">
+      <div class="oc-col-4"><div class="box">4</div></div>
+      <div class="oc-col-4"><div class="box">4</div></div>
+      <div class="oc-col-4"><div class="box">4</div></div>
+    </div>
+
+    <br>
+
+    <h2>2. Responsive Columns (Mobile first)</h2>
+    <div class="oc-row">
+      <div class="oc-col-12 oc-col-md-6 oc-col-lg-3"><div class="box">Responsive</div></div>
+      <div class="oc-col-12 oc-col-md-6 oc-col-lg-3"><div class="box">Responsive</div></div>
+      <div class="oc-col-12 oc-col-md-6 oc-col-lg-3"><div class="box">Responsive</div></div>
+      <div class="oc-col-12 oc-col-md-6 oc-col-lg-3"><div class="box">Responsive</div></div>
+    </div>
+
+    <br>
+
+    <h2>3. Asymmetrical Layout (Sidebar + Main Content)</h2>
+    <div class="oc-row">
+      <div class="oc-col-12 oc-col-lg-4"><div class="box" style="background: darkorange;">Sidebar (4)</div></div>
+      <div class="oc-col-12 oc-col-lg-8"><div class="box">Main Content (8)</div></div>
+    </div>
+
+    <br>
+
+    <h2>4. Using Offsets</h2>
+    <div class="oc-row">
+      <div class="oc-col-4 oc-offset-md-4"><div class="box">Centered via offset-4</div></div>
+    </div>
+
+  </div>
+
+    <!-- Menu Component -->
+    <div class="demo-section">
+        <h2>Menu Component</h2>
+        
+        <h3>Basic Menus</h3>
+        <div class="demo-grid">
+            <div class="oc-menu" data-position="bottom-left">
+                <button class="oc-menu-trigger">Menu ▼</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📄</span>
+                        <span class="oc-menu-item-text">New Document</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📁</span>
+                        <span class="oc-menu-item-text">Open File</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">💾</span>
+                        <span class="oc-menu-item-text">Save</span>
+                        <span class="oc-menu-item-shortcut">Ctrl+S</span>
+                    </a>
+                    <div class="oc-menu-divider"></div>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">⚙️</span>
+                        <span class="oc-menu-item-text">Preferences</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🚪</span>
+                        <span class="oc-menu-item-text">Exit</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="oc-menu" data-position="bottom-right">
+                <button class="oc-menu-trigger">Options ▼</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Profile Settings</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Account</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Privacy</span>
+                    </a>
+                    <div class="oc-menu-divider"></div>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Help</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">About</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="oc-menu" data-position="bottom-center">
+                <button class="oc-menu-trigger">Center ▼</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🏠</span>
+                        <span class="oc-menu-item-text">Home</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📊</span>
+                        <span class="oc-menu-item-text">Dashboard</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📈</span>
+                        <span class="oc-menu-item-text">Analytics</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Click to Open</h3>
+        <div class="demo-grid">
+            <div class="oc-menu" data-position="bottom-left" data-trigger="click">
+                <button class="oc-menu-trigger" tabindex="0">Click Menu</button>
+                <div class="oc-menu-content">
+                    <div class="oc-menu-header">File Operations</div>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">➕</span>
+                        <span class="oc-menu-item-text">Create New</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📂</span>
+                        <span class="oc-menu-item-text">Browse</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🔄</span>
+                        <span class="oc-menu-item-text">Recent</span>
+                    </a>
+                    <div class="oc-menu-divider"></div>
+                    <a href="#" class="oc-menu-item" data-destructive="true">
+                        <span class="oc-menu-item-icon">🗑️</span>
+                        <span class="oc-menu-item-text">Delete All</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="oc-menu" data-position="bottom-right" data-trigger="click">
+                <button class="oc-menu-trigger" tabindex="0">User Menu</button>
+                <div class="oc-menu-content">
+                    <div class="oc-menu-header">Account</div>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">👤</span>
+                        <span class="oc-menu-item-text">Profile</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🔐</span>
+                        <span class="oc-menu-item-text">Security</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🔔</span>
+                        <span class="oc-menu-item-text">Notifications</span>
+                    </a>
+                    <div class="oc-menu-divider"></div>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🚪</span>
+                        <span class="oc-menu-item-text">Sign Out</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Size Variants</h3>
+        <div class="demo-grid">
+            <div class="oc-menu" data-position="bottom-left" data-size="sm">
+                <button class="oc-menu-trigger">Small</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📝</span>
+                        <span class="oc-menu-item-text">Edit</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📋</span>
+                        <span class="oc-menu-item-text">Copy</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🗑️</span>
+                        <span class="oc-menu-item-text">Delete</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="oc-menu" data-position="bottom-left">
+                <button class="oc-menu-trigger">Default</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📝</span>
+                        <span class="oc-menu-item-text">Edit</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📋</span>
+                        <span class="oc-menu-item-text">Copy</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🗑️</span>
+                        <span class="oc-menu-item-text">Delete</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="oc-menu" data-position="bottom-left" data-size="lg">
+                <button class="oc-menu-trigger">Large</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📝</span>
+                        <span class="oc-menu-item-text">Edit Document</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📋</span>
+                        <span class="oc-menu-item-text">Copy to Clipboard</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🗑️</span>
+                        <span class="oc-menu-item-text">Delete Item</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Checkbox Menu</h3>
+        <div class="demo-grid">
+            <div class="oc-menu" data-position="bottom-left">
+                <button class="oc-menu-trigger">View Options</button>
+                <div class="oc-menu-content">
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Show Toolbar</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Show Sidebar</span>
+                    </button>
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Show Status Bar</span>
+                    </button>
+                    <div class="oc-menu-divider"></div>
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Grid View</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">List View</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="oc-menu" data-position="bottom-left">
+                <button class="oc-menu-trigger">Features</button>
+                <div class="oc-menu-content">
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Auto-save</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Spell Check</span>
+                    </button>
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Word Wrap</span>
+                    </button>
+                    <div class="oc-menu-divider"></div>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Line Numbers</span>
+                    </button>
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-checkbox"></span>
+                        <span class="oc-menu-item-text">Syntax Highlighting</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <h3>Radio Menu</h3>
+        <div class="demo-grid">
+            <div class="oc-menu" data-position="bottom-left">
+                <button class="oc-menu-trigger">Theme</button>
+                <div class="oc-menu-content">
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Light</span>
+                    </button>
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Dark</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Auto</span>
+                    </button>
+                    <div class="oc-menu-divider"></div>
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Blue</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Green</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Purple</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="oc-menu" data-position="bottom-left">
+                <button class="oc-menu-trigger">Language</button>
+                <div class="oc-menu-content">
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">English</span>
+                    </button>
+                    <button class="oc-menu-item" data-checked="true">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Spanish</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">French</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">German</span>
+                    </button>
+                    <button class="oc-menu-item">
+                        <span class="oc-menu-item-radio"></span>
+                        <span class="oc-menu-item-text">Japanese</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <h3>Submenu</h3>
+        <div class="demo-grid">
+            <div class="oc-menu" data-position="bottom-left">
+                <button class="oc-menu-trigger">File ▼</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📄</span>
+                        <span class="oc-menu-item-text">New</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">📁</span>
+                        <span class="oc-menu-item-text">Open</span>
+                    </a>
+                    <div class="oc-menu-submenu">
+                        <button class="oc-menu-item">
+                            <span class="oc-menu-item-icon">💾</span>
+                            <span class="oc-menu-item-text">Save As</span>
+                            <span class="oc-menu-submenu-arrow">▶</span>
+                        </button>
+                        <div class="oc-menu-content">
+                            <a href="#" class="oc-menu-item">
+                                <span class="oc-menu-item-text">PDF</span>
+                            </a>
+                            <a href="#" class="oc-menu-item">
+                                <span class="oc-menu-item-text">Word</span>
+                            </a>
+                            <a href="#" class="oc-menu-item">
+                                <span class="oc-menu-item-text">Excel</span>
+                            </a>
+                            <div class="oc-menu-submenu">
+                                <button class="oc-menu-item">
+                                    <span class="oc-menu-item-text">Images</span>
+                                    <span class="oc-menu-submenu-arrow">▶</span>
+                                </button>
+                                <div class="oc-menu-content">
+                                    <a href="#" class="oc-menu-item">
+                                        <span class="oc-menu-item-text">PNG</span>
+                                    </a>
+                                    <a href="#" class="oc-menu-item">
+                                        <span class="oc-menu-item-text">JPEG</span>
+                                    </a>
+                                    <a href="#" class="oc-menu-item">
+                                        <span class="oc-menu-item-text">GIF</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="oc-menu-item">
+                                <span class="oc-menu-item-text">Plain Text</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="oc-menu-divider"></div>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-icon">🖨️</span>
+                        <span class="oc-menu-item-text">Print</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Scrollable Menu</h3>
+        <div class="demo-grid">
+            <div class="oc-menu" data-position="bottom-left" data-scrollable="true">
+                <button class="oc-menu-trigger">Long List</button>
+                <div class="oc-menu-content">
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 1</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 2</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 3</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 4</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 5</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 6</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 7</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 8</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 9</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 10</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 11</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 12</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 13</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 14</span>
+                    </a>
+                    <a href="#" class="oc-menu-item">
+                        <span class="oc-menu-item-text">Item 15</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-example">
+&lt;!-- Basic menu --&gt;
+&lt;div class="oc-menu" data-position="bottom-left"&gt;
+    &lt;button class="oc-menu-trigger"&gt;Menu ▼&lt;/button&gt;
+    &lt;div class="oc-menu-content"&gt;
+        &lt;a href="#" class="oc-menu-item"&gt;
+            &lt;span class="oc-menu-item-icon"&gt;📄&lt;/span&gt;
+            &lt;span class="oc-menu-item-text"&gt;New Document&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a href="#" class="oc-menu-item"&gt;
+            &lt;span class="oc-menu-item-icon"&gt;📁&lt;/span&gt;
+            &lt;span class="oc-menu-item-text"&gt;Open File&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;div class="oc-menu-divider"&gt;&lt;/div&gt;
+        &lt;a href="#" class="oc-menu-item"&gt;
+            &lt;span class="oc-menu-item-icon"&gt;⚙️&lt;/span&gt;
+            &lt;span class="oc-menu-item-text"&gt;Preferences&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Click to open --&gt;
+&lt;div class="oc-menu" data-position="bottom-left" data-trigger="click"&gt;
+    &lt;button class="oc-menu-trigger" tabindex="0"&gt;Click Menu&lt;/button&gt;
+    &lt;div class="oc-menu-content"&gt;
+        &lt;div class="oc-menu-header"&gt;File Operations&lt;/div&gt;
+        &lt;a href="#" class="oc-menu-item"&gt;Create New&lt;/a&gt;
+        &lt;a href="#" class="oc-menu-item"&gt;Browse&lt;/a&gt;
+        &lt;div class="oc-menu-divider"&gt;&lt;/div&gt;
+        &lt;a href="#" class="oc-menu-item" data-destructive="true"&gt;Delete All&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Checkbox menu --&gt;
+&lt;div class="oc-menu" data-position="bottom-left"&gt;
+    &lt;button class="oc-menu-trigger"&gt;View Options&lt;/button&gt;
+    &lt;div class="oc-menu-content"&gt;
+        &lt;button class="oc-menu-item" data-checked="true"&gt;
+            &lt;span class="oc-menu-item-checkbox"&gt;&lt;/span&gt;
+            &lt;span class="oc-menu-item-text"&gt;Show Toolbar&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button class="oc-menu-item"&gt;
+            &lt;span class="oc-menu-item-checkbox"&gt;&lt;/span&gt;
+            &lt;span class="oc-menu-item-text"&gt;Show Sidebar&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Radio menu --&gt;
+&lt;div class="oc-menu" data-position="bottom-left"&gt;
+    &lt;button class="oc-menu-trigger"&gt;Theme&lt;/button&gt;
+    &lt;div class="oc-menu-content"&gt;
+        &lt;button class="oc-menu-item"&gt;
+            &lt;span class="oc-menu-item-radio"&gt;&lt;/span&gt;
+            &lt;span class="oc-menu-item-text"&gt;Light&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button class="oc-menu-item" data-checked="true"&gt;
+            &lt;span class="oc-menu-item-radio"&gt;&lt;/span&gt;
+            &lt;span class="oc-menu-item-text"&gt;Dark&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </div>
+    </div>
+
+    <!-- Slideer -->
+</body>
+</html>

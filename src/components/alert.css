@@ -1,0 +1,41 @@
+@layer components {
+  .oc-alert {
+    padding: var(--oc-spacing-4);
+    border-radius: var(--oc-radius-md);
+    border: 1px solid var(--oc-border-base);
+    background: var(--oc-surface-secondary);
+    color: var(--oc-text-on-secondary);
+    display: flex;
+    gap: var(--oc-spacing-3);
+    align-items: flex-start;
+    position: relative;
+    
+    &[data-variant="danger"] {
+      background: #fef2f2;
+      border-color: #fee2e2;
+      color: #991b1b;
+    }
+    
+    &[data-variant="success"] {
+      background: #f0fdf4;
+      border-color: #dcfce7;
+      color: #166534;
+    }
+    
+    &[data-variant="warning"] {
+      background: #fffbeb;
+      border-color: #fef3c7;
+      color: #92400e;
+    }
+    
+    .oc-alert-title {
+      font-weight: 600;
+      margin-bottom: var(--oc-spacing-1);
+    }
+    
+    .oc-alert-description {
+      font-size: var(--oc-font-size-sm);
+      opacity: 0.9;
+    }
+  }
+}

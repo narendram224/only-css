@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only-CSS Component Library</title>
+    <link rel="stylesheet" href="src/index.css">
+    <style>
+        body {
+            padding: 4rem;
+            font-family: var(--oc-font-sans);
+            color: var(--oc-text-base);
+            background-color: var(--oc-color-slate-50);
+        }
+        section {
+            margin-bottom: 4rem;
+        }
+        h2 {
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .dark-mode {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 2rem;
+            border-radius: var(--oc-radius-lg);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Only-CSS Component Library</h1>
+    <p style="margin-bottom: 3rem; color: var(--oc-text-muted);">A pure CSS component library with zero JavaScript and minimal footprint.</p>
+
+    <section>
+        <h2>Button Variants</h2>
+        <div class="grid">
+            <button>Default Primary</button>
+            <button data-variant="secondary">Secondary</button>
+            <button data-variant="danger">Danger</button>
+            <button data-variant="link">Link Button</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Button Styles</h2>
+        <div class="grid">
+            <button class="outline">Outline Primary</button>
+            <button data-variant="danger" class="outline">Outline Danger</button>
+            <button class="ghost">Ghost Primary</button>
+            <button data-variant="secondary" class="ghost">Ghost Secondary</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Button Shapes</h2>
+        <div class="grid">
+            <button class="rounded">Rounded Corners</button>
+            <button class="pill">Pill Shape</button>
+            <button data-variant="danger" class="pill">Danger Pill</button>
+            <button class="outline pill">Outline Pill</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Button Sizes</h2>
+        <div class="grid">
+            <button class="small">Small</button>
+            <button>Default</button>
+            <button class="large">Large</button>
+            <button class="xlarge">Extra Large</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>States</h2>
+        <div class="grid">
+            <button disabled>Disabled</button>
+            <button data-variant="danger" disabled>Disabled Danger</button>
+            <button class="outline" disabled>Disabled Outline</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Dark Mode Preview</h2>
+        <div class="dark-mode" data-theme="dark">
+            <div class="grid">
+                <button>Primary</button>
+                <button data-variant="secondary">Secondary</button>
+                <button class="outline">Outline</button>
+                <button class="ghost">Ghost</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

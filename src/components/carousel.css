@@ -1,0 +1,185 @@
+@layer components {
+  .oc-carousel {
+    /* 1. CSS Variables for easy theming */
+    --primary: var(--oc-surface-primary);
+    --primary-hover: var(--oc-surface-primary-hover);
+    --bg-surface: var(--oc-surface-secondary);
+    --text-main: var(--oc-text-base);
+    --shadow: 0 8px 24px rgb(0 0 0 / 0.08);
+
+    width: 100%;
+    overflow-x: auto;
+    margin: 3em auto;
+    display: flex;
+    gap: var(--oc-spacing-6);
+    scroll-behavior: smooth;
+    anchor-name: --carousel;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+
+    /* EDGE CASE: Standardize hidden scrollbar for Firefox */
+    scrollbar-width: none;
+
+    /* EDGE CASE: Prevent horizontal trackpad swipe from triggering browser back/forward */
+    overscroll-behavior-x: contain;
+
+    /* Give breathing room so card drop-shadows aren't clipped by overflow */
+    padding: var(--oc-spacing-4) var(--oc-spacing-2);
+  }
+
+  .oc-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* EDGE CASE: Accessibility - Respect OS preferences for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .oc-carousel {
+      scroll-behavior: auto;
+    }
+  }
+
+  .oc-carousel::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: var(--oc-spacing-3);
+    margin-top: var(--oc-spacing-4); /* Push markers down slightly */
+  }
+
+  .oc-carousel-item::scroll-marker {
+    content: "";
+    height: 10px;
+    width: 10px;
+    background: var(--oc-border-base); /* Use theme border color */
+    border-radius: 50%;
+    cursor: pointer;
+    /* Smooth transition for active states */
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .oc-carousel-item::scroll-marker:target-current {
+    background: var(--primary);
+    transform: scale(1.4); /* Elegant pop effect */
+  }
+
+  .oc-carousel::scroll-button(right),
+  .oc-carousel::scroll-button(left) {
+    content: "›";
+    border: none;
+
+    /* Stunning glassmorphism effect */
+    background: var(--oc-surface-primary);
+    backdrop-filter: blur(8px);
+
+    font-size: 1.5rem;
+    color: var(--oc-text-on-primary);
+    border-radius: 50%;
+
+    /* Perfect centering without hacky padding */
+    display: grid;
+
+    width: 34px;
+    height: 34px;
+    padding-left: 8px;
+
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --carousel;
+    position-area: right center;
+    translate: -50%;
+
+    /* width: 34px;
+    height: 34px;
+    line-height: 0;
+    padding-bottom: 4px;
+    padding-left: 8px; */
+
+    /* Smooth hover and disable transitions */
+    transition:
+      background 0.2s,
+      scale 0.2s,
+      opacity 0.3s,
+      translate 0.3s;
+    box-shadow: 0 4px 12px var(--oc-surface-primary);
+    z-index: 10;
+  }
+
+  .oc-carousel::scroll-button(left) {
+    rotate: 180deg;
+    position-area: left center;
+    translate: 50%;
+  }
+
+  /* Interactive Hover States */
+  .oc-carousel::scroll-button(right):hover,
+  .oc-carousel::scroll-button(left):hover {
+    background: var(--primary-hover);
+    scale: 1.1;
+  }
+
+  /* EDGE CASE: Fade out disabled buttons instead of keeping them visible */
+  .oc-carousel::scroll-button(right):disabled,
+  .oc-carousel::scroll-button(left):disabled {
+    opacity: 0;
+    pointer-events: none;
+    scale: 0.9;
+  }
+
+  /* EDGE CASE: Accessibility - Clear focus outlines for keyboard users */
+  .oc-carousel::scroll-button(right):focus-visible,
+  .oc-carousel::scroll-button(left):focus-visible,
+  .oc-carousel-item::scroll-marker:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+  }
+
+  .oc-carousel-item {
+    /* EDGE CASE: Center alignment is usually safer for varied screen sizes */
+    scroll-snap-align: center;
+
+    /* EDGE CASE: Prevent users from fast-swiping past multiple cards */
+    scroll-snap-stop: always;
+
+    flex: 0 0 20em;
+    aspect-ratio: 5/3;
+    background: var(--bg-surface);
+    color: var(--text-main);
+    padding: var(--oc-spacing-6);
+    border-radius: var(--oc-radius-xl);
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+
+    /* Add depth */
+    box-shadow: var(--shadow);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* Subtle lift effect on hover */
+  .oc-carousel-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px var(--oc-color-slate-900);
+  }
+
+  @media (max-width: 600px) {
+    .oc-carousel-item {
+      /* EDGE CASE: 85% instead of 92.5% leaves a sliver of the next card visible,
+         which is a vital UX cue indicating that the user can swipe horizontally */
+      flex: 0 0 85%;
+    }
+
+    .oc-carousel {
+      gap: var(--oc-spacing-4);
+    }
+
+    /* EDGE CASE: Hide arrows on mobile where swiping is intuitive and screen real estate is precious */
+    .oc-carousel::scroll-button(right),
+    .oc-carousel::scroll-button(left) {
+      display: none;
+    }
+  }
+}
