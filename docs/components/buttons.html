@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buttons - Only-CSS Component Library</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../src/index.css">
+    <link rel="stylesheet" href="../../src/components/buttons.css">
     <link rel="stylesheet" href="../utility.css">
     <link rel="stylesheet" href="../doc-base.css">
     <script src="../components/doc-header.js"></script>
@@ -30,10 +29,10 @@
                 <div class="component-preview">
                     <div class="preview-title">Basic Button</div>
                     <div class="preview-content">
-                        <button class="oc-btn">Default Button</button>
+                        <button >Default Button</button>
                     </div>
                     <code-block language="html">
-&lt;button class="oc-btn"&gt;Default Button&lt;/button&gt;
+                        <button >Default Button</button>
                     </code-block>
                 </div>
 
@@ -44,28 +43,17 @@
                 <div class="component-preview">
                     <div class="preview-title">Button Variants</div>
                     <div class="preview-content">
-                        <button class="oc-btn">Primary (Default)</button>
-                        <button class="oc-btn" data-variant="secondary">Secondary</button>
-                        <button class="oc-btn" data-variant="danger">Danger</button>
-                        <button class="oc-btn" data-variant="link">Link</button>
+                        <button>Primary (Default)</button>
+                        <button  data-variant="secondary">Secondary</button>
+                        <button  data-variant="danger">Danger</button>
+                        <button  data-variant="link">Link</button>
                     </div>
-
-                    <div class="code-wrapper">
-    <div class="code-header">
-        <span class="code-lang">HTML</span>
-        <button class="copy-btn" onclick="copyCode(this)">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            Copy
-        </button>
-    </div>
-    <pre><code class="language-html">
-&lt;button class="oc-btn"&gt;Primary (Default)&lt;/button&gt;
-&lt;button class="oc-btn" data-variant="secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="oc-btn" data-variant="danger"&gt;Danger&lt;/button&gt;
-&lt;button class="oc-btn" data-variant="link"&gt;Link&lt;/button&gt;
-    </code></pre>
-</div>
-                  
+                    <code-block language="html">
+                        <button >Primary dfdfdsf (Default)</button>
+                        <button  data-variant="secondary">Secondary</button>
+                        <button  data-variant="danger">Danger</button>
+                        <button  data-variant="link">Link</button>
+                    </code-block>
                 </div>
 
                 <!-- Styles -->
@@ -120,15 +108,15 @@
                     <div class="preview-title">Button Sizes</div>
                     <div class="preview-content">
                         <button class="small">Small</button>
-                        <button class="oc-btn">Default</button>
+                        <button >Default</button>
                         <button class="large">Large</button>
                         <button class="xlarge">Extra Large</button>
                     </div>
                     <code-block language="html">
-&lt;button class="small"&gt;Small&lt;/button&gt;
-&lt;button class="oc-btn"&gt;Default&lt;/button&gt;
-&lt;button class="large"&gt;Large&lt;/button&gt;
-&lt;button class="xlarge"&gt;Extra Large&lt;/button&gt;
+                        <button >Small</button>
+                        <button >Default</button>
+                        <button class="large">Large</button>
+                        <button class="xlarge">Extra Large</button>
                     </code-block>
                 </div>
 
@@ -139,14 +127,14 @@
                 <div class="component-preview">
                     <div class="preview-title">Button States</div>
                     <div class="preview-content">
-                        <button class="oc-btn" disabled>Disabled</button>
-                        <button class="oc-btn" data-variant="danger" disabled>Disabled Danger</button>
+                        <button  disabled>Disabled</button>
+                        <button  data-variant="danger" disabled>Disabled Danger</button>
                         <button class="outline" disabled>Disabled Outline</button>
                     </div>
                     <code-block language="html">
-&lt;button class="oc-btn" disabled&gt;Disabled&lt;/button&gt;
-&lt;button class="oc-btn" data-variant="danger" disabled&gt;Disabled Danger&lt;/button&gt;
-&lt;button class="outline" disabled&gt;Disabled Outline&lt;/button&gt;
+                        <button  disabled>Disabled</button>
+                        <button  data-variant="danger" disabled>Disabled Danger</button>
+                        <button class="outline" disabled>Disabled Outline</button>
                     </code-block>
                 </div>
 
@@ -233,15 +221,16 @@
                     <div class="preview-title">Button Group</div>
                     <div class="preview-content">
                         <div style="display: flex; gap: 0.5rem;">
-                            <button class="oc-btn">Cancel</button>
-                            <button class="oc-btn" data-variant="primary">Save</button>
+                            <button >Cancel</button>
+                            <button  data-variant="primary">Save</button>
                         </div>
                     </div>
                     <code-block language="html">
-&lt;div style="display: flex; gap: 0.5rem;"&gt;
-    &lt;button class="oc-btn"&gt;Cancel&lt;/button&gt;
-    &lt;button class="oc-btn" data-variant="primary"&gt;Save&lt;/button&gt;
-&lt;/div&gt;
+
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button >Cancel</button>
+                            <button  data-variant="primary">Save</button>
+                        </div>
                     </code-block>
                 </div>
 
@@ -255,10 +244,10 @@
                         </button>
                     </div>
                     <code-block language="html">
-&lt;button class="outline pill"&gt;
-    &lt;span style="margin-right: 0.5rem;"&gt;🔍&lt;/span&gt;
-    Search
-&lt;/button&gt;
+                        <button class="outline pill">
+                            <span style="margin-right: 0.5rem;">🔍</span>
+                            Search
+                        </button>
                     </code-block>
                 </div>
 
@@ -266,16 +255,16 @@
                 <div class="component-preview">
                     <div class="preview-title">Loading State</div>
                     <div class="preview-content">
-                        <button class="oc-btn" disabled>
+                        <button  disabled>
                             <span style="margin-right: 0.5rem;">⏳</span>
                             Loading...
                         </button>
                     </div>
                     <code-block language="html">
-&lt;button class="oc-btn" disabled&gt;
-    &lt;span style="margin-right: 0.5rem;"&gt;⏳&lt;/span&gt;
-    Loading...
-&lt;/button&gt;
+                        <button  disabled>
+                            <span style="margin-right: 0.5rem;">⏳</span>
+                           Loading
+                        </button>
                     </code-block>
                 </div>
 
@@ -326,7 +315,6 @@
         });
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script> -->
 </body>
 </html>

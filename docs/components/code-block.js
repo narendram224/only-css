@@ -1,16 +1,15 @@
+// Global tracking so we don't load Prism multiple times on the same page
+let isPrismLoading = false;
+const elementsToHighlight = [];
+
 class CodeBlock extends HTMLElement {
     connectedCallback() {
-        // Defer execution until the browser finishes parsing the children inside this tag
         setTimeout(() => {
-            // Prevent infinite loops if another script (like doc-layout) rewrites the DOM
             if (this.querySelector('.code-wrapper')) return;
 
             const language = this.getAttribute('language') || 'html';
-            
-            // Grab the raw HTML/text inside the tag
             let rawContent = this.innerHTML;
 
-            // Clean up formatting (removes extra blank lines and aligns indentation)
             let lines = rawContent.split('\n');
             if (lines.length > 0 && lines[0].trim() === '') lines.shift();
             if (lines.length > 0 && lines[lines.length - 1].trim() === '') lines.pop();
@@ -41,22 +40,62 @@ class CodeBlock extends HTMLElement {
                 </div>
             `;
             
-            // Trigger Prism highlighting
-            if (typeof Prism !== 'undefined') {
-                Prism.highlightElement(this.querySelector('code'));
-            }
+            // Call our new dynamic loader instead of assuming Prism is there
+            this.loadAndHighlight(this.querySelector('code'));
         }, 0);
     }
 
     escapeHtml(text) {
-        // Safely handles both raw HTML (<button>) and already-escaped HTML (&lt;button&gt;)
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
+
+    loadAndHighlight(codeElement) {
+        // 1. If Prism is already fully loaded, just highlight immediately
+        if (typeof Prism !== 'undefined') {
+            Prism.highlightElement(codeElement);
+            return;
+        }
+
+        // 2. Add this element to the queue to be highlighted later
+        elementsToHighlight.push(codeElement);
+
+        // 3. If we are already fetching Prism, don't fetch it again
+        if (isPrismLoading) return;
+        isPrismLoading = true;
+
+        // Inject the Prism CSS
+        if (!document.querySelector('link[href*="prism"]')) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css';
+            document.head.appendChild(link);
+        }
+
+        // Inject the Prism Core JS
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js';
+        
+        script.onload = () => {
+            // Once Core is loaded, inject the HTML/Markup language support
+            const markupScript = document.createElement('script');
+            markupScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js';
+            
+            markupScript.onload = () => {
+                // Prism is fully ready! Highlight everything in the queue
+                elementsToHighlight.forEach(el => Prism.highlightElement(el));
+                elementsToHighlight.length = 0; // Clear the queue
+            };
+            
+            document.head.appendChild(markupScript);
+        };
+        
+        document.head.appendChild(script);
+    }
 }
 
-// Global copy function
+// Global copy function (unchanged)
 function copyCode(button) {
     const codeElement = button.closest('.code-wrapper').querySelector('code');
     const text = codeElement.textContent;
@@ -76,7 +115,6 @@ function copyCode(button) {
             button.classList.remove('copied');
         }, 2000);
     }).catch(err => {
-        // Fallback for older browsers
         const textArea = document.createElement('textarea');
         textArea.value = text;
         document.body.appendChild(textArea);

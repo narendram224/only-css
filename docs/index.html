@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Only-CSS - Ultra-lightweight CSS Component Library</title>
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../src/index.css">
     <link rel="stylesheet" href="./doc-base.css">
     <script src="./components/doc-header.js"></script>
@@ -223,26 +222,23 @@ bun add only-css
                     <h2>Quick Start</h2>
                     <p>Get started with Only-CSS in just a few minutes:</p>
 
-                    <div class="code-block" data-language="html">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;My Only-CSS App&lt;/title&gt;
-    &lt;link rel="stylesheet" href="path/to/only-css/index.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class="oc-container"&gt;
-        &lt;h1&gt;Hello World!&lt;/h1&gt;
-        &lt;button&gt;Click me&lt;/button&gt;
-        &lt;div class="oc-alert"&gt;
-            &lt;div&gt;Welcome to Only-CSS!&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-                    </div>
+                    <code-block data-language="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Only-CSS App</title>
+    <!-- <link rel="stylesheet" href="path/to/only-css/index.css"> -->
+</head>
+    <div class="oc-container">
+        <h1>Hello World!</h1>
+        <button>Click me</button>
+        <div class="oc-alert">
+            <div>Welcome to Only-CSS!</div>
+        </div>
+    </div>
+
+                    </code-block>
                 </section>
 
                 <!-- Browser Support -->
@@ -349,8 +345,6 @@ bun add only-css
             document.querySelector('.sidebar').classList.toggle('open');
         }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
 
 </body>
 </html>
