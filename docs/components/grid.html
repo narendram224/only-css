@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid System - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../src/index.css">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --header-height: 60px;
+            --primary-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --code-bg: #1f2937;
+            --sidebar-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .header-nav {
+            margin-left: auto;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .header-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Layout */
+        .layout {
+            display: flex;
+            margin-top: var(--header-height);
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: var(--header-height);
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--header-height));
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 0.375rem;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+        }
+
+        .sidebar-nav a:hover {
+            background-color: var(--bg-primary);
+            color: var(--primary-color);
+        }
+
+        .sidebar-nav a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - var(--sidebar-width));
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: var(--code-bg);
+            color: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: attr(data-language);
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.75rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+        }
+
+        /* Component Preview */
+        .component-preview {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .preview-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .preview-content {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            min-height: 60px;
+        }
+
+        /* Props Table */
+        .props-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--bg-primary);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .props-table th,
+        .props-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .props-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .props-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .props-table code {
+            background: var(--code-bg);
+            color: #f3f4f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        /* Alert */
+        .alert {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .alert.info {
+            background: #dbeafe;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .alert.success {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+
+        /* Grid Demo Styles */
+        .grid-demo {
+            border: 1px dashed var(--border-color);
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid-demo > div {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            border: 2px solid var(--border-color);
+        }
+
+        .grid-demo > div:nth-child(odd) {
+            background: #f3f4f6;
+        }
+
+        .grid-demo > div:nth-child(even) {
+            background: #e5e7eb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 1rem;
+            }
+
+            .header-nav {
+                display: none;
+            }
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #f9fafb;
+                --text-secondary: #d1d5db;
+                --border-color: #374151;
+                --bg-primary: #1f2937;
+                --bg-secondary: #111827;
+                --sidebar-bg: #1f2937;
+            }
+
+            .grid-demo > div:nth-child(odd) {
+                background: #374151;
+            }
+
+            .grid-demo > div:nth-child(even) {
+                background: #4b5563;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="../index.html" class="logo">Only-CSS</a>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="#examples">Examples</a>
+            <a href="#api">API</a>
+            <a href="https://github.com/narendrakumar/only-css" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <!-- Layout -->
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Components</div>
+                <ul class="sidebar-nav">
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="grid.html" class="active">Grid System</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="alerts.html">Alerts</a></li>
+                    <li><a href="avatars.html">Avatars</a></li>
+                    <li><a href="badges.html">Badges</a></li>
+                    <li><a href="progress.html">Progress</a></li>
+                    <li><a href="toasts.html">Toasts</a></li>
+                    <li><a href="dialogs.html">Dialogs</a></li>
+                    <li><a href="dropdowns.html">Dropdowns</a></li>
+                    <li><a href="accordions.html">Accordions</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="skeletons.html">Skeletons</a></li>
+                    <li><a href="spinners.html">Spinners</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Resources</div>
+                <ul class="sidebar-nav">
+                    <li><a href="../index.html">Documentation</a></li>
+                    <li><a href="../themes.html">Themes</a></li>
+                    <li><a href="https://github.com/narendrakumar/only-css" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <h1>Grid System</h1>
+                <p>The Only-CSS grid system is a powerful, flexible 12-column grid built with CSS Grid. It provides responsive layouts with mobile-first approach and intuitive naming conventions.</p>
+
+                <div class="alert info">
+                    <strong>Good to know:</strong> The grid system uses CSS Grid for modern browser support while maintaining fallbacks for older browsers. It's designed to be lightweight and intuitive.
+                </div>
+
+                <!-- Basic Grid -->
+                <h2 id="basic-grid">Basic Grid</h2>
+                <p>The grid system is based on a 12-column layout. Use <code>.oc-row</code> for the container and <code>.oc-col-{number}</code> for columns:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Basic 3-Column Grid</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col-4">Col 4</div>
+                            <div class="oc-col-4">Col 4</div>
+                            <div class="oc-col-4">Col 4</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-4"&gt;Col 4&lt;/div&gt;
+    &lt;div class="oc-col-4"&gt;Col 4&lt;/div&gt;
+    &lt;div class="oc-col-4"&gt;Col 4&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Column Sizes -->
+                <h2 id="column-sizes">Column Sizes</h2>
+                <p>The grid supports columns from 1 to 12, plus special utilities:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Different Column Sizes</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo" style="margin-bottom: 1rem;">
+                            <div class="oc-col-2">Col 2</div>
+                            <div class="oc-col-8">Col 8</div>
+                            <div class="oc-col-2">Col 2</div>
+                        </div>
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col-3">Col 3</div>
+                            <div class="oc-col-6">Col 6</div>
+                            <div class="oc-col-3">Col 3</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;!-- Different column sizes --&gt;
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-2"&gt;Col 2&lt;/div&gt;
+    &lt;div class="oc-col-8"&gt;Col 8&lt;/div&gt;
+    &lt;div class="oc-col-2"&gt;Col 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Another example --&gt;
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-3"&gt;Col 3&lt;/div&gt;
+    &lt;div class="oc-col-6"&gt;Col 6&lt;/div&gt;
+    &lt;div class="oc-col-3"&gt;Col 3&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Offsets -->
+                <h2 id="offsets">Offsets</h2>
+                <p>Use offset classes to add spacing to the left of columns:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Grid with Offsets</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col-4">Col 4</div>
+                            <div class="oc-col-4 oc-offset-4">Col 4 + Offset 4</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-4"&gt;Col 4&lt;/div&gt;
+    &lt;div class="oc-col-4 oc-offset-4"&gt;Col 4 + Offset 4&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Responsive Grid -->
+                <h2 id="responsive-grid">Responsive Grid</h2>
+                <p>The grid system is mobile-first with responsive breakpoints. Use breakpoint prefixes for responsive behavior:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Responsive Grid (6 on desktop, 12 on mobile)</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col-6 oc-col-sm-12">6 on desktop, 12 on mobile</div>
+                            <div class="oc-col-6 oc-col-sm-12">6 on desktop, 12 on mobile</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-6 oc-col-sm-12"&gt;6 on desktop, 12 on mobile&lt;/div&gt;
+    &lt;div class="oc-col-6 oc-col-sm-12"&gt;6 on desktop, 12 on mobile&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Nested Grid -->
+                <h2 id="nested-grid">Nested Grid</h2>
+                <p>Grids can be nested inside other grid columns for complex layouts:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Nested Grid</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col-8">
+                                <div style="font-weight: 600; margin-bottom: 0.5rem;">Col 8 with nested grid:</div>
+                                <div class="oc-row grid-demo">
+                                    <div class="oc-col-6">Nested 6</div>
+                                    <div class="oc-col-6">Nested 6</div>
+                                </div>
+                            </div>
+                            <div class="oc-col-4">Col 4</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-8"&gt;
+        &lt;div&gt;Col 8 with nested grid:&lt;/div&gt;
+        &lt;div class="oc-row"&gt;
+            &lt;div class="oc-col-6"&gt;Nested 6&lt;/div&gt;
+            &lt;div class="oc-col-6"&gt;Nested 6&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="oc-col-4"&gt;Col 4&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Auto Layout -->
+                <h2 id="auto-layout">Auto Layout</h2>
+                <p>Use auto-layout columns for equal-width columns:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Auto Layout Columns</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col">Auto</div>
+                            <div class="oc-col">Auto</div>
+                            <div class="oc-col">Auto</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col"&gt;Auto&lt;/div&gt;
+    &lt;div class="oc-col"&gt;Auto&lt;/div&gt;
+    &lt;div class="oc-col"&gt;Auto&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- API Reference -->
+                <h2 id="api">API Reference</h2>
+
+                <h3>Container Classes</h3>
+                <table class="props-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>oc-row</code></td>
+                            <td>Container for grid columns, creates a flex row</td>
+                        </tr>
+                        <tr>
+                            <td><code>oc-container</code></td>
+                            <td>Fixed-width container for centering content</td>
+                        </tr>
+                        <tr>
+                            <td><code>oc-container-fluid</code></td>
+                            <td>Full-width container that spans the entire viewport</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Column Classes</h3>
+                <table class="props-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>oc-col-1</code> to <code>oc-col-12</code></td>
+                            <td>Fixed width columns (1-12 out of 12)</td>
+                        </tr>
+                        <tr>
+                            <td><code>oc-col</code></td>
+                            <td>Auto-width column that shares space equally</td>
+                        </tr>
+                        <tr>
+                            <td><code>oc-col-auto</code></td>
+                            <td>Column that takes only the space it needs</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Offset Classes</h3>
+                <table class="props-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>oc-offset-1</code> to <code>oc-offset-11</code></td>
+                            <td>Offset columns by 1-11 column widths</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Responsive Breakpoints</h3>
+                <table class="props-table">
+                    <thead>
+                        <tr>
+                            <th>Breakpoint</th>
+                            <th>Prefix</th>
+                            <th>Min Width</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Extra Small</td>
+                            <td><code>oc-col-xs-</code></td>
+                            <td>0px</td>
+                            <td>Default (mobile-first)</td>
+                        </tr>
+                        <tr>
+                            <td>Small</td>
+                            <td><code>oc-col-sm-</code></td>
+                            <td>576px</td>
+                            <td>Small screens (tablets)</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td><code>oc-col-md-</code></td>
+                            <td>768px</td>
+                            <td>Medium screens (landscape tablets)</td>
+                        </tr>
+                        <tr>
+                            <td>Large</td>
+                            <td><code>oc-col-lg-</code></td>
+                            <td>992px</td>
+                            <td>Large screens (desktops)</td>
+                        </tr>
+                        <tr>
+                            <td>Extra Large</td>
+                            <td><code>oc-col-xl-</code></td>
+                            <td>1200px</td>
+                            <td>Extra large screens</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Examples -->
+                <h2 id="examples">Examples</h2>
+
+                <h3>Common Layout Patterns</h3>
+                <div class="component-preview">
+                    <div class="preview-title">Sidebar Layout</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo" style="min-height: 200px;">
+                            <div class="oc-col-3" style="background: #e5e7eb;">Sidebar (3 cols)</div>
+                            <div class="oc-col-9" style="background: #f3f4f6;">Main Content (9 cols)</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-3"&gt;Sidebar&lt;/div&gt;
+    &lt;div class="oc-col-9"&gt;Main Content&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <h3>Card Grid Layout</h3>
+                <div class="component-preview">
+                    <div class="preview-title">Card Grid (4 columns on desktop, 2 on tablet, 1 on mobile)</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col-3 oc-col-md-6 oc-col-sm-12">Card 1</div>
+                            <div class="oc-col-3 oc-col-md-6 oc-col-sm-12">Card 2</div>
+                            <div class="oc-col-3 oc-col-md-6 oc-col-sm-12">Card 3</div>
+                            <div class="oc-col-3 oc-col-md-6 oc-col-sm-12">Card 4</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-3 oc-col-md-6 oc-col-sm-12"&gt;Card 1&lt;/div&gt;
+    &lt;div class="oc-col-3 oc-col-md-6 oc-col-sm-12"&gt;Card 2&lt;/div&gt;
+    &lt;div class="oc-col-3 oc-col-md-6 oc-col-sm-12"&gt;Card 3&lt;/div&gt;
+    &lt;div class="oc-col-3 oc-col-md-6 oc-col-sm-12"&gt;Card 4&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <h3>Centered Content</h3>
+                <div class="component-preview">
+                    <div class="preview-title">Centered Column</div>
+                    <div class="preview-content">
+                        <div class="oc-row grid-demo">
+                            <div class="oc-col-6 oc-offset-3">Centered Content (6 cols with 3 offset)</div>
+                        </div>
+                    </div>
+                    <div class="code-block" data-language="html">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-6 oc-offset-3"&gt;Centered Content&lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Best Practices -->
+                <h2 id="best-practices">Best Practices</h2>
+
+                <div class="alert success">
+                    <strong>Grid Best Practices:</strong>
+                    <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                        <li>Always use rows inside containers</li>
+                        <li>Keep column numbers consistent across rows</li>
+                        <li>Use responsive classes for mobile-first design</li>
+                        <li>Avoid nesting grids too deeply (max 2-3 levels)</li>
+                        <li>Use semantic HTML5 elements with grid classes</li>
+                    </ul>
+                </div>
+
+                <h3>Do's and Don'ts</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                    <div>
+                        <h4 style="color: #10b981; margin-bottom: 1rem;">✅ Do</h4>
+                        <ul style="color: var(--text-secondary);">
+                            <li>Use semantic HTML with grid classes</li>
+                            <li>Plan responsive breakpoints</li>
+                            <li>Keep column sums to 12 or less</li>
+                            <li>Test on all screen sizes</li>
+                            <li>Use containers for proper spacing</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #ef4444; margin-bottom: 1rem;">❌ Don't</h4>
+                        <ul style="color: var(--text-secondary);">
+                            <li>Nest grids more than 3 levels deep</li>
+                            <li>Mix fixed and auto columns unnecessarily</li>
+                            <li>Use grid for simple single-column layouts</li>
+                            <li>Override grid widths with custom CSS</li>
+                            <li>Forget to test on mobile devices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Customization -->
+                <h2 id="customization">Customization</h2>
+                <p>The grid system can be customized using CSS variables:</p>
+
+                <div class="code-block" data-language="css">
+:root {
+    /* Grid breakpoints */
+    --oc-grid-breakpoint-sm: 576px;
+    --oc-grid-breakpoint-md: 768px;
+    --oc-grid-breakpoint-lg: 992px;
+    --oc-grid-breakpoint-xl: 1200px;
+    
+    /* Grid gutters */
+    --oc-grid-gutter: 1rem;
+    --oc-grid-gutter-sm: 0.5rem;
+    --oc-grid-gutter-lg: 1.5rem;
+    
+    /* Container max widths */
+    --oc-container-sm: 540px;
+    --oc-container-md: 720px;
+    --oc-container-lg: 960px;
+    --oc-container-xl: 1140px;
+}
+                </div>
+
+                <div class="alert info">
+                    <strong>Pro Tip:</strong> You can create custom grid utilities by extending the CSS with your own classes and variables for specific project needs.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../src/index.css">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --header-height: 60px;
+            --primary-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --code-bg: #1f2937;
+            --sidebar-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .header-nav {
+            margin-left: auto;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .header-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Layout */
+        .layout {
+            display: flex;
+            margin-top: var(--header-height);
+            min-height: calc(100vh - var(--header-height));
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: var(--header-height);
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--header-height));
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 0.375rem;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+        }
+
+        .sidebar-nav a:hover {
+            background-color: var(--bg-primary);
+            color: var(--primary-color);
+        }
+
+        .sidebar-nav a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: calc(100% - var(--sidebar-width));
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Example Container */
+        .example-container {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .example-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .example-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .example-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .example-preview {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            min-height: 200px;
+        }
+
+        .example-code {
+            background: var(--code-bg);
+            color: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            position: relative;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .example-code::before {
+            content: "HTML";
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.75rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+        }
+
+        /* Live Demo Styles */
+        .demo-dashboard {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+        }
+
+        .demo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .demo-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .demo-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .demo-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .demo-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .demo-card-title {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-card-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .demo-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-primary);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .demo-table th,
+        .demo-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .demo-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .demo-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Form Demo */
+        .demo-form {
+            max-width: 500px;
+        }
+
+        .demo-form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .demo-form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+        }
+
+        .demo-form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Alert */
+        .alert {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .alert.info {
+            background: #dbeafe;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .alert.success {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 1rem;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .example-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .demo-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #f9fafb;
+                --text-secondary: #d1d5db;
+                --border-color: #374151;
+                --bg-primary: #1f2937;
+                --bg-secondary: #111827;
+                --sidebar-bg: #1f2937;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">Only-CSS</a>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#forms">Forms</a>
+            <a href="#layouts">Layouts</a>
+            <a href="https://github.com/narendrakumar/only-css" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <!-- Layout -->
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Examples</div>
+                <ul class="sidebar-nav">
+                    <li><a href="#dashboard" class="active">Dashboard Layout</a></li>
+                    <li><a href="#forms">Form Examples</a></li>
+                    <li><a href="#cards">Card Layouts</a></li>
+                    <li><a href="#navigation">Navigation</a></li>
+                    <li><a href="#tables">Data Tables</a></li>
+                    <li><a href="#landing">Landing Page</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Resources</div>
+                <ul class="sidebar-nav">
+                    <li><a href="index.html">Documentation</a></li>
+                    <li><a href="components/buttons.html">Components</a></li>
+                    <li><a href="themes.html">Themes</a></li>
+                    <li><a href="https://github.com/narendrakumar/only-css" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <h1>Live Examples</h1>
+                <p>Explore real-world examples and layouts built with Only-CSS. Each example demonstrates how components work together to create complete user interfaces.</p>
+
+                <div class="alert info">
+                    <strong>Interactive Examples:</strong> All examples are fully functional. Try interacting with buttons, forms, and navigation elements to see the components in action.
+                </div>
+
+                <!-- Dashboard Example -->
+                <section id="dashboard">
+                    <h2>Dashboard Layout</h2>
+                    <p>A modern dashboard layout with navigation, stats cards, and data tables.</p>
+
+                    <div class="example-container">
+                        <div class="example-header">
+                            <div class="example-title">📊 Analytics Dashboard</div>
+                            <div class="example-actions">
+                                <button class="small" onclick="toggleCode('dashboard-code')">View Code</button>
+                                <button class="small outline">Reset</button>
+                            </div>
+                        </div>
+
+                        <div class="example-preview">
+                            <div class="demo-dashboard">
+                                <!-- Dashboard Header -->
+                                <div class="demo-header">
+                                    <div>
+                                        <h3 style="margin-bottom: 0.5rem;">Analytics Dashboard</h3>
+                                        <p style="color: var(--text-secondary); font-size: 0.875rem;">Welcome back! Here's what's happening with your business today.</p>
+                                    </div>
+                                    <div class="demo-nav">
+                                        <a href="#" style="color: var(--primary-color);">Overview</a>
+                                        <a href="#">Reports</a>
+                                        <a href="#">Settings</a>
+                                    </div>
+                                </div>
+
+                                <!-- Stats Grid -->
+                                <div class="demo-stats">
+                                    <div class="demo-card">
+                                        <div class="demo-card-title">Total Revenue</div>
+                                        <div class="demo-card-value">$45,231</div>
+                                        <div style="color: #10b981; font-size: 0.875rem; margin-top: 0.5rem;">+12.5% from last month</div>
+                                    </div>
+                                    <div class="demo-card">
+                                        <div class="demo-card-title">Active Users</div>
+                                        <div class="demo-card-value">2,543</div>
+                                        <div style="color: #10b981; font-size: 0.875rem; margin-top: 0.5rem;">+8.2% from last month</div>
+                                    </div>
+                                    <div class="demo-card">
+                                        <div class="demo-card-title">Conversion Rate</div>
+                                        <div class="demo-card-value">3.24%</div>
+                                        <div style="color: #ef4444; font-size: 0.875rem; margin-top: 0.5rem;">-2.1% from last month</div>
+                                    </div>
+                                    <div class="demo-card">
+                                        <div class="demo-card-title">Avg. Order Value</div>
+                                        <div class="demo-card-value">$89.50</div>
+                                        <div style="color: #10b981; font-size: 0.875rem; margin-top: 0.5rem;">+5.7% from last month</div>
+                                    </div>
+                                </div>
+
+                                <!-- Data Table -->
+                                <h4 style="margin-bottom: 1rem;">Recent Transactions</h4>
+                                <table class="demo-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Customer</th>
+                                            <th>Product</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>John Doe</td>
+                                            <td>Premium Plan</td>
+                                            <td>$99.00</td>
+                                            <td><span class="oc-badge success">Completed</span></td>
+                                            <td>2024-01-15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jane Smith</td>
+                                            <td>Basic Plan</td>
+                                            <td>$29.00</td>
+                                            <td><span class="oc-badge success">Completed</span></td>
+                                            <td>2024-01-14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bob Johnson</td>
+                                            <td>Pro Plan</td>
+                                            <td>$59.00</td>
+                                            <td><span class="oc-badge warning">Pending</span></td>
+                                            <td>2024-01-14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alice Brown</td>
+                                            <td>Enterprise Plan</td>
+                                            <td>$199.00</td>
+                                            <td><span class="oc-badge danger">Failed</span></td>
+                                            <td>2024-01-13</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="example-code" id="dashboard-code" style="display: none;">
+&lt;!-- Dashboard Header --&gt;
+&lt;div class="demo-header"&gt;
+    &lt;div&gt;
+        &lt;h3&gt;Analytics Dashboard&lt;/h3&gt;
+        &lt;p&gt;Welcome back! Here's what's happening with your business today.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;nav class="demo-nav"&gt;
+        &lt;a href="#"&gt;Overview&lt;/a&gt;
+        &lt;a href="#"&gt;Reports&lt;/a&gt;
+        &lt;a href="#"&gt;Settings&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;!-- Stats Grid --&gt;
+&lt;div class="demo-stats"&gt;
+    &lt;div class="demo-card"&gt;
+        &lt;div class="demo-card-title"&gt;Total Revenue&lt;/div&gt;
+        &lt;div class="demo-card-value"&gt;$45,231&lt;/div&gt;
+        &lt;div style="color: #10b981;"&gt;+12.5% from last month&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- More stat cards... --&gt;
+&lt;/div&gt;
+
+&lt;!-- Data Table --&gt;
+&lt;table class="demo-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Customer&lt;/th&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Amount&lt;/th&gt;
+            &lt;th&gt;Status&lt;/th&gt;
+            &lt;th&gt;Date&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John Doe&lt;/td&gt;
+            &lt;td&gt;Premium Plan&lt;/td&gt;
+            &lt;td&gt;$99.00&lt;/td&gt;
+            &lt;td&gt;&lt;span class="oc-badge success"&gt;Completed&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;2024-01-15&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!-- More rows... --&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Form Examples -->
+                <section id="forms">
+                    <h2>Form Examples</h2>
+                    <p>Complete form layouts with validation, different input types, and responsive design.</p>
+
+                    <div class="example-container">
+                        <div class="example-header">
+                            <div class="example-title">📝 User Registration Form</div>
+                            <div class="example-actions">
+                                <button class="small" onclick="toggleCode('form-code')">View Code</button>
+                                <button class="small outline">Reset</button>
+                            </div>
+                        </div>
+
+                        <div class="example-preview">
+                            <div class="demo-form">
+                                <form onsubmit="handleSubmit(event)">
+                                    <div class="demo-form-group">
+                                        <label class="demo-form-label" for="name">Full Name *</label>
+                                        <input type="text" id="name" class="demo-form-input" placeholder="Enter your full name" required>
+                                    </div>
+
+                                    <div class="demo-form-group">
+                                        <label class="demo-form-label" for="email">Email Address *</label>
+                                        <input type="email" id="email" class="demo-form-input" placeholder="your@email.com" required>
+                                    </div>
+
+                                    <div class="demo-form-group">
+                                        <label class="demo-form-label" for="company">Company</label>
+                                        <input type="text" id="company" class="demo-form-input" placeholder="Your company name">
+                                    </div>
+
+                                    <div class="demo-form-group">
+                                        <label class="demo-form-label" for="plan">Subscription Plan *</label>
+                                        <select id="plan" class="demo-form-input" required>
+                                            <option value="">Select a plan</option>
+                                            <option value="basic">Basic - $29/month</option>
+                                            <option value="pro">Pro - $59/month</option>
+                                            <option value="enterprise">Enterprise - $199/month</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="demo-form-group">
+                                        <label class="demo-form-label">
+                                            <input type="checkbox" style="margin-right: 0.5rem;" required>
+                                            I agree to the Terms of Service and Privacy Policy
+                                        </label>
+                                    </div>
+
+                                    <div style="display: flex; gap: 1rem;">
+                                        <button type="submit">Create Account</button>
+                                        <button type="button" class="outline" onclick="resetForm()">Cancel</button>
+                                    </div>
+                                </form>
+
+                                <div id="form-message" style="margin-top: 1rem; display: none;"></div>
+                            </div>
+                        </div>
+
+                        <div class="example-code" id="form-code" style="display: none;">
+&lt;form class="demo-form"&gt;
+    &lt;div class="demo-form-group"&gt;
+        &lt;label class="demo-form-label" for="name"&gt;Full Name *&lt;/label&gt;
+        &lt;input type="text" id="name" class="demo-form-input" 
+               placeholder="Enter your full name" required&gt;
+    &lt;/div&gt;
+
+    &lt;div class="demo-form-group"&gt;
+        &lt;label class="demo-form-label" for="email"&gt;Email Address *&lt;/label&gt;
+        &lt;input type="email" id="email" class="demo-form-input" 
+               placeholder="your@email.com" required&gt;
+    &lt;/div&gt;
+
+    &lt;div class="demo-form-group"&gt;
+        &lt;label class="demo-form-label" for="plan"&gt;Subscription Plan *&lt;/label&gt;
+        &lt;select id="plan" class="demo-form-input" required&gt;
+            &lt;option value=""&gt;Select a plan&lt;/option&gt;
+            &lt;option value="basic"&gt;Basic - $29/month&lt;/option&gt;
+            &lt;option value="pro"&gt;Pro - $59/month&lt;/option&gt;
+            &lt;option value="enterprise"&gt;Enterprise - $199/month&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div style="display: flex; gap: 1rem;"&gt;
+        &lt;button type="submit"&gt;Create Account&lt;/button&gt;
+        &lt;button type="button" class="outline"&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Card Layouts -->
+                <section id="cards">
+                    <h2>Card Layouts</h2>
+                    <p>Various card layouts for different content types and use cases.</p>
+
+                    <div class="example-container">
+                        <div class="example-header">
+                            <div class="example-title">🎴 Product Cards</div>
+                            <div class="example-actions">
+                                <button class="small" onclick="toggleCode('cards-code')">View Code</button>
+                                <button class="small outline">Reset</button>
+                            </div>
+                        </div>
+
+                        <div class="example-preview">
+                            <div class="oc-row">
+                                <div class="oc-col-4 oc-col-md-6 oc-col-sm-12">
+                                    <div class="oc-card" style="height: 100%;">
+                                        <div class="oc-card-header">
+                                            <h3>Premium Plan</h3>
+                                            <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">$99<span style="font-size: 1rem; font-weight: 400;">/month</span></p>
+                                        </div>
+                                        <div class="oc-card-content">
+                                            <ul style="list-style: none; padding: 0;">
+                                                <li style="padding: 0.5rem 0;">✓ Unlimited users</li>
+                                                <li style="padding: 0.5rem 0;">✓ 100GB storage</li>
+                                                <li style="padding: 0.5rem 0;">✓ Priority support</li>
+                                                <li style="padding: 0.5rem 0;">✓ Advanced analytics</li>
+                                            </ul>
+                                        </div>
+                                        <div class="oc-card-footer">
+                                            <button style="width: 100%;">Get Started</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="oc-col-4 oc-col-md-6 oc-col-sm-12">
+                                    <div class="oc-card" style="height: 100%;">
+                                        <div class="oc-card-header">
+                                            <h3>Pro Plan</h3>
+                                            <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">$59<span style="font-size: 1rem; font-weight: 400;">/month</span></p>
+                                        </div>
+                                        <div class="oc-card-content">
+                                            <ul style="list-style: none; padding: 0;">
+                                                <li style="padding: 0.5rem 0;">✓ Up to 50 users</li>
+                                                <li style="padding: 0.5rem 0;">✓ 50GB storage</li>
+                                                <li style="padding: 0.5rem 0;">✓ Email support</li>
+                                                <li style="padding: 0.5rem 0;">✓ Basic analytics</li>
+                                            </ul>
+                                        </div>
+                                        <div class="oc-card-footer">
+                                            <button class="outline" style="width: 100%;">Get Started</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="oc-col-4 oc-col-md-6 oc-col-sm-12">
+                                    <div class="oc-card" style="height: 100%;">
+                                        <div class="oc-card-header">
+                                            <h3>Basic Plan</h3>
+                                            <p style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">$29<span style="font-size: 1rem; font-weight: 400;">/month</span></p>
+                                        </div>
+                                        <div class="oc-card-content">
+                                            <ul style="list-style: none; padding: 0;">
+                                                <li style="padding: 0.5rem 0;">✓ Up to 10 users</li>
+                                                <li style="padding: 0.5rem 0;">✓ 10GB storage</li>
+                                                <li style="padding: 0.5rem 0;">✓ Community support</li>
+                                                <li style="padding: 0.5rem 0;">✓ Basic features</li>
+                                            </ul>
+                                        </div>
+                                        <div class="oc-card-footer">
+                                            <button class="ghost" style="width: 100%;">Get Started</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="example-code" id="cards-code" style="display: none;">
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-4 oc-col-md-6 oc-col-sm-12"&gt;
+        &lt;div class="oc-card"&gt;
+            &lt;div class="oc-card-header"&gt;
+                &lt;h3&gt;Premium Plan&lt;/h3&gt;
+                &lt;p&gt;$99/month&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="oc-card-content"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;✓ Unlimited users&lt;/li&gt;
+                    &lt;li&gt;✓ 100GB storage&lt;/li&gt;
+                    &lt;li&gt;✓ Priority support&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="oc-card-footer"&gt;
+                &lt;button&gt;Get Started&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- More cards... --&gt;
+&lt;/div&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation -->
+                <section id="navigation">
+                    <h2>Navigation Examples</h2>
+                    <p>Different navigation patterns including headers, sidebars, and breadcrumbs.</p>
+
+                    <div class="example-container">
+                        <div class="example-header">
+                            <div class="example-title">🧭 Multi-Level Navigation</div>
+                            <div class="example-actions">
+                                <button class="small" onclick="toggleCode('nav-code')">View Code</button>
+                                <button class="small outline">Reset</button>
+                            </div>
+                        </div>
+
+                        <div class="example-preview">
+                            <!-- Breadcrumb -->
+                            <div style="margin-bottom: 2rem;">
+                                <nav style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem;">
+                                    <a href="#" style="color: var(--text-secondary); text-decoration: none;">Home</a>
+                                    <span style="color: var(--text-secondary);">/</span>
+                                    <a href="#" style="color: var(--text-secondary); text-decoration: none;">Products</a>
+                                    <span style="color: var(--text-secondary);">/</span>
+                                    <span style="color: var(--text-primary); font-weight: 500;">Electronics</span>
+                                </nav>
+                            </div>
+
+                            <!-- Tab Navigation -->
+                            <div class="tab-container" data-variant="pills" data-orientation="horizontal" data-size="md" style="--tab-count: 4">
+                                <details class="item" name="nav-tabs" open style="--n: 1">
+                                    <summary class="subitem">
+                                        <span class="label">Overview</span>
+                                    </summary>
+                                    <div class="content-wrapper">
+                                        <h4>Overview Content</h4>
+                                        <p>This is the overview tab content with general information.</p>
+                                    </div>
+                                </details>
+                                <details class="item" name="nav-tabs" style="--n: 2">
+                                    <summary class="subitem">
+                                        <span class="label">Features</span>
+                                    </summary>
+                                    <div class="content-wrapper">
+                                        <h4>Features Content</h4>
+                                        <p>Detailed features and capabilities are listed here.</p>
+                                    </div>
+                                </details>
+                                <details class="item" name="nav-tabs" style="--n: 3">
+                                    <summary class="subitem">
+                                        <span class="label">Pricing</span>
+                                    </summary>
+                                    <div class="content-wrapper">
+                                        <h4>Pricing Content</h4>
+                                        <p>Pricing plans and options are displayed in this tab.</p>
+                                    </div>
+                                </details>
+                                <details class="item" name="nav-tabs" style="--n: 4">
+                                    <summary class="subitem">
+                                        <span class="label">Support</span>
+                                    </summary>
+                                    <div class="content-wrapper">
+                                        <h4>Support Content</h4>
+                                        <p>Support options and contact information.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <div class="example-code" id="nav-code" style="display: none;">
+&lt;!-- Breadcrumb Navigation --&gt;
+&lt;nav&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;span&gt;/&lt;/span&gt;
+    &lt;a href="#"&gt;Products&lt;/a&gt;
+    &lt;span&gt;/&lt;/span&gt;
+    &lt;span&gt;Electronics&lt;/span&gt;
+&lt;/nav&gt;
+
+&lt;!-- Tab Navigation --&gt;
+&lt;div class="tab-container" data-variant="pills"&gt;
+    &lt;details class="item" name="nav-tabs" open&gt;
+        &lt;summary class="subitem"&gt;
+            &lt;span class="label"&gt;Overview&lt;/span&gt;
+        &lt;/summary&gt;
+        &lt;div class="content-wrapper"&gt;
+            &lt;h4&gt;Overview Content&lt;/h4&gt;
+            &lt;p&gt;Tab content goes here...&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/details&gt;
+    &lt;!-- More tabs... --&gt;
+&lt;/div&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Landing Page -->
+                <section id="landing">
+                    <h2>Landing Page Layout</h2>
+                    <p>A complete landing page layout with hero section, features, and call-to-action.</p>
+
+                    <div class="example-container">
+                        <div class="example-header">
+                            <div class="example-title">🚀 SaaS Landing Page</div>
+                            <div class="example-actions">
+                                <button class="small" onclick="toggleCode('landing-code')">View Code</button>
+                                <button class="small outline">Reset</button>
+                            </div>
+                        </div>
+
+                        <div class="example-preview">
+                            <!-- Hero Section -->
+                            <div style="text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 1rem; margin-bottom: 2rem;">
+                                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Build Something Amazing</h1>
+                                <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">The only CSS framework you'll ever need. Fast, responsive, and beautiful.</p>
+                                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                                    <button style="font-size: 1.125rem; padding: 0.75rem 2rem;">Get Started Free</button>
+                                    <button class="outline" style="font-size: 1.125rem; padding: 0.75rem 2rem; background: transparent; border-color: white; color: white;">View Demo</button>
+                                </div>
+                            </div>
+
+                            <!-- Features Grid -->
+                            <div class="oc-row" style="margin-bottom: 2rem;">
+                                <div class="oc-col-4 oc-col-md-6 oc-col-sm-12">
+                                    <div style="text-align: center; padding: 2rem;">
+                                        <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
+                                        <h3>Lightning Fast</h3>
+                                        <p style="color: var(--text-secondary);">Optimized for performance with minimal CSS and zero JavaScript.</p>
+                                    </div>
+                                </div>
+                                <div class="oc-col-4 oc-col-md-6 oc-col-sm-12">
+                                    <div style="text-align: center; padding: 2rem;">
+                                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+                                        <h3>Beautiful Design</h3>
+                                        <p style="color: var(--text-secondary);">Modern, clean components that look great out of the box.</p>
+                                    </div>
+                                </div>
+                                <div class="oc-col-4 oc-col-md-6 oc-col-sm-12">
+                                    <div style="text-align: center; padding: 2rem;">
+                                        <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                                        <h3>Mobile First</h3>
+                                        <p style="color: var(--text-secondary);">Responsive design that works perfectly on all devices.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA Section -->
+                            <div style="text-align: center; padding: 3rem 2rem; background: var(--bg-secondary); border-radius: 1rem;">
+                                <h2 style="margin-bottom: 1rem;">Ready to Get Started?</h2>
+                                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Join thousands of developers building amazing interfaces.</p>
+                                <button style="font-size: 1.125rem; padding: 0.75rem 2rem;">Start Free Trial</button>
+                            </div>
+                        </div>
+
+                        <div class="example-code" id="landing-code" style="display: none;">
+&lt;!-- Hero Section --&gt;
+&lt;div style="text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"&gt;
+    &lt;h1&gt;Build Something Amazing&lt;/h1&gt;
+    &lt;p&gt;The only CSS framework you'll ever need.&lt;/p&gt;
+    &lt;div&gt;
+        &lt;button&gt;Get Started Free&lt;/button&gt;
+        &lt;button class="outline"&gt;View Demo&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Features Grid --&gt;
+&lt;div class="oc-row"&gt;
+    &lt;div class="oc-col-4"&gt;
+        &lt;div style="text-align: center; padding: 2rem;"&gt;
+            &lt;div style="font-size: 3rem;"&gt;⚡&lt;/div&gt;
+            &lt;h3&gt;Lightning Fast&lt;/h3&gt;
+            &lt;p&gt;Optimized for performance.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- More features... --&gt;
+&lt;/div&gt;
+                        </div>
+                    </div>
+                </section>
+
+                <div class="alert success">
+                    <strong>Try It Yourself:</strong> All examples are interactive. Click buttons, fill out forms, and navigate through tabs to see how the components behave in real scenarios.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle code visibility
+        function toggleCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            if (codeElement) {
+                codeElement.style.display = codeElement.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.innerHTML = `
+                <div class="oc-alert" data-variant="success">
+                    <div>
+                        <div class="oc-alert-title">Success!</div>
+                        <div class="oc-alert-description">Your form has been submitted successfully.</div>
+                    </div>
+                </div>
+            `;
+            messageDiv.style.display = 'block';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Reset form
+        function resetForm() {
+            document.querySelector('.demo-form').reset();
+            document.getElementById('form-message').style.display = 'none';
+        }
+
+        // Sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Update active state
+                        document.querySelectorAll('.sidebar-nav a').forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Update active sidebar item based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.sidebar-nav a').forEach(l => l.classList.remove('active'));
+                    const activeLink = document.querySelector(`.sidebar-nav a[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

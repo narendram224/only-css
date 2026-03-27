@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only-CSS - Ultra-lightweight CSS Component Library</title>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../src/index.css">
+    <link rel="stylesheet" href="./doc-base.css">
+    <script src="./components/doc-header.js"></script>
+    <script src="./components/doc-sidebar.js"></script>
+    <script src="./components/doc-layout.js"></script>
+    <script src="./components/code-block.js"></script>
+    <style>
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            color: var(--text-white);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Installation Box */
+        .install-box {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 1px solid #d1d5db;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .install-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+                <!-- Hero Section -->
+                <section class="hero">
+                    <h1>Only-CSS</h1>
+                    <p>Ultra-lightweight CSS component library with zero JavaScript dependencies</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">~20KB</div>
+                            <div class="stat-label">Minified CSS</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">JavaScript Dependencies</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">21+</div>
+                            <div class="stat-label">Components</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Introduction -->
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>Only-CSS is a modern, lightweight CSS component library that helps you build beautiful web interfaces faster. With zero JavaScript dependencies and a focus on semantic HTML, it provides everything you need to create responsive, accessible websites.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-title">Lightweight</div>
+                            <div class="feature-description">Only ~20KB minified CSS with zero JavaScript bloat. Load times are incredibly fast.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-title">Modern Design</div>
+                            <div class="feature-description">Clean, modern components with consistent design system and smooth animations.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <div class="feature-title">Responsive</div>
+                            <div class="feature-description">Mobile-first approach with responsive grid system and flexible components.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">♿</div>
+                            <div class="feature-title">Accessible</div>
+                            <div class="feature-description">Built with semantic HTML5 and ARIA attributes for maximum accessibility.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌙</div>
+                            <div class="feature-title">Dark Mode</div>
+                            <div class="feature-description">Built-in dark mode support that respects user preferences.</div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔧</div>
+                            <div class="feature-title">Customizable</div>
+                            <div class="feature-description">Easy to customize with CSS variables and modular component imports.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Installation -->
+                <section id="installation">
+                    <h2>Installation</h2>
+                    
+                    <div class="install-box">
+                        <div class="install-title">Option 1: CDN (Recommended for quick start)</div>
+                        <!-- <div class="code-block" data-language="html">
+&lt;!-- Include Only-CSS from CDN --&gt;
+&lt;link rel="stylesheet" href="https://unpkg.com/only-css@latest/dist/index.css"&gt;
+                        </div> -->
+                        <code-block data-language="html">
+!-- Include Only-CSS from CDN ;
+link rel="stylesheet" href="https://unpkg.com/only-css@latest/dist/index.css"
+                        </code-block>
+                    </div>
+
+                    <div class="install-box">
+                        <div class="install-title">Option 2: NPM/Yarn</div>
+                        <div class="code-block" data-language="bash">
+# Using npm
+npm install only-css
+
+# Using yarn
+yarn add only-css
+
+# Using bun
+bun add only-css
+                        </div>
+                    </div>
+
+                    <div class="install-box">
+                        <div class="install-title">Option 3: Download</div>
+                        <p>Download the latest release from GitHub and include the CSS file in your project.</p>
+                    </div>
+                </section>
+
+                <!-- Quick Start -->
+                <section id="quick-start">
+                    <h2>Quick Start</h2>
+                    <p>Get started with Only-CSS in just a few minutes:</p>
+
+                    <div class="code-block" data-language="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Only-CSS App&lt;/title&gt;
+    &lt;link rel="stylesheet" href="path/to/only-css/index.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="oc-container"&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+        &lt;button&gt;Click me&lt;/button&gt;
+        &lt;div class="oc-alert"&gt;
+            &lt;div&gt;Welcome to Only-CSS!&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </div>
+                </section>
+
+                <!-- Browser Support -->
+                <section id="browser-support">
+                    <h2>Browser Support</h2>
+                    <p>Only-CSS supports all modern browsers:</p>
+                    <ul>
+                        <li>Chrome 60+</li>
+                        <li>Firefox 55+</li>
+                        <li>Safari 12+</li>
+                        <li>Edge 79+</li>
+                    </ul>
+                    <p><strong>Note:</strong> Some components use modern CSS features like CSS Grid, Custom Properties, and :focus-within. Ensure your target browsers support these features.</p>
+                </section>
+
+                <!-- Components Preview -->
+                <section id="components">
+                    <h2>Components</h2>
+                    <p>Only-CSS includes 21+ ready-to-use components. Here's a preview of what's available:</p>
+
+                    <!-- Buttons Preview -->
+                    <div class="component-preview">
+                        <div class="preview-title">Buttons</div>
+                        <div class="preview-content">
+                            <button>Default</button>
+                            <button data-variant="secondary">Secondary</button>
+                            <button data-variant="danger">Danger</button>
+                            <button class="outline">Outline</button>
+                            <button class="ghost">Ghost</button>
+                            <button class="pill">Pill</button>
+                        </div>
+                        <p><a href="#buttons">View full documentation →</a></p>
+                    </div>
+
+                    <!-- Grid Preview -->
+                    <div class="component-preview">
+                        <div class="preview-title">Grid System</div>
+                        <div class="preview-content">
+                            <div class="oc-row">
+                                <div class="oc-col-4" style="background: #e5e7eb; padding: 1rem; text-align: center;">Col 4</div>
+                                <div class="oc-col-4" style="background: #d1d5db; padding: 1rem; text-align: center;">Col 4</div>
+                                <div class="oc-col-4" style="background: #e5e7eb; padding: 1rem; text-align: center;">Col 4</div>
+                            </div>
+                        </div>
+                        <p><a href="#grid">View full documentation →</a></p>
+                    </div>
+
+                    <!-- Alert Preview -->
+                    <div class="component-preview">
+                        <div class="preview-title">Alerts</div>
+                        <div class="preview-content">
+                            <div class="oc-alert">
+                                <div>
+                                    <div class="oc-alert-title">Default Alert</div>
+                                    <div class="oc-alert-description">This is a default alert message.</div>
+                                </div>
+                            </div>
+                            <div class="oc-alert" data-variant="success">
+                                <div>
+                                    <div class="oc-alert-title">Success Alert</div>
+                                    <div class="oc-alert-description">Operation completed successfully!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p><a href="#alerts">View full documentation →</a></p>
+                    </div>
+                </section>
+
+                <!-- Call to Action -->
+                <section style="text-align: center; padding: 3rem 0;">
+                    <h2>Ready to get started?</h2>
+                    <p style="margin-bottom: 2rem;">Explore all components and start building beautiful interfaces today.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button style="font-size: 1rem; padding: 0.75rem 2rem;">View All Components</button>
+                        <button class="outline" style="font-size: 1rem; padding: 0.75rem 2rem;">View on GitHub</button>
+                    </div>
+                </section>
+            </div>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.sidebar-nav a').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Smooth scroll to section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Mobile sidebar toggle (if needed)
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+
+</body>
+</html>

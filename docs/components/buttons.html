@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons - Only-CSS Component Library</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../src/index.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+                <h1>Buttons</h1>
+                <p>Buttons are the primary interactive elements in any interface. Only-CSS provides a comprehensive button system with multiple variants, sizes, and styles.</p>
+
+                <div class="alert">
+                    <strong>Good to know:</strong> Buttons use semantic HTML <code>&lt;button&gt;</code> elements by default, ensuring maximum accessibility and keyboard navigation.
+                </div>
+
+                <!-- Basic Usage -->
+                <h2 id="basic-usage">Basic Usage</h2>
+                <p>The simplest way to create a button is to use the <code>&lt;button&gt;</code> element:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Basic Button</div>
+                    <div class="preview-content">
+                        <button class="oc-btn">Default Button</button>
+                    </div>
+                    <code-block language="html">
+&lt;button class="oc-btn"&gt;Default Button&lt;/button&gt;
+                    </code-block>
+                </div>
+
+                <!-- Variants -->
+                <h2 id="variants">Variants</h2>
+                <p>Buttons come in several semantic variants using the <code>data-variant</code> attribute:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Button Variants</div>
+                    <div class="preview-content">
+                        <button class="oc-btn">Primary (Default)</button>
+                        <button class="oc-btn" data-variant="secondary">Secondary</button>
+                        <button class="oc-btn" data-variant="danger">Danger</button>
+                        <button class="oc-btn" data-variant="link">Link</button>
+                    </div>
+
+                    <div class="code-wrapper">
+    <div class="code-header">
+        <span class="code-lang">HTML</span>
+        <button class="copy-btn" onclick="copyCode(this)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+        </button>
+    </div>
+    <pre><code class="language-html">
+&lt;button class="oc-btn"&gt;Primary (Default)&lt;/button&gt;
+&lt;button class="oc-btn" data-variant="secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="oc-btn" data-variant="danger"&gt;Danger&lt;/button&gt;
+&lt;button class="oc-btn" data-variant="link"&gt;Link&lt;/button&gt;
+    </code></pre>
+</div>
+                  
+                </div>
+
+                <!-- Styles -->
+                <h2 id="styles">Styles</h2>
+                <p>Buttons can be styled with different visual approaches using CSS classes:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Button Styles</div>
+                    <div class="preview-content">
+                        <button class="outline">Outline Primary</button>
+                        <button class="outline" data-variant="danger">Outline Danger</button>
+                        <button class="ghost">Ghost Primary</button>
+                        <button class="ghost" data-variant="secondary">Ghost Secondary</button>
+                    </div>
+                    <code-block language="html">
+                        <button class="outline">Outline Primary</button>
+                        <button class="outline" data-variant="danger">Outline Danger</button>
+                        <button class="ghost">Ghost Primary</button>
+                        <button class="ghost" data-variant="secondary">Ghost Secondary</button>
+                    </code-block>
+                </div>
+
+                <!-- Shapes -->
+                <h2 id="shapes">Shapes</h2>
+                <p>Customize button appearance with different shapes:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Button Shapes</div>
+                    <div class="preview-content">
+                        <button class="rounded">Roundedddd</button>
+                        <button class="pill">Pill</button>
+                        <button class="pill" data-variant="danger">Danger Pill</button>
+                        <button class="outline pill">Outline Pill</button>
+                    
+                     <button data-variant="secondary">Secondary</button>
+        <button data-variant="danger">Danger</button>
+        <button data-variant="link">Link</button>
+                    </div>
+                    <code-block language="html">
+<button class="rounded">Rounded</button>
+<button class="pill">Pill</button>
+<button class="pill" data-variant="danger">Danger Pill</button>
+<button class="outline pill">Outline Pill</button>
+                    </code-block>
+                </div>
+
+                <!-- Sizes -->
+                <h2 id="sizes">Sizes</h2>
+                <p>Buttons come in four predefined sizes:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Button Sizes</div>
+                    <div class="preview-content">
+                        <button class="small">Small</button>
+                        <button class="oc-btn">Default</button>
+                        <button class="large">Large</button>
+                        <button class="xlarge">Extra Large</button>
+                    </div>
+                    <code-block language="html">
+&lt;button class="small"&gt;Small&lt;/button&gt;
+&lt;button class="oc-btn"&gt;Default&lt;/button&gt;
+&lt;button class="large"&gt;Large&lt;/button&gt;
+&lt;button class="xlarge"&gt;Extra Large&lt;/button&gt;
+                    </code-block>
+                </div>
+
+                <!-- States -->
+                <h2 id="states">States</h2>
+                <p>Buttons automatically handle different states, including disabled state:</p>
+
+                <div class="component-preview">
+                    <div class="preview-title">Button States</div>
+                    <div class="preview-content">
+                        <button class="oc-btn" disabled>Disabled</button>
+                        <button class="oc-btn" data-variant="danger" disabled>Disabled Danger</button>
+                        <button class="outline" disabled>Disabled Outline</button>
+                    </div>
+                    <code-block language="html">
+&lt;button class="oc-btn" disabled&gt;Disabled&lt;/button&gt;
+&lt;button class="oc-btn" data-variant="danger" disabled&gt;Disabled Danger&lt;/button&gt;
+&lt;button class="outline" disabled&gt;Disabled Outline&lt;/button&gt;
+                    </code-block>
+                </div>
+
+                <!-- API Reference -->
+                <h2 id="api">API Reference</h2>
+
+                <h3>Attributes</h3>
+                <table class="props-table">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>data-variant</code></td>
+                            <td>string</td>
+                            <td><code>"primary"</code></td>
+                            <td>Button variant: <code>"primary"</code>, <code>"secondary"</code>, <code>"danger"</code>, <code>"link"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>disabled</code></td>
+                            <td>boolean</td>
+                            <td><code>false</code></td>
+                            <td>Disables the button and prevents interaction</td>
+                        </tr>
+                        <tr>
+                            <td><code>type</code></td>
+                            <td>string</td>
+                            <td><code>"button"</code></td>
+                            <td>HTML button type: <code>"button"</code>, <code>"submit"</code>, <code>"reset"</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>CSS Classes</h3>
+                <table class="props-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>small</code></td>
+                            <td>Makes the button small</td>
+                        </tr>
+                        <tr>
+                            <td><code>large</code></td>
+                            <td>Makes the button large</td>
+                        </tr>
+                        <tr>
+                            <td><code>xlarge</code></td>
+                            <td>Makes the button extra large</td>
+                        </tr>
+                        <tr>
+                            <td><code>outline</code></td>
+                            <td>Applies outline style</td>
+                        </tr>
+                        <tr>
+                            <td><code>ghost</code></td>
+                            <td>Applies ghost style</td>
+                        </tr>
+                        <tr>
+                            <td><code>rounded</code></td>
+                            <td>Applies rounded corners</td>
+                        </tr>
+                        <tr>
+                            <td><code>pill</code></td>
+                            <td>Applies pill shape</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Examples -->
+                <h2 id="examples">Examples</h2>
+
+                <h3>Button Group</h3>
+                <div class="component-preview">
+                    <div class="preview-title">Button Group</div>
+                    <div class="preview-content">
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="oc-btn">Cancel</button>
+                            <button class="oc-btn" data-variant="primary">Save</button>
+                        </div>
+                    </div>
+                    <code-block language="html">
+&lt;div style="display: flex; gap: 0.5rem;"&gt;
+    &lt;button class="oc-btn"&gt;Cancel&lt;/button&gt;
+    &lt;button class="oc-btn" data-variant="primary"&gt;Save&lt;/button&gt;
+&lt;/div&gt;
+                    </code-block>
+                </div>
+
+                <h3>Icon Button</h3>
+                <div class="component-preview">
+                    <div class="preview-title">Icon Button</div>
+                    <div class="preview-content">
+                        <button class="outline pill">
+                            <span style="margin-right: 0.5rem;">🔍</span>
+                            Search
+                        </button>
+                    </div>
+                    <code-block language="html">
+&lt;button class="outline pill"&gt;
+    &lt;span style="margin-right: 0.5rem;"&gt;🔍&lt;/span&gt;
+    Search
+&lt;/button&gt;
+                    </code-block>
+                </div>
+
+                <h3>Loading State</h3>
+                <div class="component-preview">
+                    <div class="preview-title">Loading State</div>
+                    <div class="preview-content">
+                        <button class="oc-btn" disabled>
+                            <span style="margin-right: 0.5rem;">⏳</span>
+                            Loading...
+                        </button>
+                    </div>
+                    <code-block language="html">
+&lt;button class="oc-btn" disabled&gt;
+    &lt;span style="margin-right: 0.5rem;"&gt;⏳&lt;/span&gt;
+    Loading...
+&lt;/button&gt;
+                    </code-block>
+                </div>
+
+                <!-- Accessibility -->
+                <h2 id="accessibility">Accessibility</h2>
+                <div class="alert info">
+                    <strong>Accessibility Features:</strong>
+                    <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                        <li>Keyboard navigation support (Tab, Enter, Space)</li>
+                        <li>Screen reader friendly with semantic HTML</li>
+                        <li>Focus states clearly visible</li>
+                        <li>Disabled state properly communicated</li>
+                    </ul>
+                </div>
+
+                <h3>Best Practices</h3>
+                <ul>
+                    <li>Always use semantic <code>&lt;button&gt;</code> elements for actions</li>
+                    <li>Provide clear, descriptive button text</li>
+                    <li>Don't rely solely on color to convey button state</li>
+                    <li>Ensure sufficient color contrast for text</li>
+                    <li>Use appropriate button types in forms (<code>type="submit"</code> for form submission)</li>
+                </ul>
+
+                <!-- CSS Variables -->
+                <h2 id="customization">Customization</h2>
+                <p>Buttons can be customized using CSS variables:</p>
+
+                <div class="alert success">
+                    <strong>Pro Tip:</strong> You can create custom button variants by extending the CSS with your own classes and variables.
+                </div>
+            </div>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</body>
+</html>
