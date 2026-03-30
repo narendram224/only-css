@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/dropdown.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Dropdown</h1>
+        <p>Dropdowns are toggleable menus that allow users to select from a list of options. Only-CSS provides dropdown components using pure CSS with :focus-within for accessibility.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Dropdowns work without JavaScript using CSS :focus-within pseudo-class, ensuring keyboard accessibility and screen reader support.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a dropdown is to use the <code>oc-dropdown</code> class with proper structure:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Dropdown</div>
+            <div class="preview-content">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">Select Option</button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">Option 1</a>
+                        <a href="#" class="oc-dropdown-item">Option 2</a>
+                        <a href="#" class="oc-dropdown-item">Option 3</a>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">Select Option</button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">Option 1</a>
+                        <a href="#" class="oc-dropdown-item">Option 2</a>
+                        <a href="#" class="oc-dropdown-item">Option 3</a>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>User Menu Dropdown</h3>
+        <div class="component-preview">
+            <div class="preview-title">User Menu Dropdown</div>
+            <div class="preview-content">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">
+                        <span>👤 John Doe</span>
+                    </button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">👤 Profile</a>
+                        <a href="#" class="oc-dropdown-item">⚙️ Settings</a>
+                        <div class="oc-dropdown-divider"></div>
+                        <a href="#" class="oc-dropdown-item">🚪 Logout</a>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">
+                        <span>👤 John Doe</span>
+                    </button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">👤 Profile</a>
+                        <a href="#" class="oc-dropdown-item">⚙️ Settings</a>
+                        <div class="oc-dropdown-divider"></div>
+                        <a href="#" class="oc-dropdown-item">🚪 Logout</a>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Navigation Dropdown</h3>
+        <div class="component-preview">
+            <div class="preview-title">Navigation Dropdown</div>
+            <div class="preview-content">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">Products ▼</button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">Laptops</a>
+                        <a href="#" class="oc-dropdown-item">Smartphones</a>
+                        <a href="#" class="oc-dropdown-item">Tablets</a>
+                        <a href="#" class="oc-dropdown-item">Accessories</a>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">Products ▼</button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">Laptops</a>
+                        <a href="#" class="oc-dropdown-item">Smartphones</a>
+                        <a href="#" class="oc-dropdown-item">Tablets</a>
+                        <a href="#" class="oc-dropdown-item">Accessories</a>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Actions Dropdown</h3>
+        <div class="component-preview">
+            <div class="preview-title">Actions Dropdown</div>
+            <div class="preview-content">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">⋮ Actions</button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">✏️ Edit</a>
+                        <a href="#" class="oc-dropdown-item">📋 Copy</a>
+                        <a href="#" class="oc-dropdown-item">📤 Share</a>
+                        <div class="oc-dropdown-divider"></div>
+                        <a href="#" class="oc-dropdown-item">🗑️ Delete</a>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-dropdown">
+                    <button class="oc-dropdown-trigger">⋮ Actions</button>
+                    <div class="oc-dropdown-menu">
+                        <a href="#" class="oc-dropdown-item">✏️ Edit</a>
+                        <a href="#" class="oc-dropdown-item">📋 Copy</a>
+                        <a href="#" class="oc-dropdown-item">📤 Share</a>
+                        <div class="oc-dropdown-divider"></div>
+                        <a href="#" class="oc-dropdown-item">🗑️ Delete</a>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-dropdown</code></td>
+                    <td>Base dropdown container class</td>
+                </tr>
+                <tr>
+                    <td><code>oc-dropdown-trigger</code></td>
+                    <td>Dropdown trigger button</td>
+                </tr>
+                <tr>
+                    <td><code>oc-dropdown-menu</code></td>
+                    <td>Dropdown menu container</td>
+                </tr>
+                <tr>
+                    <td><code>oc-dropdown-item</code></td>
+                    <td>Individual menu item</td>
+                </tr>
+                <tr>
+                    <td><code>oc-dropdown-divider</code></td>
+                    <td>Visual separator between items</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>CSS :focus-within for keyboard navigation</li>
+                <li>Semantic HTML structure</li>
+                <li>Screen reader friendly</li>
+                <li>Focus management handled by CSS</li>
+                <li>High contrast colors</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use clear, descriptive trigger text</li>
+            <li>Group related items logically</li>
+            <li>Use dividers to separate item groups</li>
+            <li>Test with keyboard navigation</li>
+            <li>Ensure sufficient color contrast</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Keep dropdown menus concise (5-7 items maximum) for better usability. Use sub-menus for complex hierarchies.
+        </div>
+
+        <h3>When to Use Dropdowns</h3>
+        <ul>
+            <li><strong>Navigation:</strong> Site navigation menus</li>
+            <li><strong>Actions:</strong> Contextual actions for items</li>
+            <li><strong>Forms:</strong> Select from predefined options</li>
+            <li><strong>Settings:</strong> Configuration choices</li>
+            <li><strong>Filters:</strong> Content filtering options</li>
+        </ul>
+
+        <h3>Content Guidelines</h3>
+        <ul>
+            <li>Keep item text short and clear</li>
+            <li>Use consistent ordering</li>
+            <li>Group related items together</li>
+            <li>Use icons for quick recognition</li>
+            <li>Consider mobile touch targets</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

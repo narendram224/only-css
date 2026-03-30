@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/alert.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Alert</h1>
+        <p>Alerts are used to communicate important messages to users, including success, warning, danger, and informational messages. Only-CSS provides semantic alert components with proper visual hierarchy and accessibility.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Alerts use semantic HTML with proper ARIA attributes for screen readers and keyboard navigation.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create an alert is to use the <code>oc-alert</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Alert</div>
+            <div class="preview-content">
+                <div class="oc-alert">
+                    This is a default alert message.
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-alert">
+                    This is a default alert message.
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Variants -->
+        <h2 id="variants">Variants</h2>
+        <p>Alerts come in several semantic variants using the <code>data-variant</code> attribute:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Alert Variants</div>
+            <div class="preview-content">
+                <div class="oc-alert" data-variant="danger">
+                    <strong>Error:</strong> Something went wrong. Please try again.
+                </div>
+                <div class="oc-alert" data-variant="success">
+                    <strong>Success:</strong> Your changes have been saved successfully.
+                </div>
+                <div class="oc-alert" data-variant="warning">
+                    <strong>Warning:</strong> Your session will expire in 5 minutes.
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-alert" data-variant="danger">
+                    <strong>Error:</strong> Something went wrong. Please try again.
+                </div>
+                <div class="oc-alert" data-variant="success">
+                    <strong>Success:</strong> Your changes have been saved successfully.
+                </div>
+                <div class="oc-alert" data-variant="warning">
+                    <strong>Warning:</strong> Your session will expire in 5 minutes.
+                </div>
+            </code-block>
+        </div>
+
+        <!-- With Title and Description -->
+        <h2 id="structured">Structured Alerts</h2>
+        <p>Alerts can have structured content with titles and descriptions:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Structured Alert</div>
+            <div class="preview-content">
+                <div class="oc-alert" data-variant="success">
+                    <div class="oc-alert-title">Operation Successful</div>
+                    <div class="oc-alert-description">
+                        Your data has been processed and saved to the database. You can now continue with your work.
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-alert" data-variant="success">
+                    <div class="oc-alert-title">Operation Successful</div>
+                    <div class="oc-alert-description">
+                        Your data has been processed and saved to the database. You can now continue with your work.
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Form Validation Alert</h3>
+        <div class="component-preview">
+            <div class="preview-title">Form Validation Alert</div>
+            <div class="preview-content">
+                <div class="oc-alert" data-variant="danger">
+                    <div class="oc-alert-title">Validation Error</div>
+                    <div class="oc-alert-description">
+                        Please fix the following issues:
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>Email address is required</li>
+                            <li>Password must be at least 8 characters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-alert" data-variant="danger">
+                    <div class="oc-alert-title">Validation Error</div>
+                    <div class="oc-alert-description">
+                        Please fix the following issues:
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>Email address is required</li>
+                            <li>Password must be at least 8 characters</li>
+                        </ul>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>System Notification</h3>
+        <div class="component-preview">
+            <div class="preview-title">System Notification</div>
+            <div class="preview-content">
+                <div class="oc-alert" data-variant="warning">
+                    <div class="oc-alert-title">System Maintenance</div>
+                    <div class="oc-alert-description">
+                        Scheduled maintenance will begin at 2:00 AM UTC. The system may be unavailable for up to 30 minutes.
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-alert" data-variant="warning">
+                    <div class="oc-alert-title">System Maintenance</div>
+                    <div class="oc-alert-description">
+                        Scheduled maintenance will begin at 2:00 AM UTC. The system may be unavailable for up to 30 minutes.
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Welcome Message</h3>
+        <div class="component-preview">
+            <div class="preview-title">Welcome Message</div>
+            <div class="preview-content">
+                <div class="oc-alert">
+                    <div class="oc-alert-title">Welcome to Only-CSS!</div>
+                    <div class="oc-alert-description">
+                        Get started with our comprehensive component library. Browse the documentation to learn about all available components.
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-alert">
+                    <div class="oc-alert-title">Welcome to Only-CSS!</div>
+                    <div class="oc-alert-description">
+                        Get started with our comprehensive component library. Browse the documentation to learn about all available components.
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>Attributes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>data-variant</code></td>
+                    <td>string</td>
+                    <td><code>"default"</code></td>
+                    <td>Alert variant: <code>"default"</code>, <code>"danger"</code>, <code>"success"</code>, <code>"warning"</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-alert</code></td>
+                    <td>Base alert component class</td>
+                </tr>
+                <tr>
+                    <td><code>oc-alert-title</code></td>
+                    <td>Alert title element (optional)</td>
+                </tr>
+                <tr>
+                    <td><code>oc-alert-description</code></td>
+                    <td>Alert description element (optional)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML structure for screen readers</li>
+                <li>Proper color contrast for all variants</li>
+                <li>Clear visual hierarchy with title and description</li>
+                <li>Keyboard accessible content</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use appropriate variants for different message types</li>
+            <li>Keep alert messages concise and actionable</li>
+            <li>Provide clear titles for structured alerts</li>
+            <li>Use success alerts for completed actions</li>
+            <li>Use danger alerts for errors or destructive actions</li>
+            <li>Use warning alerts for cautionary messages</li>
+            <li>Position alerts prominently but don't overuse them</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use alerts sparingly to maintain their impact. Too many alerts can lead to alert fatigue where users ignore important messages.
+        </div>
+
+        <h3>When to Use Alerts</h3>
+        <ul>
+            <li><strong>Success:</strong> After completing important actions (save, submit, delete)</li>
+            <li><strong>Danger:</strong> For errors, validation failures, or critical issues</li>
+            <li><strong>Warning:</strong> For cautionary messages or potential problems</li>
+            <li><strong>Default:</strong> For general information or neutral messages</li>
+        </ul>
+
+        <h3>When Not to Use Alerts</h3>
+        <ul>
+            <li>For routine status updates</li>
+            <li>For non-critical information</li>
+            <li>For content that should always be visible</li>
+            <li>For complex interactive elements</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

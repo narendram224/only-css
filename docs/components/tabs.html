@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/tabs.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Tabs</h1>
+        <p>Tabs are a navigation pattern that allows users to switch between different content panels within the same context. Only-CSS provides a pure CSS tab system using modern CSS Grid and the details/summary elements.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> These tabs work without JavaScript by using CSS Grid and the HTML5 details/summary elements, making them lightweight and accessible.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>Create tabs using the <code>tab-container</code> class with <code>&lt;details&gt;</code> elements:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Tabs</div>
+            <div class="preview-content">
+                <div class="tab-container" style="--tab-count: 3;">
+                    <details style="--n: 1;">
+                        <summary>Tab 1</summary>
+                        <div class="content">
+                            <h3>Content for Tab 1</h3>
+                            <p>This is the content area for the first tab. You can put any content here including text, images, or other components.</p>
+                        </div>
+                    </details>
+                    <details style="--n: 2;">
+                        <summary>Tab 2</summary>
+                        <div class="content">
+                            <h3>Content for Tab 2</h3>
+                            <p>This is the content area for the second tab. Each tab can have completely different content.</p>
+                        </div>
+                    </details>
+                    <details style="--n: 3;">
+                        <summary>Tab 3</summary>
+                        <div class="content">
+                            <h3>Content for Tab 3</h3>
+                            <p>This is the content area for the third tab. The content is only visible when the tab is active.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="tab-container" style="--tab-count: 3;">
+                    <details style="--n: 1;">
+                        <summary>Tab 1</summary>
+                        <div class="content">
+                            <h3>Content for Tab 1</h3>
+                            <p>This is the content area for the first tab.</p>
+                        </div>
+                    </details>
+                    <details style="--n: 2;">
+                        <summary>Tab 2</summary>
+                        <div class="content">
+                            <h3>Content for Tab 2</h3>
+                            <p>This is the content area for the second tab.</p>
+                        </div>
+                    </details>
+                    <details style="--n: 3;">
+                        <summary>Tab 3</summary>
+                        <div class="content">
+                            <h3>Content for Tab 3</h3>
+                            <p>This is the content area for the third tab.</p>
+                        </div>
+                    </details>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Variables</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--tab-count</code></td>
+                    <td><code>3</code></td>
+                    <td>Number of tabs in the container</td>
+                </tr>
+                <tr>
+                    <td><code>--n</code></td>
+                    <td><code>-</code></td>
+                    <td>Tab position (1-based index)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>tab-container</code></td>
+                    <td>Base tabs container class</td>
+                </tr>
+                <tr>
+                    <td><code>content</code></td>
+                    <td>Tab content container</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Product Details Tabs</h3>
+        <div class="component-preview">
+            <div class="preview-title">Product Details Tabs</div>
+            <div class="preview-content">
+                <div class="tab-container" style="--tab-count: 4;">
+                    <details style="--n: 1;" open>
+                        <summary>Description</summary>
+                        <div class="content">
+                            <h3>Product Description</h3>
+                            <p>This premium product features high-quality materials and exceptional craftsmanship. Designed for everyday use with attention to detail and durability.</p>
+                            <ul>
+                                <li>Premium materials</li>
+                                <li>Handcrafted quality</li>
+                                <li>Lifetime warranty</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details style="--n: 2;">
+                        <summary>Specifications</summary>
+                        <div class="content">
+                            <h3>Technical Specifications</h3>
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Material:</strong></td>
+                                    <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">Premium Alloy</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Weight:</strong></td>
+                                    <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">2.5 lbs</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;"><strong>Dimensions:</strong></td>
+                                    <td style="padding: 0.5rem; border-bottom: 1px solid #e2e8f0;">10" x 6" x 3"</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </details>
+                    <details style="--n: 3;">
+                        <summary>Reviews</summary>
+                        <div class="content">
+                            <h3>Customer Reviews</h3>
+                            <div style="margin-bottom: 1rem;">
+                                <div style="font-weight: 600;">⭐⭐⭐⭐⭐ Excellent Product!</div>
+                                <div style="color: #64748b; font-size: 0.875rem;">By John D. - 2 days ago</div>
+                                <p style="margin-top: 0.5rem;">This product exceeded my expectations. Highly recommend!</p>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600;">⭐⭐⭐⭐ Good Value</div>
+                                <div style="color: #64748b; font-size: 0.875rem;">By Sarah M. - 1 week ago</div>
+                                <p style="margin-top: 0.5rem;">Great quality for the price. Would buy again.</p>
+                            </div>
+                        </div>
+                    </details>
+                    <details style="--n: 4;">
+                        <summary>Shipping</summary>
+                        <div class="content">
+                            <h3>Shipping Information</h3>
+                            <p>Free shipping on orders over $50. Standard delivery takes 5-7 business days.</p>
+                            <p>Express shipping available for additional fee. International shipping available to select countries.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="tab-container" style="--tab-count: 4;">
+                    <details style="--n: 1;" open>
+                        <summary>Description</summary>
+                        <div class="content">
+                            <h3>Product Description</h3>
+                            <p>This premium product features high-quality materials...</p>
+                        </div>
+                    </details>
+                    <!-- Additional tabs... -->
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML5 details/summary elements</li>
+                <li>Keyboard navigation support</li>
+                <li>Screen reader friendly</li>
+                <li>Focus management handled by browser</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use clear, concise tab labels</li>
+            <li>Ensure tab content is relevant to the label</li>
+            <li>Consider the default open tab carefully</li>
+            <li>Test with keyboard navigation</li>
+            <li>Use consistent tab ordering</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Tabs work best for organizing related content that doesn't need to be visible simultaneously. Keep tab labels short and descriptive.
+        </div>
+
+        <h3>When to Use Tabs</h3>
+        <ul>
+            <li><strong>Product Pages:</strong> Description, specs, reviews</li>
+            <li><strong>Settings:</strong> Different configuration categories</li>
+            <li><strong>Documentation:</strong> Related topics or sections</li>
+            <li><strong>Forms:</strong> Multi-step processes</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

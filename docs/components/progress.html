@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/progress.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Progress</h1>
+        <p>Progress bars show the completion status of a task or process. Only-CSS provides progress components with customizable colors, sizes, and animated transitions.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Progress bars use semantic HTML5 progress elements with proper ARIA attributes for accessibility.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a progress bar is to use the <code>&lt;progress&gt;</code> element with the <code>oc-progress</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Progress Bar</div>
+            <div class="preview-content">
+                <progress class="oc-progress" value="65" max="100"></progress>
+            </div>
+            <code-block language="html">
+                <progress class="oc-progress" value="65" max="100"></progress>
+            </code-block>
+        </div>
+
+        <!-- Variants -->
+        <h2 id="variants">Variants</h2>
+        <p>Progress bars come in different color variants:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Progress Variants</div>
+            <div class="preview-content">
+                <progress class="oc-progress primary" value="75" max="100"></progress>
+                <progress class="oc-progress success" value="85" max="100"></progress>
+                <progress class="oc-progress warning" value="45" max="100"></progress>
+                <progress class="oc-progress danger" value="25" max="100"></progress>
+            </div>
+            <code-block language="html">
+                <progress class="oc-progress primary" value="75" max="100"></progress>
+                <progress class="oc-progress success" value="85" max="100"></progress>
+                <progress class="oc-progress warning" value="45" max="100"></progress>
+                <progress class="oc-progress danger" value="25" max="100"></progress>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>File Upload Progress</h3>
+        <div class="component-preview">
+            <div class="preview-title">File Upload Progress</div>
+            <div class="preview-content">
+                <div style="margin-bottom: 0.5rem;">
+                    <strong>uploading_document.pdf</strong>
+                    <span style="color: #64748b; margin-left: 0.5rem;">65%</span>
+                </div>
+                <progress class="oc-progress primary" value="65" max="100"></progress>
+            </div>
+            <code-block language="html">
+                <div style="margin-bottom: 0.5rem;">
+                    <strong>uploading_document.pdf</strong>
+                    <span style="color: #64748b; margin-left: 0.5rem;">65%</span>
+                </div>
+                <progress class="oc-progress primary" value="65" max="100"></progress>
+            </code-block>
+        </div>
+
+        <h3>Task Completion</h3>
+        <div class="component-preview">
+            <div class="preview-title">Task Completion</div>
+            <div class="preview-content">
+                <div style="margin-bottom: 0.5rem;">
+                    <strong>Profile Setup</strong>
+                    <span style="color: #64748b; margin-left: 0.5rem;">3 of 5 completed</span>
+                </div>
+                <progress class="oc-progress success" value="60" max="100"></progress>
+            </div>
+            <code-block language="html">
+                <div style="margin-bottom: 0.5rem;">
+                    <strong>Profile Setup</strong>
+                    <span style="color: #64748b; margin-left: 0.5rem;">3 of 5 completed</span>
+                </div>
+                <progress class="oc-progress success" value="60" max="100"></progress>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>Attributes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>value</code></td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>Current progress value</td>
+                </tr>
+                <tr>
+                    <td><code>max</code></td>
+                    <td>number</td>
+                    <td>Yes</td>
+                    <td>Maximum progress value</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-progress</code></td>
+                    <td>Base progress component class</td>
+                </tr>
+                <tr>
+                    <td><code>primary</code></td>
+                    <td>Primary color variant</td>
+                </tr>
+                <tr>
+                    <td><code>success</code></td>
+                    <td>Success color variant</td>
+                </tr>
+                <tr>
+                    <td><code>warning</code></td>
+                    <td>Warning color variant</td>
+                </tr>
+                <tr>
+                    <td><code>danger</code></td>
+                    <td>Danger color variant</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML5 progress element</li>
+                <li>Proper ARIA attributes</li>
+                <li>Screen reader announcements</li>
+                <li>High contrast colors</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Always provide labels for progress bars</li>
+            <li>Use appropriate colors for context</li>
+            <li>Show percentage or fraction when possible</li>
+            <li>Consider indeterminate progress for unknown duration</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use progress bars for operations with predictable duration. For indeterminate operations, consider using spinners instead.
+        </div>
+
+        <h3>When to Use Progress Bars</h3>
+        <ul>
+            <li><strong>File Uploads:</strong> Show upload completion</li>
+            <li><strong>Form Steps:</strong> Multi-step form progress</li>
+            <li><strong>Task Completion:</strong> Show task status</li>
+            <li><strong>Data Processing:</strong> Show processing status</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

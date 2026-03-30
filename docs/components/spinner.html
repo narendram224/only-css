@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinner - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/spinner.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Spinner</h1>
+        <p>Spinners are loading indicators that show users that content is being processed or loaded. Only-CSS provides animated spinner components with multiple sizes and styles.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Spinners use pure CSS animations, making them lightweight and performant without any JavaScript dependencies.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a spinner is to use the <code>oc-spinner</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Spinner</div>
+            <div class="preview-content">
+                <div class="oc-spinner"></div>
+            </div>
+            <code-block language="html">
+                <div class="oc-spinner"></div>
+            </code-block>
+        </div>
+
+        <!-- Sizes -->
+        <h2 id="sizes">Sizes</h2>
+        <p>Spinners come in multiple sizes:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Spinner Sizes</div>
+            <div class="preview-content">
+                <div class="oc-spinner small"></div>
+                <div class="oc-spinner"></div>
+                <div class="oc-spinner large"></div>
+                <div class="oc-spinner xlarge"></div>
+            </div>
+            <code-block language="html">
+                <div class="oc-spinner small"></div>
+                <div class="oc-spinner"></div>
+                <div class="oc-spinner large"></div>
+                <div class="oc-spinner xlarge"></div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Loading Button</h3>
+        <div class="component-preview">
+            <div class="preview-title">Loading Button</div>
+            <div class="preview-content">
+                <button disabled style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: #3b82f6; color: white; display: flex; align-items: center; gap: 0.5rem;">
+                    <div class="oc-spinner small" style="border-color: white; border-top-color: transparent;"></div>
+                    Loading...
+                </button>
+            </div>
+            <code-block language="html">
+                <button disabled style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: #3b82f6; color: white; display: flex; align-items: center; gap: 0.5rem;">
+                    <div class="oc-spinner small" style="border-color: white; border-top-color: transparent;"></div>
+                    Loading...
+                </button>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-spinner</code></td>
+                    <td>Base spinner component class</td>
+                </tr>
+                <tr>
+                    <td><code>small</code></td>
+                    <td>Small spinner size</td>
+                </tr>
+                <tr>
+                    <td><code>large</code></td>
+                    <td>Large spinner size</td>
+                </tr>
+                <tr>
+                    <td><code>xlarge</code></td>
+                    <td>Extra large spinner size</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Use with appropriate ARIA labels</li>
+                <li>Announce loading states to screen readers</li>
+                <li>Provide alternative text when needed</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use appropriate spinner sizes for context</li>
+            <li>Combine with loading text for clarity</li>
+            <li>Don't use spinners for quick operations</li>
+            <li>Provide feedback when loading completes</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use spinners for operations taking more than 1 second. For faster operations, consider other loading indicators.
+        </div>
+
+        <h3>When to Use Spinners</h3>
+        <ul>
+            <li><strong>Data Loading:</strong> Fetching content from servers</li>
+            <li><strong>Form Submission:</strong> Processing form data</li>
+            <li><strong>File Uploads:</strong> Uploading files</li>
+            <li><strong>Content Generation:</strong> Processing content</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

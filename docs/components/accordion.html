@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/accordion.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Accordion</h1>
+        <p>Accordions are collapsible content sections that allow users to expand and collapse information panels. Only-CSS provides a semantic accordion component using HTML5 details/summary elements with smooth animations.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Accordions use semantic HTML5 <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements, ensuring maximum accessibility and keyboard navigation without JavaScript.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create an accordion is to use the <code>oc-accordion</code> class with <code>&lt;details&gt;</code> elements:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Accordion</div>
+            <div class="preview-content">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>What is Only-CSS?</summary>
+                        <div class="content">
+                            Only-CSS is a comprehensive component library built with pure CSS, providing reusable UI components for modern web applications.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I get started?</summary>
+                        <div class="content">
+                            Getting started is easy! Simply include the CSS files in your project and start using the component classes in your HTML.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>What is Only-CSS?</summary>
+                        <div class="content">
+                            Only-CSS is a comprehensive component library built with pure CSS, providing reusable UI components for modern web applications.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I get started?</summary>
+                        <div class="content">
+                            Getting started is easy! Simply include the CSS files in your project and start using the component classes in your HTML.
+                        </div>
+                    </details>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Multiple Open -->
+        <h2 id="multiple-open">Multiple Open Sections</h2>
+        <p>By default, accordions allow multiple sections to be open simultaneously:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Multiple Open Accordion</div>
+            <div class="preview-content">
+                <div class="oc-accordion">
+                    <details open>
+                        <summary>Section 1 (Already Open)</summary>
+                        <div class="content">
+                            This section is already open when the page loads. You can close it by clicking on the header.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Section 2</summary>
+                        <div class="content">
+                            This section starts closed but can be opened independently of other sections.
+                        </div>
+                    </details>
+                    <details open>
+                        <summary>Section 3 (Already Open)</summary>
+                        <div class="content">
+                            Multiple sections can be open at the same time, allowing users to view different content areas simultaneously.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-accordion">
+                    <details open>
+                        <summary>Section 1 (Already Open)</summary>
+                        <div class="content">
+                            This section is already open when the page loads. You can close it by clicking on the header.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Section 2</summary>
+                        <div class="content">
+                            This section starts closed but can be opened independently of other sections.
+                        </div>
+                    </details>
+                    <details open>
+                        <summary>Section 3 (Already Open)</summary>
+                        <div class="content">
+                            Multiple sections can be open at the same time, allowing users to view different content areas simultaneously.
+                        </div>
+                    </details>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>FAQ Accordion</h3>
+        <div class="component-preview">
+            <div class="preview-title">FAQ Accordion</div>
+            <div class="preview-content">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>What browsers are supported?</summary>
+                        <div class="content">
+                            Only-CSS supports all modern browsers including Chrome, Firefox, Safari, and Edge. The components use standard CSS features that are widely implemented.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Can I customize the components?</summary>
+                        <div class="content">
+                            Yes! All components are built with CSS variables and can be easily customized to match your brand. You can override colors, spacing, typography, and more.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Is JavaScript required?</summary>
+                        <div class="content">
+                            No JavaScript is required for basic functionality. All components work with pure CSS and semantic HTML. JavaScript is only needed for advanced interactions if desired.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I report issues?</summary>
+                        <div class="content">
+                            If you find any issues or have suggestions for improvements, please open an issue on our GitHub repository. We welcome feedback and contributions from the community.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>What browsers are supported?</summary>
+                        <div class="content">
+                            Only-CSS supports all modern browsers including Chrome, Firefox, Safari, and Edge. The components use standard CSS features that are widely implemented.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Can I customize the components?</summary>
+                        <div class="content">
+                            Yes! All components are built with CSS variables and can be easily customized to match your brand. You can override colors, spacing, typography, and more.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Is JavaScript required?</summary>
+                        <div class="content">
+                            No JavaScript is required for basic functionality. All components work with pure CSS and semantic HTML. JavaScript is only needed for advanced interactions if desired.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>How do I report issues?</summary>
+                        <div class="content">
+                            If you find any issues or have suggestions for improvements, please open an issue on our GitHub repository. We welcome feedback and contributions from the community.
+                        </div>
+                    </details>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Product Features Accordion</h3>
+        <div class="component-preview">
+            <div class="preview-title">Product Features Accordion</div>
+            <div class="preview-content">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>🚀 Performance Optimized</summary>
+                        <div class="content">
+                            Our components are built with performance in mind. They use efficient CSS and minimal DOM manipulation to ensure fast rendering and smooth animations.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>🎨 Fully Customizable</summary>
+                        <div class="content">
+                            Every aspect of the components can be customized using CSS variables. Change colors, spacing, typography, and behavior to match your design system.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>♿ Accessible by Default</summary>
+                        <div class="content">
+                            All components follow WCAG guidelines and include proper ARIA attributes, keyboard navigation, and screen reader support out of the box.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>📱 Mobile First Design</summary>
+                        <div class="content">
+                            Components are designed with a mobile-first approach and work seamlessly across all device sizes and screen resolutions.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>🚀 Performance Optimized</summary>
+                        <div class="content">
+                            Our components are built with performance in mind. They use efficient CSS and minimal DOM manipulation to ensure fast rendering and smooth animations.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>🎨 Fully Customizable</summary>
+                        <div class="content">
+                            Every aspect of the components can be customized using CSS variables. Change colors, spacing, typography, and behavior to match your design system.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>♿ Accessible by Default</summary>
+                        <div class="content">
+                            All components follow WCAG guidelines and include proper ARIA attributes, keyboard navigation, and screen reader support out of the box.
+                        </div>
+                    </details>
+                    <details>
+                        <summary>📱 Mobile First Design</summary>
+                        <div class="content">
+                            Components are designed with a mobile-first approach and work seamlessly across all device sizes and screen resolutions.
+                        </div>
+                    </details>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Technical Documentation Accordion</h3>
+        <div class="component-preview">
+            <div class="preview-title">Technical Documentation Accordion</div>
+            <div class="preview-content">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>Installation</summary>
+                        <div class="content">
+                            <h4>Step 1: Download the CSS files</h4>
+                            <p>Download the component CSS files from our repository or use npm to install the package.</p>
+                            <h4>Step 2: Include in your project</h4>
+                            <p>Add the CSS files to your HTML head section or import them into your CSS build process.</p>
+                            <h4>Step 3: Start using components</h4>
+                            <p>Begin using the component classes in your HTML markup.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Configuration</summary>
+                        <div class="content">
+                            <h4>CSS Variables</h4>
+                            <p>Customize the appearance using CSS variables. Define your own theme colors, spacing, and typography.</p>
+                            <h4>Component Overrides</h4>
+                            <p>You can override specific component styles by targeting the component classes in your custom CSS.</p>
+                            <h4>Theme System</h4>
+                            <p>Use the built-in theme system or create your own themes for consistent styling across your application.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>API Reference</summary>
+                        <div class="content">
+                            <h4>Component Classes</h4>
+                            <p>Each component has specific CSS classes that you can use to apply the component styles.</p>
+                            <h4>Modifiers</h4>
+                            <p>Use modifier classes to change component appearance, size, color, or behavior.</p>
+                            <h4>Composition</h4>
+                            <p>Components can be nested and combined to create complex UI patterns.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-accordion">
+                    <details>
+                        <summary>Installation</summary>
+                        <div class="content">
+                            <h4>Step 1: Download the CSS files</h4>
+                            <p>Download the component CSS files from our repository or use npm to install the package.</p>
+                            <h4>Step 2: Include in your project</h4>
+                            <p>Add the CSS files to your HTML head section or import them into your CSS build process.</p>
+                            <h4>Step 3: Start using components</h4>
+                            <p>Begin using the component classes in your HTML markup.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Configuration</summary>
+                        <div class="content">
+                            <h4>CSS Variables</h4>
+                            <p>Customize the appearance using CSS variables. Define your own theme colors, spacing, and typography.</p>
+                            <h4>Component Overrides</h4>
+                            <p>You can override specific component styles by targeting the component classes in your custom CSS.</p>
+                            <h4>Theme System</h4>
+                            <p>Use the built-in theme system or create your own themes for consistent styling across your application.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>API Reference</summary>
+                        <div class="content">
+                            <h4>Component Classes</h4>
+                            <p>Each component has specific CSS classes that you can use to apply the component styles.</p>
+                            <h4>Modifiers</h4>
+                            <p>Use modifier classes to change component appearance, size, color, or behavior.</p>
+                            <h4>Composition</h4>
+                            <p>Components can be nested and combined to create complex UI patterns.</p>
+                        </div>
+                    </details>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>HTML Structure</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;div class="oc-accordion"&gt;</code></td>
+                    <td>Yes</td>
+                    <td>Container for accordion sections</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;details&gt;</code></td>
+                    <td>Yes</td>
+                    <td>Individual accordion section</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;summary&gt;</code></td>
+                    <td>Yes</td>
+                    <td>Section header/trigger</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;div class="content"&gt;</code></td>
+                    <td>Yes</td>
+                    <td>Section content container</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Attributes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>open</code></td>
+                    <td>boolean</td>
+                    <td><code>false</code></td>
+                    <td>Whether the accordion section is initially open</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-accordion</code></td>
+                    <td>Base accordion container class</td>
+                </tr>
+                <tr>
+                    <td><code>content</code></td>
+                    <td>Content container inside details element</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML5 details/summary elements</li>
+                <li>Keyboard navigation (Space, Enter, Tab)</li>
+                <li>Screen reader friendly</li>
+                <li>Focus states clearly visible</li>
+                <li>ARIA attributes automatically handled by browser</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use clear, descriptive summary text</li>
+            <li>Keep content sections focused and relevant</li>
+            <li>Consider the default state carefully</li>
+            <li>Test with screen readers and keyboard navigation</li>
+            <li>Use appropriate heading levels within content</li>
+            <li>Ensure sufficient color contrast for text</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Accordions work best for organizing large amounts of content or when you want to let users control what information they see. Don't use them for critical information that should always be visible.
+        </div>
+
+        <h3>When to Use Accordions</h3>
+        <ul>
+            <li><strong>FAQ Sections:</strong> Organize frequently asked questions</li>
+            <li><strong>Product Features:</strong> Group related features and details</li>
+            <li><strong>Technical Documentation:</strong> Structure complex information</li>
+            <li><strong>Settings Panels:</strong> Group configuration options</li>
+            <li><strong>Content Organization:</strong> Break down long content into sections</li>
+        </ul>
+
+        <h3>When Not to Use Accordions</h3>
+        <ul>
+            <li>For critical information that must always be visible</li>
+            <li>When users need to compare information across sections</li>
+            <li>For very short content that doesn't need hiding</li>
+            <li>When the content hierarchy is unclear</li>
+            <li>For mobile devices where expanding might be cumbersome</li>
+        </ul>
+
+        <h3>Content Guidelines</h3>
+        <ul>
+            <li>Write clear, concise summary text</li>
+            <li>Keep related content together in sections</li>
+            <li>Use proper heading hierarchy within content</li>
+            <li>Consider the reading order and flow</li>
+            <li>Test with different content lengths</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

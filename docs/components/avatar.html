@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/avatar.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Avatar</h1>
+        <p>Avatars are used to represent users or entities in your interface. Only-CSS provides a comprehensive avatar system with multiple sizes, shapes, status indicators, and group layouts.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Avatars automatically handle fallback initials when no image is provided, ensuring consistent appearance across your application.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create an avatar is to use the <code>oc-avatar</code> class with text initials:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Avatar</div>
+            <div class="preview-content">
+                <div class="oc-avatar medium">JD</div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar medium">JD</div>
+            </code-block>
+        </div>
+
+        <!-- Sizes -->
+        <h2 id="sizes">Sizes</h2>
+        <p>Avatars come in six predefined sizes:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Avatar Sizes</div>
+            <div class="preview-content">
+                <div class="oc-avatar xsmall">XS</div>
+                <div class="oc-avatar small">SM</div>
+                <div class="oc-avatar medium">MD</div>
+                <div class="oc-avatar large">LG</div>
+                <div class="oc-avatar xlarge">XL</div>
+                <div class="oc-avatar xxlarge">XX</div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar xsmall">XS</div>
+                <div class="oc-avatar small">SM</div>
+                <div class="oc-avatar medium">MD</div>
+                <div class="oc-avatar large">LG</div>
+                <div class="oc-avatar xlarge">XL</div>
+                <div class="oc-avatar xxlarge">XX</div>
+            </code-block>
+        </div>
+
+        <!-- Image Avatars -->
+        <h2 id="image-avatars">Image Avatars</h2>
+        <p>Use images for avatars by adding an <code>&lt;img&gt;</code> element inside:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Image Avatar</div>
+            <div class="preview-content">
+                <div class="oc-avatar medium">
+                    <img src="https://picsum.photos/seed/avatar1/100/100.jpg" alt="User Avatar">
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar medium">
+                    <img src="https://picsum.photos/seed/avatar1/100/100.jpg" alt="User Avatar">
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Status Indicators -->
+        <h2 id="status-indicators">Status Indicators</h2>
+        <p>Add status indicators to show user availability:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Avatar Status Indicators</div>
+            <div class="preview-content">
+                <div class="oc-avatar medium online">JD</div>
+                <div class="oc-avatar medium offline">JD</div>
+                <div class="oc-avatar medium busy">JD</div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar medium online">JD</div>
+                <div class="oc-avatar medium offline">JD</div>
+                <div class="oc-avatar medium busy">JD</div>
+            </code-block>
+        </div>
+
+        <!-- Shapes -->
+        <h2 id="shapes">Shapes</h2>
+        <p>Customize avatar appearance with different shapes:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Avatar Shapes</div>
+            <div class="preview-content">
+                <div class="oc-avatar medium">Default</div>
+                <div class="oc-avatar medium square">Square</div>
+                <div class="oc-avatar medium rounded">Rounded</div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar medium">Default</div>
+                <div class="oc-avatar medium square">Square</div>
+                <div class="oc-avatar medium rounded">Rounded</div>
+            </code-block>
+        </div>
+
+        <!-- Border Variants -->
+        <h2 id="borders">Border Variants</h2>
+        <p>Add borders to avatars for additional styling:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Avatar Borders</div>
+            <div class="preview-content">
+                <div class="oc-avatar medium bordered">JD</div>
+                <div class="oc-avatar medium border-primary">JD</div>
+                <div class="oc-avatar medium border-success">JD</div>
+                <div class="oc-avatar medium border-danger">JD</div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar medium bordered">JD</div>
+                <div class="oc-avatar medium border-primary">JD</div>
+                <div class="oc-avatar medium border-success">JD</div>
+                <div class="oc-avatar medium border-danger">JD</div>
+            </code-block>
+        </div>
+
+        <!-- Avatar Groups -->
+        <h2 id="avatar-groups">Avatar Groups</h2>
+        <p>Display multiple avatars together in groups:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Horizontal Avatar Group</div>
+            <div class="preview-content">
+                <div class="oc-avatar-group horizontal">
+                    <div class="oc-avatar small">JD</div>
+                    <div class="oc-avatar small">AS</div>
+                    <div class="oc-avatar small">MK</div>
+                    <div class="oc-avatar small">+3</div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar-group horizontal">
+                    <div class="oc-avatar small">JD</div>
+                    <div class="oc-avatar small">AS</div>
+                    <div class="oc-avatar small">MK</div>
+                    <div class="oc-avatar small">+3</div>
+                </div>
+            </code-block>
+        </div>
+
+        <div class="component-preview">
+            <div class="preview-title">Stack Avatar Group</div>
+            <div class="preview-content">
+                <div class="oc-avatar-group stack">
+                    <div class="oc-avatar small">JD</div>
+                    <div class="oc-avatar small">AS</div>
+                    <div class="oc-avatar small">MK</div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar-group stack">
+                    <div class="oc-avatar small">JD</div>
+                    <div class="oc-avatar small">AS</div>
+                    <div class="oc-avatar small">MK</div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Avatar with Labels -->
+        <h2 id="avatar-with-labels">Avatar with Labels</h2>
+        <p>Combine avatars with user labels for complete user representations:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Avatar with Labels</div>
+            <div class="preview-content">
+                <div class="oc-avatar-group with-labels">
+                    <div class="oc-avatar medium">JD</div>
+                    <div class="oc-avatar-label">John Doe</div>
+                </div>
+                <div class="oc-avatar-group with-labels">
+                    <div class="oc-avatar medium online">AS</div>
+                    <div class="oc-avatar-label">Alice Smith</div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-avatar-group with-labels">
+                    <div class="oc-avatar medium">JD</div>
+                    <div class="oc-avatar-label">John Doe</div>
+                </div>
+                <div class="oc-avatar-group with-labels">
+                    <div class="oc-avatar medium online">AS</div>
+                    <div class="oc-avatar-label">Alice Smith</div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>User Profile Card</h3>
+        <div class="component-preview">
+            <div class="preview-title">User Profile Card</div>
+            <div class="preview-content">
+                <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="oc-avatar large online">
+                        <img src="https://picsum.photos/seed/user1/150/150.jpg" alt="User Avatar">
+                    </div>
+                    <div>
+                        <div style="font-weight: 600;">Sarah Johnson</div>
+                        <div style="color: #64748b; font-size: 0.875rem;">Product Designer</div>
+                        <div style="color: #22c55e; font-size: 0.75rem; margin-top: 0.25rem;">● Online</div>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="oc-avatar large online">
+                        <img src="https://picsum.photos/seed/user1/150/150.jpg" alt="User Avatar">
+                    </div>
+                    <div>
+                        <div style="font-weight: 600;">Sarah Johnson</div>
+                        <div style="color: #64748b; font-size: 0.875rem;">Product Designer</div>
+                        <div style="color: #22c55e; font-size: 0.75rem; margin-top: 0.25rem;">● Online</div>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Team Members List</h3>
+        <div class="component-preview">
+            <div class="preview-title">Team Members List</div>
+            <div class="preview-content">
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-avatar medium">JD</div>
+                        <div>
+                            <div style="font-weight: 500;">John Doe</div>
+                            <div style="color: #64748b; font-size: 0.875rem;">Frontend Developer</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-avatar medium busy">AS</div>
+                        <div>
+                            <div style="font-weight: 500;">Alice Smith</div>
+                            <div style="color: #64748b; font-size: 0.875rem;">Backend Developer</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-avatar medium offline">MK</div>
+                        <div>
+                            <div style="font-weight: 500;">Mike Kim</div>
+                            <div style="color: #64748b; font-size: 0.875rem;">UI Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-avatar medium">JD</div>
+                        <div>
+                            <div style="font-weight: 500;">John Doe</div>
+                            <div style="color: #64748b; font-size: 0.875rem;">Frontend Developer</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-avatar medium busy">AS</div>
+                        <div>
+                            <div style="font-weight: 500;">Alice Smith</div>
+                            <div style="color: #64748b; font-size: 0.875rem;">Backend Developer</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-avatar medium offline">MK</div>
+                        <div>
+                            <div style="font-weight: 500;">Mike Kim</div>
+                            <div style="color: #64748b; font-size: 0.875rem;">UI Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-avatar</code></td>
+                    <td>Base avatar component class</td>
+                </tr>
+                <tr>
+                    <td><code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>, <code>xxlarge</code></td>
+                    <td>Avatar size variants</td>
+                </tr>
+                <tr>
+                    <td><code>online</code>, <code>offline</code>, <code>busy</code></td>
+                    <td>Status indicator classes</td>
+                </tr>
+                <tr>
+                    <td><code>bordered</code>, <code>border-primary</code>, <code>border-success</code>, <code>border-danger</code></td>
+                    <td>Border variants</td>
+                </tr>
+                <tr>
+                    <td><code>square</code>, <code>rounded</code></td>
+                    <td>Shape variants</td>
+                </tr>
+                <tr>
+                    <td><code>oc-avatar-group</code></td>
+                    <td>Container for avatar groups</td>
+                </tr>
+                <tr>
+                    <td><code>horizontal</code>, <code>stack</code></td>
+                    <td>Avatar group layout variants</td>
+                </tr>
+                <tr>
+                    <td><code>with-labels</code></td>
+                    <td>Avatar group with labels layout</td>
+                </tr>
+                <tr>
+                    <td><code>oc-avatar-label</code></td>
+                    <td>Label text for avatar</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Proper alt text for image avatars</li>
+                <li>Semantic HTML structure</li>
+                <li>Status indicators with proper color contrast</li>
+                <li>Keyboard accessible content</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Always provide meaningful alt text for image avatars</li>
+            <li>Use consistent sizing within the same context</li>
+            <li>Ensure status indicators have sufficient color contrast</li>
+            <li>Use initials that represent the user's name</li>
+            <li>Consider loading states for image avatars</li>
+            <li>Maintain consistent avatar shapes across your application</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use consistent avatar sizes throughout your application. Medium (2.5rem) is ideal for most use cases, while large (3rem) works well for user profiles.
+        </div>
+
+        <h3>When to Use Avatars</h3>
+        <ul>
+            <li><strong>User Profiles:</strong> To represent individual users</li>
+            <li><strong>Team Lists:</strong> To show team members or collaborators</li>
+            <li><strong>Comments:</strong> To identify who made a comment</li>
+            <li><strong>Notifications:</strong> To show who triggered an action</li>
+            <li><strong>Chat Applications:</strong> To display conversation participants</li>
+        </ul>
+
+        <h3>Content Guidelines</h3>
+        <ul>
+            <li>Use 1-2 initials for text avatars</li>
+            <li>Use high-quality images for best results</li>
+            <li>Ensure images are square for consistent appearance</li>
+            <li>Use meaningful alt text for accessibility</li>
+            <li>Consider fallback colors for different users</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

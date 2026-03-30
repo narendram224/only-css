@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/badge.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Badge</h1>
+        <p>Badges are small components used to label, categorize, or organize items. Only-CSS provides a comprehensive badge system with multiple sizes, colors, styles, and positioning options.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Badges use semantic HTML with proper ARIA attributes for screen readers and maintain consistent visual hierarchy across your application.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a badge is to use the <code>oc-badge</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Badge</div>
+            <div class="preview-content">
+                <span class="oc-badge">Default</span>
+            </div>
+            <code-block language="html">
+                <span class="oc-badge">Default</span>
+            </code-block>
+        </div>
+
+        <!-- Sizes -->
+        <h2 id="sizes">Sizes</h2>
+        <p>Badges come in five predefined sizes:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Badge Sizes</div>
+            <div class="preview-content">
+                <span class="oc-badge xsmall">XS</span>
+                <span class="oc-badge small">SM</span>
+                <span class="oc-badge medium">MD</span>
+                <span class="oc-badge large">LG</span>
+                <span class="oc-badge xlarge">XL</span>
+            </div>
+            <code-block language="html">
+                <span class="oc-badge xsmall">XS</span>
+                <span class="oc-badge small">SM</span>
+                <span class="oc-badge medium">MD</span>
+                <span class="oc-badge large">LG</span>
+                <span class="oc-badge xlarge">XL</span>
+            </code-block>
+        </div>
+
+        <!-- Color Variants -->
+        <h2 id="colors">Color Variants</h2>
+        <p>Badges come in several semantic color variants:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Badge Colors</div>
+            <div class="preview-content">
+                <span class="oc-badge primary">Primary</span>
+                <span class="oc-badge secondary">Secondary</span>
+                <span class="oc-badge success">Success</span>
+                <span class="oc-badge danger">Danger</span>
+                <span class="oc-badge warning">Warning</span>
+                <span class="oc-badge info">Info</span>
+            </div>
+            <code-block language="html">
+                <span class="oc-badge primary">Primary</span>
+                <span class="oc-badge secondary">Secondary</span>
+                <span class="oc-badge success">Success</span>
+                <span class="oc-badge danger">Danger</span>
+                <span class="oc-badge warning">Warning</span>
+                <span class="oc-badge info">Info</span>
+            </code-block>
+        </div>
+
+        <!-- Outline Variants -->
+        <h2 id="outline">Outline Variants</h2>
+        <p>Use outline badges for a more subtle appearance:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Outline Badges</div>
+            <div class="preview-content">
+                <span class="oc-badge outline primary">Primary</span>
+                <span class="oc-badge outline secondary">Secondary</span>
+                <span class="oc-badge outline success">Success</span>
+                <span class="oc-badge outline danger">Danger</span>
+                <span class="oc-badge outline warning">Warning</span>
+            </div>
+            <code-block language="html">
+                <span class="oc-badge outline primary">Primary</span>
+                <span class="oc-badge outline secondary">Secondary</span>
+                <span class="oc-badge outline success">Success</span>
+                <span class="oc-badge outline danger">Danger</span>
+                <span class="oc-badge outline warning">Warning</span>
+            </code-block>
+        </div>
+
+        <!-- Ghost Variants -->
+        <h2 id="ghost">Ghost Variants</h2>
+        <p>Ghost badges have no background or border for maximum subtlety:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Ghost Badges</div>
+            <div class="preview-content">
+                <span class="oc-badge ghost primary">Primary</span>
+                <span class="oc-badge ghost secondary">Secondary</span>
+                <span class="oc-badge ghost success">Success</span>
+                <span class="oc-badge ghost danger">Danger</span>
+            </div>
+            <code-block language="html">
+                <span class="oc-badge ghost primary">Primary</span>
+                <span class="oc-badge ghost secondary">Secondary</span>
+                <span class="oc-badge ghost success">Success</span>
+                <span class="oc-badge ghost danger">Danger</span>
+            </code-block>
+        </div>
+
+        <!-- Styles -->
+        <h2 id="styles">Styles</h2>
+        <p>Different badge styles for various use cases:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Badge Styles</div>
+            <div class="preview-content">
+                <span class="oc-badge pill">Pill</span>
+                <span class="oc-badge square">Square</span>
+                <span class="oc-badge dot"></span>
+                <span class="oc-badge dot large"></span>
+                <span class="oc-badge dot xlarge"></span>
+            </div>
+            <code-block language="html">
+                <span class="oc-badge pill">Pill</span>
+                <span class="oc-badge square">Square</span>
+                <span class="oc-badge dot"></span>
+                <span class="oc-badge dot large"></span>
+                <span class="oc-badge dot xlarge"></span>
+            </code-block>
+        </div>
+
+        <!-- Counter Badges -->
+        <h2 id="counter">Counter Badges</h2>
+        <p>Use counter badges for notifications and counts:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Counter Badges</div>
+            <div class="preview-content">
+                <span class="oc-badge counter">5</span>
+                <span class="oc-badge counter large">99+</span>
+                <span class="oc-badge counter danger">3</span>
+            </div>
+            <code-block language="html">
+                <span class="oc-badge counter">5</span>
+                <span class="oc-badge counter large">99+</span>
+                <span class="oc-badge counter danger">3</span>
+            </code-block>
+        </div>
+
+        <!-- Positioning -->
+        <h2 id="positioning">Positioning</h2>
+        <p>Position badges relative to other elements:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Positioned Badges</div>
+            <div class="preview-content">
+                <div style="position: relative; display: inline-block; padding: 0.5rem 1rem; background: #f1f5f9; border-radius: 0.25rem;">
+                    Container
+                    <span class="oc-badge top-right">New</span>
+                </div>
+                <div style="position: relative; display: inline-block; padding: 0.5rem 1rem; background: #f1f5f9; border-radius: 0.25rem; margin-left: 1rem;">
+                    Container
+                    <span class="oc-badge bottom-left">3</span>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="position: relative; display: inline-block; padding: 0.5rem 1rem; background: #f1f5f9; border-radius: 0.25rem;">
+                    Container
+                    <span class="oc-badge top-right">New</span>
+                </div>
+                <div style="position: relative; display: inline-block; padding: 0.5rem 1rem; background: #f1f5f9; border-radius: 0.25rem; margin-left: 1rem;">
+                    Container
+                    <span class="oc-badge bottom-left">3</span>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Badge Groups -->
+        <h2 id="badge-groups">Badge Groups</h2>
+        <p>Group multiple badges together:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Badge Groups</div>
+            <div class="preview-content">
+                <div class="oc-badge-group">
+                    <span class="oc-badge primary">React</span>
+                    <span class="oc-badge success">CSS</span>
+                    <span class="oc-badge info">TypeScript</span>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-badge-group">
+                    <span class="oc-badge primary">React</span>
+                    <span class="oc-badge success">CSS</span>
+                    <span class="oc-badge info">TypeScript</span>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Status Indicators</h3>
+        <div class="component-preview">
+            <div class="preview-title">Status Indicators</div>
+            <div class="preview-content">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="oc-badge dot success"></span>
+                    <span>Active</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="oc-badge dot warning"></span>
+                    <span>Pending</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="oc-badge dot"></span>
+                    <span>Inactive</span>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="oc-badge dot success"></span>
+                    <span>Active</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="oc-badge dot warning"></span>
+                    <span>Pending</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="oc-badge dot"></span>
+                    <span>Inactive</span>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Notification Badges</h3>
+        <div class="component-preview">
+            <div class="preview-title">Notification Badges</div>
+            <div class="preview-content">
+                <div class="oc-notification-badge">
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">
+                        Messages
+                    </button>
+                    <span class="oc-badge counter">5</span>
+                </div>
+                <div class="oc-notification-badge" style="margin-left: 1rem;">
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">
+                        Alerts
+                    </button>
+                    <span class="oc-badge counter danger">2</span>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-notification-badge">
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">
+                        Messages
+                    </button>
+                    <span class="oc-badge counter">5</span>
+                </div>
+                <div class="oc-notification-badge" style="margin-left: 1rem;">
+                    <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">
+                        Alerts
+                    </button>
+                    <span class="oc-badge counter danger">2</span>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Tag System</h3>
+        <div class="component-preview">
+            <div class="preview-title">Tag System</div>
+            <div class="preview-content">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <h4 style="margin: 0 0 0.75rem 0;">Blog Post</h4>
+                    <div class="oc-badge-group">
+                        <span class="oc-badge outline primary">Frontend</span>
+                        <span class="oc-badge outline success">Tutorial</span>
+                        <span class="oc-badge outline info">CSS</span>
+                        <span class="oc-badge outline warning">Design</span>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <h4 style="margin: 0 0 0.75rem 0;">Blog Post</h4>
+                    <div class="oc-badge-group">
+                        <span class="oc-badge outline primary">Frontend</span>
+                        <span class="oc-badge outline success">Tutorial</span>
+                        <span class="oc-badge outline info">CSS</span>
+                        <span class="oc-badge outline warning">Design</span>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-badge</code></td>
+                    <td>Base badge component class</td>
+                </tr>
+                <tr>
+                    <td><code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code></td>
+                    <td>Badge size variants</td>
+                </tr>
+                <tr>
+                    <td><code>primary</code>, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>warning</code>, <code>info</code></td>
+                    <td>Color variants</td>
+                </tr>
+                <tr>
+                    <td><code>outline</code></td>
+                    <td>Outline style variant</td>
+                </tr>
+                <tr>
+                    <td><code>ghost</code></td>
+                    <td>Ghost style variant (no background/border)</td>
+                </tr>
+                <tr>
+                    <td><code>pill</code></td>
+                    <td>Pill shape style</td>
+                </tr>
+                <tr>
+                    <td><code>square</code></td>
+                    <td>Square shape style</td>
+                </tr>
+                <tr>
+                    <td><code>dot</code></td>
+                    <td>Dot style (circular indicator)</td>
+                </tr>
+                <tr>
+                    <td><code>counter</code></td>
+                    <td>Counter badge style for notifications</td>
+                </tr>
+                <tr>
+                    <td><code>top-left</code>, <code>top-right</code>, <code>bottom-left</code>, <code>bottom-right</code></td>
+                    <td>Positioning classes (requires parent with position: relative)</td>
+                </tr>
+                <tr>
+                    <td><code>oc-badge-group</code></td>
+                    <td>Container for badge groups</td>
+                </tr>
+                <tr>
+                    <td><code>oc-notification-badge</code></td>
+                    <td>Container for notification badges</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML structure</li>
+                <li>Proper color contrast for all variants</li>
+                <li>Screen reader friendly</li>
+                <li>Keyboard accessible content</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use appropriate colors for semantic meaning</li>
+            <li>Keep badge text short and concise</li>
+            <li>Ensure sufficient color contrast</li>
+            <li>Use outline badges for less emphasis</li>
+            <li>Use counter badges for notifications only</li>
+            <li>Position badges consistently across your application</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use color consistently across your application. Success badges should always indicate positive states, danger badges for negative states, etc.
+        </div>
+
+        <h3>When to Use Badges</h3>
+        <ul>
+            <li><strong>Status Indicators:</strong> Show item status (active, inactive, pending)</li>
+            <li><strong>Categories:</strong> Tag and categorize content</li>
+            <li><strong>Notifications:</strong> Display unread counts or alerts</li>
+            <li><strong>Labels:</strong> Provide additional context</li>
+            <li><strong>Filters:</strong> Show active filters or tags</li>
+        </ul>
+
+        <h3>Content Guidelines</h3>
+        <ul>
+            <li>Keep text under 10 characters when possible</li>
+            <li>Use consistent terminology</li>
+            <li>Avoid abbreviations unless widely understood</li>
+            <li>Use numbers for counts and statistics</li>
+            <li>Consider localization for international users</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

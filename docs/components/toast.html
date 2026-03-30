@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/toast.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Toast</h1>
+        <p>Toasts are brief notifications that appear temporarily to provide feedback to users. Only-CSS provides toast components with multiple variants, positions, and auto-dismiss functionality.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Toasts use CSS animations for smooth entrance and exit effects, providing elegant user feedback without JavaScript.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a toast is to use the <code>oc-toast</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Toast</div>
+            <div class="preview-content">
+                <div class="oc-toast">
+                    <div class="toast-content">
+                        <strong>Success!</strong> Your changes have been saved.
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-toast">
+                    <div class="toast-content">
+                        <strong>Success!</strong> Your changes have been saved.
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Variants -->
+        <h2 id="variants">Variants</h2>
+        <p>Toasts come in different semantic variants:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Toast Variants</div>
+            <div class="preview-content">
+                <div class="oc-toast success">
+                    <div class="toast-content">
+                        <strong>Success!</strong> Operation completed successfully.
+                    </div>
+                </div>
+                <div class="oc-toast error">
+                    <div class="toast-content">
+                        <strong>Error!</strong> Something went wrong.
+                    </div>
+                </div>
+                <div class="oc-toast warning">
+                    <div class="toast-content">
+                        <strong>Warning!</strong> Please review your input.
+                    </div>
+                </div>
+                <div class="oc-toast info">
+                    <div class="toast-content">
+                        <strong>Info:</strong> New update available.
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-toast success">
+                    <div class="toast-content">
+                        <strong>Success!</strong> Operation completed successfully.
+                    </div>
+                </div>
+                <div class="oc-toast error">
+                    <div class="toast-content">
+                        <strong>Error!</strong> Something went wrong.
+                    </div>
+                </div>
+                <div class="oc-toast warning">
+                    <div class="toast-content">
+                        <strong>Warning!</strong> Please review your input.
+                    </div>
+                </div>
+                <div class="oc-toast info">
+                    <div class="toast-content">
+                        <strong>Info:</strong> New update available.
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Form Submission Toast</h3>
+        <div class="component-preview">
+            <div class="preview-title">Form Submission Toast</div>
+            <div class="preview-content">
+                <div class="oc-toast success">
+                    <div class="toast-content">
+                        <strong>✓ Form Submitted</strong>
+                        <p>Your profile has been updated successfully.</p>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-toast success">
+                    <div class="toast-content">
+                        <strong>✓ Form Submitted</strong>
+                        <p>Your profile has been updated successfully.</p>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Network Error Toast</h3>
+        <div class="component-preview">
+            <div class="preview-title">Network Error Toast</div>
+            <div class="preview-content">
+                <div class="oc-toast error">
+                    <div class="toast-content">
+                        <strong>⚠ Connection Error</strong>
+                        <p>Unable to connect to server. Please check your internet connection.</p>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-toast error">
+                    <div class="toast-content">
+                        <strong>⚠ Connection Error</strong>
+                        <p>Unable to connect to server. Please check your internet connection.</p>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-toast</code></td>
+                    <td>Base toast component class</td>
+                </tr>
+                <tr>
+                    <td><code>toast-content</code></td>
+                    <td>Toast content container</td>
+                </tr>
+                <tr>
+                    <td><code>success</code></td>
+                    <td>Success variant (green)</td>
+                </tr>
+                <tr>
+                    <td><code>error</code></td>
+                    <td>Error variant (red)</td>
+                </tr>
+                <tr>
+                    <td><code>warning</code></td>
+                    <td>Warning variant (yellow)</td>
+                </tr>
+                <tr>
+                    <td><code>info</code></td>
+                    <td>Info variant (blue)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML structure</li>
+                <li>Proper color contrast</li>
+                <li>Screen reader friendly</li>
+                <li>Clear visual hierarchy</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Keep toast messages brief and clear</li>
+            <li>Use appropriate variants for different message types</li>
+            <li>Position toasts consistently</li>
+            <li>Consider auto-dismiss timing</li>
+            <li>Test with screen readers</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use toasts for non-critical feedback. For important information that requires user action, consider using dialogs or alerts instead.
+        </div>
+
+        <h3>When to Use Toasts</h3>
+        <ul>
+            <li><strong>Success Feedback:</strong> Confirm successful actions</li>
+            <li><strong>Error Messages:</strong> Show non-critical errors</li>
+            <li><strong>Warnings:</strong> Alert to potential issues</li>
+            <li><strong>Information:</strong> Provide helpful tips</li>
+        </ul>
+
+        <h3>Content Guidelines</h3>
+        <ul>
+            <li>Keep messages under 2 lines when possible</li>
+            <li>Use clear, action-oriented language</li>
+            <li>Include relevant icons for quick recognition</li>
+            <li>Test message clarity with users</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

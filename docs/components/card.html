@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/card.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Card</h1>
+        <p>Cards are flexible containers for grouping related content. Only-CSS provides a clean card component with header, content, and footer sections, plus hover effects for enhanced interactivity.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Cards use semantic HTML5 structure with proper sectioning elements for better accessibility and SEO.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a card is to use the <code>oc-card</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Card</div>
+            <div class="preview-content">
+                <div class="oc-card">
+                    <div class="oc-card-content">
+                        <p>This is a simple card with content. Cards are great for grouping related information together.</p>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-card">
+                    <div class="oc-card-content">
+                        <p>This is a simple card with content. Cards are great for grouping related information together.</p>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Card Structure -->
+        <h2 id="structure">Card Structure</h2>
+        <p>Cards have three main sections: header, content, and footer:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Complete Card Structure</div>
+            <div class="preview-content">
+                <div class="oc-card">
+                    <div class="oc-card-header">
+                        <h3>Card Title</h3>
+                        <p>Optional subtitle or description</p>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>This is the main content area of the card. You can put any content here including text, images, or other components.</p>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white; margin-right: 0.5rem;">Cancel</button>
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: #3b82f6; color: white;">Save</button>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-card">
+                    <div class="oc-card-header">
+                        <h3>Card Title</h3>
+                        <p>Optional subtitle or description</p>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>This is the main content area of the card. You can put any content here including text, images, or other components.</p>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white; margin-right: 0.5rem;">Cancel</button>
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: #3b82f6; color: white;">Save</button>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Hover Effects -->
+        <h2 id="hover-effects">Hover Effects</h2>
+        <p>Add hover effects to make cards more interactive:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Card with Hover Effect</div>
+            <div class="preview-content">
+                <div class="oc-card hover">
+                    <div class="oc-card-header">
+                        <h3>Interactive Card</h3>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>This card has a hover effect. Try hovering over it to see the elevation change and shadow effect.</p>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-card hover">
+                    <div class="oc-card-header">
+                        <h3>Interactive Card</h3>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>This card has a hover effect. Try hovering over it to see the elevation change and shadow effect.</p>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Profile Card</h3>
+        <div class="component-preview">
+            <div class="preview-title">Profile Card</div>
+            <div class="preview-content">
+                <div class="oc-card hover">
+                    <div class="oc-card-header">
+                        <h3>Sarah Johnson</h3>
+                        <p>Senior Product Designer</p>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>Passionate about creating intuitive user experiences and beautiful interfaces. 8+ years of experience in product design.</p>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">View Profile</button>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-card hover">
+                    <div class="oc-card-header">
+                        <h3>Sarah Johnson</h3>
+                        <p>Senior Product Designer</p>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>Passionate about creating intuitive user experiences and beautiful interfaces. 8+ years of experience in product design.</p>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">View Profile</button>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Product Card</h3>
+        <div class="component-preview">
+            <div class="preview-title">Product Card</div>
+            <div class="preview-content">
+                <div class="oc-card hover">
+                    <div class="oc-card-content">
+                        <div style="width: 100%; height: 200px; background: #f8fafc; border-radius: 0.5rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                            Product Image
+                        </div>
+                        <h4>Premium Headphones</h4>
+                        <p style="color: #64748b; font-size: 0.875rem; margin: 0.5rem 0;">High-quality wireless headphones with noise cancellation</p>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #3b82f6;">$299</div>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: #3b82f6; color: white; width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-card hover">
+                    <div class="oc-card-content">
+                        <div style="width: 100%; height: 200px; background: #f8fafc; border-radius: 0.5rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                            Product Image
+                        </div>
+                        <h4>Premium Headphones</h4>
+                        <p style="color: #64748b; font-size: 0.875rem; margin: 0.5rem 0;">High-quality wireless headphones with noise cancellation</p>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #3b82f6;">$299</div>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: #3b82f6; color: white; width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Stats Card</h3>
+        <div class="component-preview">
+            <div class="preview-title">Stats Card</div>
+            <div class="preview-content">
+                <div class="oc-card">
+                    <div class="oc-card-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: #3b82f6;">24,532</div>
+                                <div style="color: #64748b; font-size: 0.875rem;">Total Users</div>
+                            </div>
+                            <div style="width: 3rem; height: 3rem; background: #dbeafe; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #3b82f6; font-size: 1.5rem;">
+                                👥
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: #22c55e; font-size: 0.875rem;">
+                                <span>↑</span>
+                                <span>12% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-card">
+                    <div class="oc-card-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: bold; color: #3b82f6;">24,532</div>
+                                <div style="color: #64748b; font-size: 0.875rem;">Total Users</div>
+                            </div>
+                            <div style="width: 3rem; height: 3rem; background: #dbeafe; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #3b82f6; font-size: 1.5rem;">
+                                👥
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem; color: #22c55e; font-size: 0.875rem;">
+                                <span>↑</span>
+                                <span>12% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Blog Post Card</h3>
+        <div class="component-preview">
+            <div class="preview-title">Blog Post Card</div>
+            <div class="preview-content">
+                <div class="oc-card hover">
+                    <div class="oc-card-header">
+                        <h3>Getting Started with CSS Grid</h3>
+                        <p>Published on March 15, 2024</p>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>Learn the fundamentals of CSS Grid and how to create complex layouts with ease. This comprehensive guide covers everything you need to know.</p>
+                        <div style="margin-top: 1rem;">
+                            <span class="oc-badge outline primary">CSS</span>
+                            <span class="oc-badge outline success">Tutorial</span>
+                            <span class="oc-badge outline info">Grid</span>
+                        </div>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">Read More</button>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-card hover">
+                    <div class="oc-card-header">
+                        <h3>Getting Started with CSS Grid</h3>
+                        <p>Published on March 15, 2024</p>
+                    </div>
+                    <div class="oc-card-content">
+                        <p>Learn the fundamentals of CSS Grid and how to create complex layouts with ease. This comprehensive guide covers everything you need to know.</p>
+                        <div style="margin-top: 1rem;">
+                            <span class="oc-badge outline primary">CSS</span>
+                            <span class="oc-badge outline success">Tutorial</span>
+                            <span class="oc-badge outline info">Grid</span>
+                        </div>
+                    </div>
+                    <div class="oc-card-footer">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.25rem; background: white;">Read More</button>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-card</code></td>
+                    <td>Base card component class</td>
+                </tr>
+                <tr>
+                    <td><code>hover</code></td>
+                    <td>Adds hover effects (elevation and shadow)</td>
+                </tr>
+                <tr>
+                    <td><code>oc-card-header</code></td>
+                    <td>Card header section (optional)</td>
+                </tr>
+                <tr>
+                    <td><code>oc-card-content</code></td>
+                    <td>Main card content area</td>
+                </tr>
+                <tr>
+                    <td><code>oc-card-footer</code></td>
+                    <td>Card footer section (optional)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML5 structure with proper sectioning</li>
+                <li>Keyboard accessible content</li>
+                <li>Screen reader friendly</li>
+                <li>Proper heading hierarchy</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use semantic heading elements in card headers</li>
+            <li>Ensure interactive elements are properly labeled</li>
+            <li>Maintain consistent card layouts within grids</li>
+            <li>Use hover effects sparingly for better performance</li>
+            <li>Ensure sufficient color contrast for text</li>
+            <li>Test cards with assistive technologies</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use cards to group related information and create visual hierarchy. Cards work best when they have a clear purpose and consistent structure.
+        </div>
+
+        <h3>When to Use Cards</h3>
+        <ul>
+            <li><strong>Content Grouping:</strong> Group related information together</li>
+            <li><strong>Dashboards:</strong> Display stats and metrics</li>
+            <li><strong>Product Listings:</strong> Show products with images and details</li>
+            <li><strong>Blog Posts:</strong> Display article previews</li>
+            <li><strong>User Profiles:</strong> Show user information and actions</li>
+            <li><strong>Task Management:</strong> Display tasks and their status</li>
+        </ul>
+
+        <h3>Layout Guidelines</h3>
+        <ul>
+            <li>Use consistent spacing within cards</li>
+            <li>Align cards properly in grid layouts</li>
+            <li>Maintain consistent card heights in rows</li>
+            <li>Use responsive design for mobile devices</li>
+            <li>Consider card loading states</li>
+            <li>Test with different content lengths</li>
+        </ul>
+
+        <h3>Content Guidelines</h3>
+        <ul>
+            <li>Keep card titles concise and descriptive</li>
+            <li>Use clear and scannable content</li>
+            <li>Include relevant images or icons when helpful</li>
+            <li>Provide clear calls-to-action in footers</li>
+            <li>Use consistent typography and spacing</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

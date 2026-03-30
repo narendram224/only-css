@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeleton - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/skeleton.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Skeleton</h1>
+        <p>Skeleton screens are loading placeholders that show content structure while data is being loaded. Only-CSS provides skeleton components with animated shimmer effects for better perceived performance.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Skeletons use pure CSS animations with shimmer effects, providing smooth loading feedback without JavaScript.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a skeleton is to use the <code>oc-skeleton</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Skeleton</div>
+            <div class="preview-content">
+                <div class="oc-skeleton"></div>
+            </div>
+            <code-block language="html">
+                <div class="oc-skeleton"></div>
+            </code-block>
+        </div>
+
+        <!-- Variants -->
+        <h2 id="variants">Variants</h2>
+        <p>Skeletons come in different shapes and sizes for various content types:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Skeleton Variants</div>
+            <div class="preview-content">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="oc-skeleton circle"></div>
+                    <div class="oc-skeleton title"></div>
+                    <div class="oc-skeleton text"></div>
+                    <div class="oc-skeleton text-short"></div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div class="oc-skeleton circle"></div>
+                <div class="oc-skeleton title"></div>
+                <div class="oc-skeleton text"></div>
+                <div class="oc-skeleton text-short"></div>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Card Skeleton</h3>
+        <div class="component-preview">
+            <div class="preview-title">Card Skeleton</div>
+            <div class="preview-content">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="oc-skeleton circle" style="margin-bottom: 1rem;"></div>
+                    <div class="oc-skeleton title" style="margin-bottom: 0.5rem;"></div>
+                    <div class="oc-skeleton text" style="margin-bottom: 0.5rem;"></div>
+                    <div class="oc-skeleton text-short" style="margin-bottom: 0.5rem;"></div>
+                    <div class="oc-skeleton text" style="width: 80%;"></div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="oc-skeleton circle" style="margin-bottom: 1rem;"></div>
+                    <div class="oc-skeleton title" style="margin-bottom: 0.5rem;"></div>
+                    <div class="oc-skeleton text" style="margin-bottom: 0.5rem;"></div>
+                    <div class="oc-skeleton text-short" style="margin-bottom: 0.5rem;"></div>
+                    <div class="oc-skeleton text" style="width: 80%;"></div>
+                </div>
+            </code-block>
+        </div>
+
+        <h3>List Skeleton</h3>
+        <div class="component-preview">
+            <div class="preview-title">List Skeleton</div>
+            <div class="preview-content">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-skeleton circle"></div>
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-skeleton circle"></div>
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-skeleton circle"></div>
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="oc-skeleton circle"></div>
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                    </div>
+                    <!-- Additional list items... -->
+                </div>
+            </code-block>
+        </div>
+
+        <h3>Form Skeleton</h3>
+        <div class="component-preview">
+            <div class="preview-title">Form Skeleton</div>
+            <div class="preview-content">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="oc-skeleton title" style="margin-bottom: 1rem;"></div>
+                    <div class="oc-skeleton text" style="margin-bottom: 1.5rem;"></div>
+                    <div class="oc-skeleton text" style="margin-bottom: 1.5rem;"></div>
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <div class="oc-skeleton title" style="margin-bottom: 1rem;"></div>
+                    <div class="oc-skeleton text" style="margin-bottom: 1.5rem;"></div>
+                    <div class="oc-skeleton text" style="margin-bottom: 1.5rem;"></div>
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                        <div class="oc-skeleton text" style="flex: 1;"></div>
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-skeleton</code></td>
+                    <td>Base skeleton component class</td>
+                </tr>
+                <tr>
+                    <td><code>circle</code></td>
+                    <td>Circular skeleton (for avatars, images)</td>
+                </tr>
+                <tr>
+                    <td><code>title</code></td>
+                    <td>Title skeleton (larger, 60% width)</td>
+                </tr>
+                <tr>
+                    <td><code>text</code></td>
+                    <td>Text skeleton (full width)</td>
+                </tr>
+                <tr>
+                    <td><code>text-short</code></td>
+                    <td>Short text skeleton (70% width)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Screen readers ignore skeleton elements</li>
+                <li>Maintains layout structure</li>
+                <li>Provides loading feedback</li>
+                <li>Reduces layout shift</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Match skeleton layout to actual content</li>
+            <li>Use appropriate skeleton variants</li>
+            <li>Keep skeleton duration minimal</li>
+            <li>Test with assistive technologies</li>
+            <li>Consider loading state indicators</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use skeletons for content that takes more than 1 second to load. They improve perceived performance and reduce layout shift.
+        </div>
+
+        <h3>When to Use Skeletons</h3>
+        <ul>
+            <li><strong>Content Loading:</strong> Articles, posts, feeds</li>
+            <li><strong>Data Fetching:</strong> User profiles, settings</li>
+            <li><strong>Image Loading:</strong> Galleries, avatars</li>
+            <li><strong>Form Loading:</strong> Dynamic forms, data entry</li>
+            <li><strong>List Loading:</strong> Tables, task lists</li>
+        </ul>
+
+        <h3>Content Guidelines</h3>
+        <ul>
+            <li>Maintain consistent spacing</li>
+            <li>Use appropriate skeleton shapes</li>
+            <li>Consider content hierarchy</li>
+            <li>Test with real content</li>
+            <li>Monitor loading performance</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

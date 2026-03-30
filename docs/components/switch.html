@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch - Only-CSS Component Library</title>
+    <link rel="stylesheet" href="../../src/components/switch.css">
+    <link rel="stylesheet" href="../utility.css">
+    <link rel="stylesheet" href="../doc-base.css">
+    <script src="../components/doc-header.js"></script>
+    <script src="../components/doc-sidebar.js"></script>
+    <script src="../components/doc-layout.js"></script>
+    <script src="../components/code-block.js"></script>
+</head>
+<body>
+    <doc-header></doc-header>
+    <doc-layout>
+        <h1>Switch</h1>
+        <p>Switches are toggle controls that allow users to turn settings on or off. Only-CSS provides accessible switch components with smooth animations and proper keyboard support.</p>
+
+        <div class="alert">
+            <strong>Good to know:</strong> Switches use semantic HTML checkbox inputs with CSS styling, ensuring maximum accessibility and form integration.
+        </div>
+
+        <!-- Basic Usage -->
+        <h2 id="basic-usage">Basic Usage</h2>
+        <p>The simplest way to create a switch is to use a checkbox input with the <code>oc-switch</code> class:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Basic Switch</div>
+            <div class="preview-content">
+                <label class="oc-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <code-block language="html">
+                <label class="oc-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </code-block>
+        </div>
+
+        <!-- States -->
+        <h2 id="states">States</h2>
+        <p>Switches support checked, unchecked, and disabled states:</p>
+
+        <div class="component-preview">
+            <div class="preview-title">Switch States</div>
+            <div class="preview-content">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    <label class="oc-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                        <span style="margin-left: 0.5rem;">Enabled</span>
+                    </label>
+                    <label class="oc-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                        <span style="margin-left: 0.5rem;">Disabled</span>
+                    </label>
+                    <label class="oc-switch">
+                        <input type="checkbox" disabled>
+                        <span class="slider"></span>
+                        <span style="margin-left: 0.5rem;">Disabled Switch</span>
+                    </label>
+                </div>
+            </div>
+            <code-block language="html">
+                <label class="oc-switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                    <span style="margin-left: 0.5rem;">Enabled</span>
+                </label>
+                <label class="oc-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                    <span style="margin-left: 0.5rem;">Disabled</span>
+                </label>
+                <label class="oc-switch">
+                    <input type="checkbox" disabled>
+                    <span class="slider"></span>
+                    <span style="margin-left: 0.5rem;">Disabled Switch</span>
+                </label>
+            </code-block>
+        </div>
+
+        <!-- Examples -->
+        <h2 id="examples">Examples</h2>
+
+        <h3>Settings Panel</h3>
+        <div class="component-preview">
+            <div class="preview-title">Settings Panel</div>
+            <div class="preview-content">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <h4 style="margin: 0 0 1rem 0;">Notification Settings</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <label class="oc-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                            <span style="margin-left: 0.5rem;">Email Notifications</span>
+                        </label>
+                        <label class="oc-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                            <span style="margin-left: 0.5rem;">Push Notifications</span>
+                        </label>
+                        <label class="oc-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                            <span style="margin-left: 0.5rem;">SMS Notifications</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <code-block language="html">
+                <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.5rem;">
+                    <h4 style="margin: 0 0 1rem 0;">Notification Settings</h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <label class="oc-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                            <span style="margin-left: 0.5rem;">Email Notifications</span>
+                        </label>
+                        <!-- Additional switches... -->
+                    </div>
+                </div>
+            </code-block>
+        </div>
+
+        <!-- API Reference -->
+        <h2 id="api">API Reference</h2>
+
+        <h3>CSS Classes</h3>
+        <table class="props-table">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>oc-switch</code></td>
+                    <td>Base switch container class</td>
+                </tr>
+                <tr>
+                    <td><code>slider</code></td>
+                    <td>Switch slider/track element</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Accessibility -->
+        <h2 id="accessibility">Accessibility</h2>
+        <div class="alert info">
+            <strong>Accessibility Features:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                <li>Semantic HTML checkbox input</li>
+                <li>Keyboard navigation support</li>
+                <li>Screen reader friendly</li>
+                <li>Focus states clearly visible</li>
+            </ul>
+        </div>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Always provide clear labels for switches</li>
+            <li>Use switches for binary settings (on/off)</li>
+            <li>Consider default states carefully</li>
+            <li>Test with keyboard navigation</li>
+            <li>Use appropriate color contrast</li>
+        </ul>
+
+        <!-- Design Guidelines -->
+        <h2 id="design-guidelines">Design Guidelines</h2>
+        <div class="alert success">
+            <strong>Pro Tip:</strong> Use switches for settings that take effect immediately. For settings that require confirmation, consider using checkboxes instead.
+        </div>
+
+        <h3>When to Use Switches</h3>
+        <ul>
+            <li><strong>Settings:</strong> Enable/disable features</li>
+            <li><strong>Preferences:</strong> User preferences</li>
+            <li><strong>Notifications:</strong> Turn notifications on/off</li>
+            <li><strong>Features:</strong> Enable/disable functionality</li>
+        </ul>
+    </doc-layout>
+
+    <script>
+        // Simple sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
